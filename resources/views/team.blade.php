@@ -17,85 +17,82 @@
 
                 <!--	<h3 class="title">Meet the team</h3>-->
 
+                @if(count($board)>2)
 
-                <div class="one-half team">
-                    <img src="img/Marlene.jpg" alt="" />
-                    <div class="arrow"></div>
-                    <div class="team-member-info">
-                        <ul>
-                            <li><h2>Marlene Short</h2></li>
-                            <li><h3>President</h3></li>
-                        </ul>
-                        <p>Just a little brief non-description of Marlene</p>
-                        <ul class="social-personal">
-                            <li><a href="#">Twitter</a><span>/</span></li>
-                            <li><a href="#">Facebook</a></li>
-                        </ul>
-                    </div><!--END TEAM-MEMBER-INFO-->
-                </div><!--END ONE-THIRD-->
+                        <div class="one-half team">
+                            <img src="{{ $board[0]->image_url }}" alt="" />
+                            <div class="arrow"></div>
+                            <div class="team-member-info">
+                                <ul>
+                                    <li><h2>{{ $board[0]->name }}</h2></li>
+                                    <li><h3>{{ $board[0]->position }}</h3></li>
+                                </ul>
+                                <p>{{ $board[0]->description }}</p>
+                                <ul class="social-personal">
+                                    <li><a href="{{ $board[0]->twitter_link }}">Twitter</a><span>/</span></li>
+                                    <li><a href="{{ $board[0]->facebook_link }}">Facebook</a></li>
+                                </ul>
+                            </div><!--END TEAM-MEMBER-INFO-->
+                        </div><!--END ONE-THIRD-->
 
-                <div class="one-half team last">
-                    <img src="img/Adam_Arguello.jpg" alt="" />
-                    <div class="arrow"></div>
-                    <div class="team-member-info">
-                        <ul>
-                            <li><h2>Adam Arguello</h2></li>
-                            <li><h3>Vice President</h3></li>
-                        </ul>
-                        <p>Just a little brief non-description of Adam</p>
-                        <ul class="social-personal">
-                            <li><a href="#">Twitter</a><span>/</span></li>
-                            <li><a href="#">Facebook</a><span>/</span></li>
-                        </ul>
-                    </div><!--END TEAM-MEMBER-INFO-->
-                </div><!--END ONE-THIRD LAST-->
-                <div class="one-third team">
-                    <img src="img/Allison_Linhart.jpg" alt="" />
-                    <div class="arrow"></div>
-                    <div class="team-member-info">
-                        <ul>
-                            <li><h2>Allison Linhart</h2></li>
-                            <li><h3>Treasurer</h3></li>
-                        </ul>
-                        <p>Just a little brief non-description of Alison</p>
-                        <ul class="social-personal">
-                            <li><a href="#">Twitter</a><span>/</span></li>
-                            <li><a href="#">Facebook</a><span>/</span></li>
-                        </ul>
-                    </div><!--END TEAM-MEMBER-INFO-->
-                </div><!--END ONE-THIRD-->
+                        <div class="one-half team last">
+                            <img src="{{ $board[1]->image_url }}" alt="" />
+                            <div class="arrow"></div>
+                            <div class="team-member-info">
+                                <ul>
+                                    <li><h2>{{ $board[1]->name }}</h2></li>
+                                    <li><h3>{{ $board[1]->position }}</h3></li>
+                                </ul>
+                                <p>{{ $board[1]->description }}</p>
+                                <ul class="social-personal">
+                                    <li><a href="{{ $board[1]->twitter_link }}">Twitter</a><span>/</span></li>
+                                    <li><a href="{{ $board[1]->facebook_link }}">Facebook</a></li>
+                                </ul>
+                            </div><!--END TEAM-MEMBER-INFO-->
+                        </div><!--END ONE-THIRD LAST-->
 
-                <div class="one-third team">
-                    <img src="img/Joann_True.jpg" alt="" />
-                    <div class="arrow"></div>
-                    <div class="team-member-info">
-                        <ul>
-                            <li><h2>Joann True</h2></li>
-                            <li><h3>Secretary</h3></li>
-                        </ul>
-                        <p>Just a little brief non-description of Joann</p>
-                        <ul class="social-personal">
-                            <li><a href="#">Twitter</a><span>/</span></li>
-                            <li><a href="#">Facebook</a><span>/</span></li>
-                        </ul>
-                    </div><!--END TEAM-MEMBER-INFO-->
-                </div><!--END ONE-THIRD-->
 
-                <div class="one-third team last">
-                    <img src="img/Cindy.jpg" alt="" />
-                    <div class="arrow"></div>
-                    <div class="team-member-info">
-                        <ul>
-                            <li><h2>Cindy Rogers</h2></li>
-                            <li><h3>Board Memeber</h3></li>
-                        </ul>
-                        <p>Just a little brief non-description of Cindy</p>
-                        <ul class="social-personal">
-                            <li><a href="#">Twitter</a><span>/</span></li>
-                            <li><a href="#">Facebook</a><span>/</span></li>
-                        </ul>
-                    </div><!--END TEAM-MEMBER-INFO-->
-                </div><!--END ONE-THIRD LAST-->
+                @endif
+                @if(count($board)>2)
+                    @for($i=2;$i<count($board);$i++)
+                        @if($i%3==1)
+                            <div class="one-third team last">
+                                <img src="{{ $board[$i]->image_url }}" alt="" />
+                                <div class="arrow"></div>
+                                <div class="team-member-info">
+                                    <ul>
+                                        <li><h2>{{ $board[$i]->name }}</h2></li>
+                                        <li><h3>{{ $board[$i]->position }}</h3></li>
+                                    </ul>
+                                    <p>{{ $board[$i]->description }}</p>
+                                    <ul class="social-personal">
+                                        <li><a href="{{ $board[$i]->twitter_link }}">Twitter</a><span>/</span></li>
+                                        <li><a href="{{ $board[$i]->facebook_link }}">Facebook</a></li>
+                                    </ul>
+                                </div><!--END TEAM-MEMBER-INFO-->
+                            </div><!--END ONE-THIRD LAST-->
+                        @else
+                            <div class="one-third team">
+                                <img src="{{ $board[$i]->image_url }}" alt="" />
+                                <div class="arrow"></div>
+                                <div class="team-member-info">
+                                    <ul>
+                                        <li><h2>{{ $board[$i]->name }}</h2></li>
+                                        <li><h3>{{ $board[$i]->position }}</h3></li>
+                                    </ul>
+                                    <p>{{ $board[$i]->description }}</p>
+                                    <ul class="social-personal">
+                                        <li><a href="{{ $board[$i]->twitter_link }}">Twitter</a><span>/</span></li>
+                                        <li><a href="{{ $board[$i]->facebook_link }}">Facebook</a></li>
+                                    </ul>
+                                </div><!--END TEAM-MEMBER-INFO-->
+                            </div><!--END ONE-THIRD LAST-->
+                        @endif
+
+                    @endfor
+
+                @endif
+                
 
             </div><!--END CONTENT-WRAPPER-->
 

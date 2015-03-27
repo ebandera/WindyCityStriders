@@ -16,138 +16,46 @@
                 </div><!--END SECTION TITLE-->
 
                 <div id="inner-content" class="blog1">
+                    @foreach($blogs as $blog)
+                        <div class="post">
 
-                    <div class="post">
+                            <div class="post-info">
+                                <div class="date"><span class="month">{{ date_format($blog->created_at,'F') }} </span><span class="day">{{date_format($blog->created_at,'d')}} </span><span class="month">{{date_format($blog->created_at,'Y')}}</span></div>
+                                <div class="comments"><a href="#"><span>4</span> comments</a></div>
+                            </div><!--END POST-INFO-->
 
-                        <div class="post-info">
-                            <div class="date"><span class="month">March </span><span class="day">9 </span><span class="month">2015</span></div>
-                            <div class="comments"><a href="#"><span>4</span> comments</a></div>
-                        </div><!--END POST-INFO-->
+                            <div class="post-content">
 
-                        <div class="post-content">
+                                <div class="post-media">
+                                    <a href="#"><img src=" {{ $blog->image_url }}" alt="" width="600" /></a>
+                                </div><!--END POST-MEDIA-->
 
-                            <div class="post-media">
-                                <a href="#"><img src="img/running_blog.jpg" alt="" width="600" /></a>
-                            </div><!--END POST-MEDIA-->
+                                <div class="post-title">
+                                    <h2 class="title"><a href="">{{ $blog->heading }}</a></h2>
+                                </div><!--END POST-TITLE-->
 
-                            <div class="post-title">
-                                <h2 class="title"><a href="">This is a blog post!.(Clicking link will take you to article full page)</a></h2>
-                            </div><!--END POST-TITLE-->
+                                <div class="post-meta">
+                                    <ul>
+                                        <li><span>Posted by</span> <a href="#">{{ $blog->user->first_name . ' ' . $blog->user->last_name}}</a></li>
+                                    </ul>
+                                </div><!--END POST-META-->
 
-                            <div class="post-meta">
-                                <ul>
-                                    <li><span>Posted by</span> <a href="#">Admin</a></li>
-                                </ul>
-                            </div><!--END POST-META-->
+                                <p>{{ $blog->html_text }} </p>
+                                <p><a href="" class="more-link">Continue reading</a></p>
 
-                            <p>This is some blog post content! Lots of great content about running and stuff. This is some blog post content! Lots of great content about running and stuff. This is some blog post content! Lots of great content about running and stuff. </p>
-                            <p><a href="" class="more-link">Continue reading</a></p>
+                            </div><!--END POST-CONTENT -->
 
-                        </div><!--END POST-CONTENT -->
-
-                    </div><!--END POST-->
-
-
+                        </div><!--END POST-->
 
 
-
-                    <div class="post">
-
-                        <div class="post-info">
-                            <div class="date"><span class="month">March </span><span class="day">9 </span><span class="month">2015</span></div>
-                            <div class="comments"><a href="#"><span>4</span> comments</a></div>
-                        </div><!--END POST-INFO-->
-
-                        <div class="post-content">
-
-                            <div class="post-media">
-                                <a href="#"><img src="" alt="" width="600" /></a>
-                            </div><!--END POST-MEDIA-->
-
-                            <div class="post-title">
-                                <h2 class="title"><a href="">This is a blog post!.(Clicking link will take you to article full page)</a></h2>
-                            </div><!--END POST-TITLE-->
-
-                            <div class="post-meta">
-                                <ul>
-                                    <li><span>Posted by</span> <a href="#">Admin</a></li>
-                                </ul>
-                            </div><!--END POST-META-->
-
-                            <p>This is some blog post content! Lots of great content about running and stuff. This is some blog post content! Lots of great content about running and stuff. This is some blog post content! Lots of great content about running and stuff. </p>
-                            <p><a href="" class="more-link">Continue reading</a></p>
-
-                        </div><!--END POST-CONTENT -->
-
-                    </div><!--END POST-->
+                    @endforeach
 
 
 
 
 
-                    <div class="post">
-
-                        <div class="post-info">
-                            <div class="date"><span class="month">March </span><span class="day">9 </span><span class="month">2015</span></div>
-                            <div class="comments"><a href="#"><span>4</span> comments</a></div>
-                        </div><!--END POST-INFO-->
-
-                        <div class="post-content">
-
-                            <div class="post-media">
-                                <a href="#"><img src="img/running_shoes.jpg" alt="" width="600" /></a>
-                            </div><!--END POST-MEDIA-->
-
-                            <div class="post-title">
-                                <h2 class="title"><a href="">This is a blog post!.(Clicking link will take you to article full page)</a></h2>
-                            </div><!--END POST-TITLE-->
-
-                            <div class="post-meta">
-                                <ul>
-                                    <li><span>Posted by</span> <a href="#">Admin</a></li>
-                                </ul>
-                            </div><!--END POST-META-->
-
-                            <p>This is some blog post content! Lots of great content about running and stuff. This is some blog post content! Lots of great content about running and stuff. This is some blog post content! Lots of great content about running and stuff. </p>
-                            <p><a href="" class="more-link">Continue reading</a></p>
-
-                        </div><!--END POST-CONTENT -->
-
-                    </div><!--END POST-->
 
 
-
-
-
-                    <div class="post">
-
-                        <div class="post-info">
-                            <div class="date"><span class="month">March </span><span class="day">9 </span><span class="month">2015</span></div>
-                            <div class="comments"><a href="#"><span>4</span> comments</a></div>
-                        </div><!--END POST-INFO-->
-
-                        <div class="post-content">
-
-                            <div class="post-media">
-                                <a href="#"><img src="img/runBlog.jpg" alt="" width="600" /></a>
-                            </div><!--END POST-MEDIA-->
-
-                            <div class="post-title">
-                                <h2 class="title"><a href="">This is a blog post!.(Clicking link will take you to article full page)</a></h2>
-                            </div><!--END POST-TITLE-->
-
-                            <div class="post-meta">
-                                <ul>
-                                    <li><span>Posted by</span> <a href="#">Admin</a></li>
-                                </ul>
-                            </div><!--END POST-META-->
-
-                            <p>This is some blog post content! Lots of great content about running and stuff. This is some blog post content! Lots of great content about running and stuff. This is some blog post content! Lots of great content about running and stuff. </p>
-                            <p><a href="" class="more-link">Continue reading</a></p>
-
-                        </div><!--END POST-CONTENT -->
-
-                    </div><!--END POST-->
                 </div><!--END INNER-CONTENT-->
 
             </div><!--END CONTENT-WRAPPER-->
