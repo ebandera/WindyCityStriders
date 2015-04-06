@@ -18,7 +18,7 @@ class AboutController extends Controller {
     {
         $blogs = Page::where('title','=','About')->first()->blog;
         //var_dump($blogs);exit();
-        return view('about',compact('blogs'));
+        return view('pages.about',compact('blogs'));
     }
 
 }

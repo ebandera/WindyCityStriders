@@ -17,6 +17,7 @@ class CreateEventsTable extends Migration {
 			$table->increments('id');
 			$table->timestamp('event_date');
 			$table->string('event_name');
+			$table->string('event_img_url');
 			$table->string('event_place_text');
 			$table->string('event_address');
 			$table->string('event_details');

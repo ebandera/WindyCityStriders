@@ -82,8 +82,68 @@ class TestDataSeeder extends Seeder {
 
 		//seed our events table
 		$evergreenParkEvent = Event::create(array(
-			'event_date'=>'2015-04-01',
-			'event_name'=>'Run and Run',
+		'event_date'=>'2014-04-01',
+		'event_name'=>'Run and Run 1',
+		'event_img_url'=>'/img/calendarImage.jpg',
+		'event_place_text'=>'Evergreen Park',
+		'event_address'=>'5713 Moody, Chicago, Il 60638',
+		'event_details'=>'Meet in playground, starts at noon',
+		'event_info_path'=>'http://www.ericbandera.com',
+		'event_results_path'=>'http://demo.shopced.com'
+
+	));
+
+		$evergreenParkEvent2 = Event::create(array(
+			'event_date'=>'2015-04-10',
+			'event_name'=>'Run and Run2',
+			'event_img_url'=>'/img/calendarImage.jpg',
+			'event_place_text'=>'Evergreen Park',
+			'event_address'=>'5713 Moody, Chicago, Il 60638',
+			'event_details'=>'Meet in playground, starts at noon',
+			'event_info_path'=>'http://www.ericbandera.com',
+			'event_results_path'=>'http://demo.shopced.com'
+
+		));
+
+		$evergreenParkEvent3 = Event::create(array(
+			'event_date'=>'2015-05-20',
+			'event_name'=>'Run and Run3',
+			'event_img_url'=>'/img/calendarImage.jpg',
+			'event_place_text'=>'Evergreen Park',
+			'event_address'=>'5713 Moody, Chicago, Il 60638',
+			'event_details'=>'Meet in playground, starts at noon',
+			'event_info_path'=>'http://www.ericbandera.com',
+			'event_results_path'=>'http://demo.shopced.com'
+
+		));
+		$evergreenParkEvent = Event::create(array(
+			'event_date'=>'2014-05-01',
+			'event_name'=>'Run and Run 4',
+			'event_img_url'=>'/img/calendarImage.jpg',
+			'event_place_text'=>'Evergreen Park',
+			'event_address'=>'5713 Moody, Chicago, Il 60638',
+			'event_details'=>'Meet in playground, starts at noon',
+			'event_info_path'=>'http://www.ericbandera.com',
+			'event_results_path'=>'http://demo.shopced.com'
+
+		));
+
+		$evergreenParkEvent2 = Event::create(array(
+			'event_date'=>'2014-04-10',
+			'event_name'=>'Run and Run5',
+			'event_img_url'=>'/img/calendarImage.jpg',
+			'event_place_text'=>'Evergreen Park',
+			'event_address'=>'5713 Moody, Chicago, Il 60638',
+			'event_details'=>'Meet in playground, starts at noon',
+			'event_info_path'=>'http://www.ericbandera.com',
+			'event_results_path'=>'http://demo.shopced.com'
+
+		));
+
+		$evergreenParkEvent3 = Event::create(array(
+			'event_date'=>'2016-05-20',
+			'event_name'=>'Run and Run6',
+			'event_img_url'=>'/img/calendarImage.jpg',
 			'event_place_text'=>'Evergreen Park',
 			'event_address'=>'5713 Moody, Chicago, Il 60638',
 			'event_details'=>'Meet in playground, starts at noon',

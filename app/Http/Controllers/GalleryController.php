@@ -15,7 +15,7 @@ class GalleryController extends Controller {
         $galleryItems = galleryItem::all();
 
 
-        return view('gallery',compact('galleryItems'));
+        return view('pages.gallery',compact('galleryItems'));
             //
 
     }

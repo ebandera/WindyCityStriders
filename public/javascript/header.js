@@ -3,7 +3,7 @@ $(document).ready(function()
     var header_h = $("#header-wrapper").height() + 0;
     var menu_h = $("#menu").height();
     var speed = 500;
-    var logo2_url = "img/logo.png";
+    var logo2_url = "/img/logo.png";
 
     var scroll_critical = parseInt(header_h - menu_h);
     var window_y = 0;

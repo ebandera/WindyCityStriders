@@ -30,7 +30,7 @@ class JoinController extends Controller {
      */
     public function index()
     {
-        return view('join');
+        return view('pages.join');
     }
 
 }

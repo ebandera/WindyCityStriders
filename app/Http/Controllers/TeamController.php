@@ -20,7 +20,7 @@ class TeamController extends Controller {
         //echo $year;exit();
         $board = BoardMember::where('year','=',$year)->get();
         //var_dump($board);
-        return view('team',compact('board'));
+        return view('pages.team',compact('board'));
     }
 
 }

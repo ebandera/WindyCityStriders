@@ -20,7 +20,7 @@ class BlogController extends Controller {
         //echo $userName;exit();
 
 
-        return view('blog',compact('blogs'));
+        return view('pages.blog',compact('blogs'));
         //
 
     }
