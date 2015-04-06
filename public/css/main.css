@@ -1,0 +1,131 @@
+@import url("bootstrap.css");
+
+.container{
+    -webkit-box-shadow: 0px 4px 26px 13px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 4px 26px 13px rgba(0,0,0,0.75);
+    box-shadow: 0px 4px 26px 13px rgba(0,0,0,0.75);
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.container .month-year-bar{
+    height: 20px;
+    color : white;
+    font-size : 30px;
+    font-weight : 300;
+    padding : 15px;
+}
+.container .month-year-bar{
+    /* IE10 Consumer Preview */
+    background-image: -ms-radial-gradient(center, ellipse closest-corner, #0A31F5 0%, #19365C 100%);
+
+    /* Mozilla Firefox */
+    background-image: -moz-radial-gradient(center, ellipse closest-corner, #0A31F5 0%, #19365C 100%);
+
+    /* Opera */
+    background-image: -o-radial-gradient(center, ellipse closest-corner, #0A31F5 0%, #19365C 100%);
+
+    /* Webkit (Safari/Chrome 10) */
+    background-image: -webkit-gradient(radial, center center, 0, center center, 497, color-stop(0, #0A31F5), color-stop(1, #19365C));
+
+    /* Webkit (Chrome 11+) */
+    background-image: -webkit-radial-gradient(center, ellipse closest-corner, #0A31F5 0%, #19365C 100%);
+
+    /* W3C Markup, IE10 Release Preview */
+    background-image: radial-gradient(ellipse closest-corner at center, #0A31F5 0%, #19365C 100%);
+}
+.container .date-bar{
+    background-color : lightgray;
+    border-top: gray solid 1px;
+    height: 50px;
+    color : white;
+    font-size : 30px;
+    font-weight : 400;
+    padding : 15px;
+}
+.container .date-bar{
+    /* IE10 Consumer Preview */
+    background-image: -ms-radial-gradient(center, ellipse closest-corner, #949494 0%, #5E5E5E 100%);
+
+    /* Mozilla Firefox */
+    background-image: -moz-radial-gradient(center, ellipse closest-corner, #949494 0%, #5E5E5E 100%);
+
+    /* Opera */
+    background-image: -o-radial-gradient(center, ellipse closest-corner, #949494 0%, #5E5E5E 100%);
+
+    /* Webkit (Safari/Chrome 10) */
+    background-image: -webkit-gradient(radial, center center, 0, center center, 497, color-stop(0, #949494), color-stop(1, #5E5E5E));
+
+    /* Webkit (Chrome 11+) */
+    background-image: -webkit-radial-gradient(center, ellipse closest-corner, #949494 0%, #5E5E5E 100%);
+
+    /* W3C Markup, IE10 Release Preview */
+    background-image: radial-gradient(ellipse closest-corner at center, #949494 0%, #5E5E5E 100%);
+}
+.date-cube{
+    height: 100%;
+    width: 100px;
+    border-left: dashed 1px #f5f5f5;
+    border-right: dashed 1px #f5f5f5;
+    float: left;
+
+}
+.date-cube:hover{
+    /* IE10 Consumer Preview */
+    background-image: -ms-radial-gradient(center, ellipse closest-corner, #0A31F5 0%, #19365C 100%);
+
+    /* Mozilla Firefox */
+    background-image: -moz-radial-gradient(center, ellipse closest-corner, #0A31F5 0%, #19365C 100%);
+
+    /* Opera */
+    background-image: -o-radial-gradient(center, ellipse closest-corner, #0A31F5 0%, #19365C 100%);
+
+    /* Webkit (Safari/Chrome 10) */
+    background-image: -webkit-gradient(radial, center center, 0, center center, 497, color-stop(0, #0A31F5), color-stop(1, #19365C));
+
+    /* Webkit (Chrome 11+) */
+    background-image: -webkit-radial-gradient(center, ellipse closest-corner, #0A31F5 0%, #19365C 100%);
+
+    /* W3C Markup, IE10 Release Preview */
+    background-image: radial-gradient(ellipse closest-corner at center, #0A31F5 0%, #19365C 100%);
+}
+.date-cube p{
+    text-align: center;
+    margin-top: 15px;
+}
+.container .month-year-bar .month{
+    float:right;
+}
+.container .month-year-bar .year{
+    float: left;
+}
+.event-bar{
+    border-top: gray solid 1px;
+    height: 500px;
+    font-size : 30px;
+    font-weight : 400;
+    padding : 15px;
+    background-color : #f5f5f5;
+}
+.event-bar .event-title h2{
+    font-size: 45px;
+    border: dotted 1px black;
+    padding: 5px;
+    height: 20%;
+}
+.event-bar .event-details{
+    font-size: 20px;
+    border: dotted 1px black;
+    padding: 5px;
+    height: 70%;
+}
+.event-bar .event-details2{
+    font-size: 20px;
+    border: dotted 1px black;
+    padding: 5px;
+    height: 10%;
+}
+.event-bar .event-img{
+    border: dotted 1px black;
+    padding: 5px;
+    height: 70%;
+}

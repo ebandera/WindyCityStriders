@@ -22,8 +22,13 @@ Route::get('join', 'JoinController@index');
 Route::get('team', 'TeamController@index');
 Route::get('about', 'AboutController@index');
 Route::get('contact','ContactController@index');
+
+
+Route::get('calendar','CalendarController@index');
+Route::get('calendar/{id}','CalendarController@selectEvent');
+Route::get('calendar/{direction}/{dateReference}','CalendarController@changeTime');
 Route::any('sendMessage',function(){
-	//return current request data
+	//return current request data\\\\\\\\\\
 	var_dump(Input::all());
 });
 
