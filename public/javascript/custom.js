@@ -1,6 +1,6 @@
 jQuery(document).ready(function($) {
     var color = "red";
-    var css_url = "css/style.css";
+    var css_url = "/css/style.css";
     $('head').append('<link rel="stylesheet" href="' + css_url + '" type="text/css" />');
 })
 

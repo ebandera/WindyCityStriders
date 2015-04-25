@@ -3,6 +3,7 @@
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Event;
+use App\Blog;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 
@@ -29,8 +30,8 @@ class CalendarController extends Controller {
 
         $calendarMonthItems = Event::whereBetween('event_date', array($firstOfMonth, $nextMonth))->get();
        // var_dump(count($calendarMonthItems));exit();
-        //var_dump($calendarItem);exit();
-        return view('pages.calendar',compact('calendarItem','calendarMonthItems'));
+        $footerBlogs = Blog::all()->take(3);
+        return view('pages.calendar',compact('calendarItem','calendarMonthItems','footerBlogs'));
     }
     public function selectEvent($id)
     {
@@ -49,8 +50,8 @@ class CalendarController extends Controller {
 
         $calendarMonthItems = Event::whereBetween('event_date', array($firstOfMonth, $nextMonth))->orderBy('event_date')->get();
         // var_dump(count($calendarMonthItems));exit();
-        //var_dump($calendarItem);exit();
-        return view('pages.calendar',compact('calendarItem','calendarMonthItems'));
+        $footerBlogs = Blog::all()->take(3);
+        return view('pages.calendar',compact('calendarItem','calendarMonthItems','footerBlogs'));
     }
 
     public function changeTime($direction,$dateReference)
@@ -124,8 +125,8 @@ class CalendarController extends Controller {
 
         $calendarMonthItems = Event::whereBetween('event_date', array($firstOfMonth, $nextMonth))->orderBy('event_date')->get();
         // var_dump(count($calendarMonthItems));exit();
-        //var_dump($calendarItem);exit();
-        return view('pages.calendar',compact('calendarItem','calendarMonthItems'));
+        $footerBlogs = Blog::all()->take(3);
+        return view('pages.calendar',compact('calendarItem','calendarMonthItems','footerBlogs'));
     }
 
 

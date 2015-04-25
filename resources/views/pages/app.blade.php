@@ -103,11 +103,9 @@
 				<h3>Latest posts</h3>
 
 				<ul>
-					<li><a href="#">This will be a blog entry</a>	</li>
-					<li><a href="#">This will be a blog entry</a>	</li>
-					<li><a href="#">This will be a blog entry</a>	</li>
-					<li><a href="#">This will be a blog entry</a>	</li>
-					<li><a href="#">This will be a blog entry</a>	</li>
+					@foreach($footerBlogs as $footerBlog)
+						<li><a href="/blogs">{{$footerBlog->heading}}</a>	</li>
+					@endforeach
 				</ul><!--END UL-->
 			</div><!--END ONE-FOURTH-->
 

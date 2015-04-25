@@ -1,6 +1,13 @@
 <?php namespace App\Http\Controllers;
 
+use Illuminate\Foundation\Bus\DispatchesCommands;
+use Illuminate\Routing\Controller as BaseController;
+use Illuminate\Foundation\Validation\ValidatesRequests;
+use App\Blog;
+use App\Page;
+
 class HomeController extends Controller {
+
 
 	/*
 	|--------------------------------------------------------------------------
@@ -30,7 +37,10 @@ class HomeController extends Controller {
 	 */
 	public function index()
 	{
-		return view('pages.home');
+
+		$footerBlogs = Blog::all()->take(3);
+		//var_dump($footerBlogs);
+		return view('pages.home',compact('footerBlogs'));
 	}
 
 }

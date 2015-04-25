@@ -17,8 +17,8 @@ class AboutController extends Controller {
     public function index()
     {
         $blogs = Page::where('title','=','About')->first()->blog;
-        //var_dump($blogs);exit();
-        return view('pages.about',compact('blogs'));
+        $footerBlogs = Blog::all()->take(3);
+        return view('pages.about',compact('blogs','footerBlogs'));
     }
 
 }

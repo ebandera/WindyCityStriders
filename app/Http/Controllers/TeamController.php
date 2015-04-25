@@ -3,7 +3,7 @@
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\BoardMember;
-
+use App\Blog;
 use Illuminate\Http\Request;
 class TeamController extends Controller {
 
@@ -20,7 +20,8 @@ class TeamController extends Controller {
         //echo $year;exit();
         $board = BoardMember::where('year','=',$year)->get();
         //var_dump($board);
-        return view('pages.team',compact('board'));
+        $footerBlogs = Blog::all()->take(3);
+        return view('pages.team',compact('board','footerBlogs'));
     }
 
 }

@@ -19,8 +19,8 @@ class BlogController extends Controller {
         //$userName = Blog::find(2)->user->first_name;
         //echo $userName;exit();
 
-
-        return view('pages.blog',compact('blogs'));
+        $footerBlogs = Blog::all()->take(3);
+        return view('pages.blog',compact('blogs','footerBlogs'));
         //
 
     }

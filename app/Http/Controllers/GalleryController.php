@@ -4,6 +4,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\GalleryItem;
 use Illuminate\Http\Request;
+use App\Blog;
 
 class GalleryController extends Controller {
 
@@ -14,8 +15,8 @@ class GalleryController extends Controller {
         echo "new";
         $galleryItems = galleryItem::all();
 
-
-        return view('pages.gallery',compact('galleryItems'));
+        $footerBlogs = Blog::all()->take(3);
+        return view('pages.gallery',compact('galleryItems','footerBlogs'));
             //
 
     }

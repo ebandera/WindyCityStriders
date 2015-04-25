@@ -1,5 +1,10 @@
 <?php namespace App\Http\Controllers;
 
+use App\Http\Requests;
+use App\Http\Controllers\Controller;
+use App\Blog;
+
+use Illuminate\Http\Request;
 class ContactController extends Controller {
 
     /*
@@ -30,7 +35,8 @@ class ContactController extends Controller {
      */
     public function index()
     {
-        return view('pages.contact');
+        $footerBlogs = Blog::all()->take(3);
+        return view('pages.contact',compact('footerBlogs'));
     }
 
     public function sendMessage()
