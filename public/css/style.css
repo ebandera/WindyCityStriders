@@ -910,6 +910,86 @@ ul.item-nav li.all a {
     background-color: #e95a00;
 }
 
+
+/*-----------------------------Eric's Style Additions--------------*/
+.myslideshowcontainer
+{
+    width:90%;
+    margin-left:auto;
+    margin-right:auto;
+    display:inline-block;
+
+
+}
+.adminHomeCarouselImage
+{
+    width:70%;
+    height:210px;
+    margin-left:auto;
+    margin-right:auto;
+}
+.adminHomeCarouselImage img
+{
+    width:100%;
+    height:100%;
+}
+.adminHomeCarouselCaption
+{
+    height:150px;
+    margin-left:auto;
+    margin-right:auto;
+    width:70%;
+
+
+}
+.adminHomeCarouselCaption textarea
+{
+    width:90%;
+    background-color:#444;
+    color:white;
+    height:60px;
+    line-height:50px;
+    font-size:14pt;
+
+
+}
+.adminHomeCarouselControls
+{
+    height:360px;
+}
+input.adminMyButton1
+{
+    width:100%;
+
+}
+input.adminMyButton1:hover
+{
+    background-color:#DDD;
+
+}
+input.adminMyButton2
+{
+    width:70%;
+
+}
+input.adminMyButton2:hover
+{
+    background-color:#DDD;
+
+}
+input.adminFile
+{
+    width:100%;
+    border:none;
+}
+select.adminSelectListbox
+{
+    width:70%;
+    background-color:#444;
+    color:white;
+
+}
+
 /*---------------iPad portrait---------------*/
 @media only screen and (min-width: 768px) and (max-width: 959px) {
 .header, .content-wrapper, #footer-content, #contact-intro, .contact-popup { width: 714px; }

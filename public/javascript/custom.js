@@ -2,6 +2,7 @@ jQuery(document).ready(function($) {
     var color = "red";
     var css_url = "/css/style.css";
     $('head').append('<link rel="stylesheet" href="' + css_url + '" type="text/css" />');
+
 })
 
 function is_touch_device() {
@@ -188,3 +189,15 @@ $(window).load(function(){
     var $item_mask = $("<div />", {"class": "item-mask"});
     $("ul.shaped .item-container, ul.comment-list .avatar").append($item_mask)
 })
+
+/***************************************************
+Eric's Scripts
+ ***************************************************/
+
+$(document).ready(function($) {
+    $('#adminCarouselListbox').change(function(){
+        $('#adminCarouselImage').attr('src',$('#adminCarouselListbox option:selected').data('image'));
+        $('#adminCorouselTextarea').val($('#adminCarouselListbox option:selected').data('caption'));
+    });
+
+});

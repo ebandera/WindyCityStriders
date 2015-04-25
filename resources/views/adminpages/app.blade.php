@@ -6,9 +6,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Laravel</title>
 
-	<link href="css/app.css" rel="stylesheet">
-	<link href="css/flexslider.css" rel="stylesheet">
-	<link href="css/style.css" rel="stylesheet">
+	<link href="/css/app.css" rel="stylesheet">
+	<link href="/css/flexslider.css" rel="stylesheet">
+	<link href="/css/style.css" rel="stylesheet">
 	<link href='http://fonts.googleapis.com/css?family=Oswald:400,700,300' rel='stylesheet' type='text/css'>
 
 	<!-- Fonts -->

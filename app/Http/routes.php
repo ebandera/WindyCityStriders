@@ -16,6 +16,8 @@ Route::get('/', 'HomeController@index');
 
 Route::get('home', 'HomeController@index');
 
+Route::get('adminhome','HomeController@admin');
+
 Route::get('blog', 'BlogController@index');
 
 Route::get('gallery', 'GalleryController@index');

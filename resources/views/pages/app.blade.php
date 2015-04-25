@@ -8,9 +8,10 @@
 
 	<!--<link href="css/app.css" rel="stylesheet">-->
 	<link href="/css/flexslider.css" rel="stylesheet">
-	<link href="/css/style.css" rel="stylesheet">
+
 	<link rel="stylesheet" href="/css/main.css" type="text/css" media="screen" />
 	<link href='http://fonts.googleapis.com/css?family=Oswald:400,700,300' rel='stylesheet' type='text/css'>
+    <link href="/css/style.css" rel="stylesheet">
 
 	<!-- Fonts -->
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>

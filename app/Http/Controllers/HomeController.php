@@ -42,5 +42,12 @@ class HomeController extends Controller {
 		//var_dump($footerBlogs);
 		return view('pages.home',compact('footerBlogs'));
 	}
+    public function admin()
+    {
+
+        $footerBlogs = Blog::all()->take(3);
+        //var_dump($footerBlogs);
+        return view('adminpages.home',compact('footerBlogs'));
+    }
 
 }
