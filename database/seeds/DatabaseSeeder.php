@@ -175,7 +175,7 @@ class TestDataSeeder extends Seeder {
 
 			'heading'=>'This is a blog post!.(Clicking link will take you to article full page)',
 			'html_text'=>'This is some blog post content! Lots of great content about running and stuff. This is some blog post content! Lots of great content about running and stuff. This is some blog post content! Lots of great content about running and stuff.',
-			'image_url'=>'img/running_blog.jpg',
+			'image_url'=>'/img/running_blog.jpg',
 			'image_position'=>'top',
 			'expiration_date'=>'2015-12-09',
 			'sort_order'=>1
@@ -206,7 +206,7 @@ class TestDataSeeder extends Seeder {
 
 			'heading'=>'This is a blog post!.(Clicking link will take you to article full page)',
 			'html_text'=>'This is some blog post content! Lots of great content about running and stuff. This is some blog post content! Lots of great content about running and stuff. This is some blog post content! Lots of great content about running and stuff.',
-			'image_url'=>'img/running_shoes.jpg',
+			'image_url'=>'/img/running_shoes.jpg',
 			'image_position'=>'top',
 			'expiration_date'=>'2015-12-09',
 			'sort_order'=>1
@@ -222,13 +222,29 @@ class TestDataSeeder extends Seeder {
 
 			'heading'=>'This is a blog post!.(Clicking link will take you to article full page)',
 			'html_text'=>'This is some blog post content! Lots of great content about running and stuff. This is some blog post content! Lots of great content about running and stuff. This is some blog post content! Lots of great content about running and stuff.',
-			'image_url'=>'img/runBlog.jpg',
+			'image_url'=>'/img/runBlog.jpg',
 			'image_position'=>'top',
 			'expiration_date'=>'2015-12-09',
 			'sort_order'=>1
 
 
 		));
+
+        $ericBlogFour = Blog::create(array(
+            'user_id'=>$userEric->id,
+            'page_id'=>$blogPage->id,
+            'event_id'=>$evergreenParkEvent->id,
+            'blog_level'=>'reply',
+            'blog_id'=>$ericBlog->id,
+            'heading'=>'This is a blog post!.(Clicking link will take you to article full page)',
+            'html_text'=>'This is some blog post content! Lots of great content about running and stuff. This is some blog post content! Lots of great content about running and stuff. This is some blog post content! Lots of great content about running and stuff.',
+            'image_url'=>'/img/runBlog.jpg',
+            'image_position'=>'top',
+            'expiration_date'=>'2015-12-09',
+            'sort_order'=>1
+
+
+        ));
 		$ericAboutOne = Blog::create(array(
 			'user_id'=>$userEric->id,
 			'page_id'=>$aboutPage->id,
@@ -281,7 +297,7 @@ class TestDataSeeder extends Seeder {
 			'name'=>'Marlene Short',
 			'year'=>'2015',
 			'position'=>'President',
-			'image_url'=>'img/Marlene.jpg',
+			'image_url'=>'/img/Marlene.jpg',
 			'description'=>'Just a little brief non-description of Marlene',
 			'twitter_link'=>'',
 			'facebook_link'=>'',
@@ -292,7 +308,7 @@ class TestDataSeeder extends Seeder {
 			'name'=>'Adam Linhart',
 			'year'=>'2015',
 			'position'=>'Vice President',
-			'image_url'=>'img/Adam_Arguello.jpg',
+			'image_url'=>'/img/Adam_Arguello.jpg',
 			'description'=>'Just a little brief non-description of Adam',
 			'twitter_link'=>'',
 			'facebook_link'=>'',
@@ -303,7 +319,7 @@ class TestDataSeeder extends Seeder {
 			'name'=>'Allison Linhart',
 			'year'=>'2015',
 			'position'=>'Treasurer',
-			'image_url'=>'img/Allison_Linhart.jpg',
+			'image_url'=>'/img/Allison_Linhart.jpg',
 			'description'=>'Just a little brief non-description of Allison',
 			'twitter_link'=>'',
 			'facebook_link'=>'',
@@ -314,7 +330,7 @@ class TestDataSeeder extends Seeder {
 			'name'=>'Joann True',
 			'year'=>'2015',
 			'position'=>'Secretary',
-			'image_url'=>'img/Joann_True.jpg',
+			'image_url'=>'/img/Joann_True.jpg',
 			'description'=>'Just a little brief non-description of Joann',
 			'twitter_link'=>'',
 			'facebook_link'=>'',
@@ -325,7 +341,7 @@ class TestDataSeeder extends Seeder {
 			'name'=>'Cindy Rogers',
 			'year'=>'2015',
 			'position'=>'Board Member',
-			'image_url'=>'img/Cindy.jpg',
+			'image_url'=>'/img/Cindy.jpg',
 			'description'=>'Just a little brief non-description of Cindy',
 			'twitter_link'=>'',
 			'facebook_link'=>'',

@@ -4,8 +4,9 @@
 	<div id="wrapper">
 
 		<!-- START HOME -->
-        <div class="myslideshowcontainer" >
-		    <div class="content-wrapper clear">
+        <div class="content-wrapper clear">
+            <div class="myareacontainer" >
+
 
 			    <div class="section-title text-align-center">
 
@@ -36,49 +37,49 @@
 				    </div><!--END FLEXSLIDER-->
 
 			    </div><!--END SLIDESHOW-CONTAINER-->
-            </div> <!-- END MYSLIDESHOWCONTAINER-->
-        </div> <!-- END MYSLIDESHOWCONTAINER-->
-       <h1 align="center"class="title">Modify Carousel</h3>
-        <div class="myslideshowcontainer" >
-            <div class="content-wrapper clear">
-            <div class="two-third">
+            </div> <!-- END MYAREACONTAINER-->
 
-                <div class="adminHomeCarouselImage">
-                    <img id="adminCarouselImage" src="/img/slideshow.png" />
-                </div>
-                <div class="adminHomeCarouselCaption">
-                    <h3>caption</h3>
-                    <div class="two-third last" >
-                        <textarea id="adminCorouselTextarea" rows="1" class="mycarouseladmincaption"></textarea>
+            <h3 align="center"class="title">Modify Carousel</h3>
+            <div class="myareacontainer" >
+                <div class="content-wrapper clear">
+                <div class="two-third">
+
+                    <div class="adminHomeCarouselImage">
+                        <img id="adminCarouselImage" src="/img/slideshow.png" />
                     </div>
-                    <div class="one-third last" >
-                        <form>
-                            <input type="button" class="adminMyButton1" value = "Save Edits" />
-                            <input type="button" class="adminMyButton1" value = "Delete Item" />
-                        </form>
+                    <div class="adminHomeCarouselCaption">
+                        <h3>caption</h3>
+                        <div class="two-third last" >
+                            <textarea id="adminCorouselTextarea" rows="1" class="mycarouseladmincaption"></textarea>
+                        </div>
+                        <div class="one-third last" >
+                            <form>
+                                <input type="button" class="adminMyButton1" value = "Save Edits" />
+                                <input type="button" class="adminMyButton1" value = "Delete Item" />
+                            </form>
+                        </div>
                     </div>
+
+
                 </div>
-
-
-            </div>
-            <div class="one-third last adminHomeCarouselControls">
-                <form>
-                    <h3>Uploaded Carousel Images</h3>
-                    <select id="adminCarouselListbox" class="adminSelectListbox" size="5">
-                        <option data-image="/img/slideshow.png" data-caption="This is a place for a brief description." value="1">Item one</option>
-                        <option data-image="/img/runningSlideShow.jpg" data-caption="It can be anysize or backround" value="2">Item two</option>
-                        <option data-image="/img/runningSlideShow2.jpg" data-caption="or nothing at all" value="3">Item three</option>
-                    </select>
-                    <hr>
-                    <h3>Add New</h3>
-                    <input type="file" class="adminFile"/>
-                    <input type="button" class="adminMyButton2" value="upload File" />
-                </form>
-            </div>
+                <div class="one-third last adminHomeCarouselControls">
+                    <form>
+                        <h3>Uploaded Carousel Images</h3>
+                        <select id="adminCarouselListbox" class="adminSelectListbox" size="5">
+                            <option data-image="/img/slideshow.png" data-caption="This is a place for a brief description." value="1">Item one</option>
+                            <option data-image="/img/runningSlideShow.jpg" data-caption="It can be anysize or backround" value="2">Item two</option>
+                            <option data-image="/img/runningSlideShow2.jpg" data-caption="or nothing at all" value="3">Item three</option>
+                        </select>
+                        <hr>
+                        <h3>Add New</h3>
+                        <input type="file" class="adminFile"/>
+                        <input type="button" class="adminMyButton2" value="upload File" />
+                    </form>
+                </div>
             </div>
         </div>
 
-        <div class="myslideshowcontainer">
+        <div class="myareacontainer">
             <div class="content-wrapper clear">
 		    <ul class="grid one-third services">
 			    <li>
@@ -108,13 +109,13 @@
 			    </li>
 		    </ul><!--END GRID SERVICES-->
             </div>
-        </div>
+        </div><!-- END CONTENT-WRAPPER -->
 
 		<div class="divider-border"></div>
 
 
 
-		</div><!-- END CONTENT-WRAPPER -->
+
 
 		<!-- END HOME -->
 

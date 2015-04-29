@@ -19,11 +19,18 @@ Route::get('home', 'HomeController@index');
 Route::get('adminhome','HomeController@admin');
 
 Route::get('blog', 'BlogController@index');
+Route::get('blog/{id}','BlogController@show');
+Route::get('memberblog', 'BlogController@member');
+Route::get('adminblog', 'BlogController@admin');
+
 
 Route::get('gallery', 'GalleryController@index');
 Route::get('join', 'JoinController@index');
 Route::get('team', 'TeamController@index');
+Route::get('adminteam', 'TeamController@admin');
+
 Route::get('about', 'AboutController@index');
+Route::get('adminabout', 'AboutController@admin');
 Route::get('contact','ContactController@index');
 
 

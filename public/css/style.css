@@ -912,9 +912,9 @@ ul.item-nav li.all a {
 
 
 /*-----------------------------Eric's Style Additions--------------*/
-.myslideshowcontainer
+.myareacontainer
 {
-    width:90%;
+    width:100%;
     margin-left:auto;
     margin-right:auto;
     display:inline-block;
@@ -944,7 +944,7 @@ ul.item-nav li.all a {
 }
 .adminHomeCarouselCaption textarea
 {
-    width:90%;
+    width:100%;
     background-color:#444;
     color:white;
     height:60px;
@@ -990,6 +990,28 @@ select.adminSelectListbox
 
 }
 
+input.title{
+    font-family: 'Oswald', sans-serif;
+    font-size:22px;
+    line-height: 20px;
+    font-weight: 300;
+    height:25px;
+}
+.adminAboutTextarea
+{
+    width:270px;
+    height:250px;
+}
+div.postIndent
+{
+    width:95%;
+    margin-left:auto;
+    background-color:#EEEEEE;
+}
+.black
+{
+    color:#333333;
+}
 /*---------------iPad portrait---------------*/
 @media only screen and (min-width: 768px) and (max-width: 959px) {
 .header, .content-wrapper, #footer-content, #contact-intro, .contact-popup { width: 714px; }

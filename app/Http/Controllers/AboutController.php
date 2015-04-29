@@ -20,5 +20,11 @@ class AboutController extends Controller {
         $footerBlogs = Blog::all()->take(3);
         return view('pages.about',compact('blogs','footerBlogs'));
     }
+    public function admin()
+    {
+        $blogs = Page::where('title','=','About')->first()->blog;
+        $footerBlogs = Blog::all()->take(3);
+        return view('adminpages.about',compact('blogs','footerBlogs'));
+    }
 
 }

@@ -19,7 +19,7 @@ class CreateBlogsTable extends Migration {
 			$table->integer('event_id')->unsigned()->nullable();
 			$table->integer('page_id')->unsigned();
 			$table->string('blog_level');
-			$table->integer('blog_parent_id')->unsigned()->nullable();
+			$table->integer('blog_id')->unsigned()->nullable();
 			$table->string('heading');
 			$table->text('html_text');
 			$table->string('image_url');
@@ -29,7 +29,7 @@ class CreateBlogsTable extends Migration {
 			$table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
 			$table->foreign('event_id')->references('id')->on('events')->onDelete('cascade')->onUpdate('cascade');
 			$table->foreign('page_id')->references('id')->on('pages')->onDelete('cascade')->onUpdate('cascade');
-			$table->foreign('blog_parent_id')->references('id')->on('blogs')->onDelete('cascade')->onUpdate('cascade');
+			$table->foreign('blog_id')->references('id')->on('blogs')->onDelete('cascade')->onUpdate('cascade');
 			$table->timestamps();
 		});
 	}

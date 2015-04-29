@@ -21,7 +21,7 @@
 
                             <div class="post-info">
                                 <div class="date"><span class="month">{{ date_format($blog->created_at,'F') }} </span><span class="day">{{date_format($blog->created_at,'d')}} </span><span class="month">{{date_format($blog->created_at,'Y')}}</span></div>
-                                <div class="comments"><a href="#"><span>4</span> comments</a></div>
+                                <div class="comments"><a href="#"><span>{{ $blog->blog_child->count() }}</span> comments</a>
                             </div><!--END POST-INFO-->
 
                             <div class="post-content">
@@ -37,17 +37,43 @@
                                 <div class="post-meta">
                                     <ul>
                                         <li><span>Posted by</span> <a href="#">{{ $blog->user->first_name . ' ' . $blog->user->last_name}}</a></li>
+
                                     </ul>
                                 </div><!--END POST-META-->
 
                                 <p>{{ $blog->html_text }} </p>
-                                <p><a href="" class="more-link">Continue reading</a></p>
+                                <p><a href="/blog/{{ $blog->id }}" class="more-link">View This Blog Only</a></p>
 
                             </div><!--END POST-CONTENT -->
 
                         </div><!--END POST-->
+                            @foreach($blog->blog_child as $reply)
+                                <div class="postIndent">
+
+                                    <div class="post-info">
+                                        <div class="date"><span class="month">{{ date_format($reply->created_at,'F') }} </span><span class="day">{{date_format($reply->created_at,'d')}} </span><span class="month">{{date_format($blog->created_at,'Y')}} (reply)</span></div>
 
 
+                                        <div class="post-content">
+
+
+
+                                            <div class="post-meta">
+                                                <ul>
+                                                    <li><span>Posted by</span> <a class="black" href="#">{{ $reply->user->first_name . ' ' . $reply->user->last_name}}</a></li>
+
+                                                </ul>
+                                            </div><!--END POST-META-->
+
+                                            <p>{{ $reply->html_text }} </p>
+                                            <p></p>
+
+                                        </div><!--END POST-CONTENT -->
+
+                                    </div><!--END POST-INFO-->
+                                </div><!--END POST
+
+                            @endforeach
                     @endforeach
 
 

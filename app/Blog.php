@@ -15,5 +15,14 @@ class Blog extends Model {
     public function page() {
         return $this->belongsTo('App\Page');
     }
+    public function blog()
+    {
+        return $this->belongsTo('App\Blog');
+    }
+    public function blog_child()
+    {
+        return $this->hasMany('App\Blog');
+    }
+
 
 }
