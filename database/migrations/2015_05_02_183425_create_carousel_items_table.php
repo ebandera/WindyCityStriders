@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUserProfilesTable extends Migration {
+class CreateCarouselItemsTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,10 +12,13 @@ class CreateUserProfilesTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('user_profiles', function(Blueprint $table)
+		Schema::create('carousel_items', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->string('profile_name');
+            $table->string('reference_name');
+            $table->string('image_url');
+			$table->string('caption');
+            $table->integer('sort_order');
 			$table->timestamps();
 		});
 	}
@@ -27,7 +30,7 @@ class CreateUserProfilesTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('user_profiles');
+		Schema::drop('carousel_items');
 	}
 
 }

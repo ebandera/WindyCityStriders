@@ -26,7 +26,7 @@ class JoinController extends Controller {
      */
     public function __construct()
     {
-        $this->middleware('guest');
+        parent::__construct();
     }
 
     /**
@@ -34,10 +34,11 @@ class JoinController extends Controller {
      *
      * @return Response
      */
+
     public function index()
     {
-        $footerBlogs = Blog::all()->take(3);
-        return view('pages.join',compact('footerBlogs'));
+        $sdh= $this->sdh->getData();
+        return view('pages.join',compact('sdh'));
     }
 
 }

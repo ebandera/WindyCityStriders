@@ -977,6 +977,18 @@ input.adminMyButton2:hover
     background-color:#DDD;
 
 }
+input.adminMyButton3
+{
+    width:30%;
+    background-color:#666;
+    color:white;
+
+}
+input.adminMyButton3:hover
+{
+    background-color:#DDD;
+
+}
 input.adminFile
 {
     width:100%;
@@ -1012,6 +1024,42 @@ div.postIndent
 {
     color:#333333;
 }
+.basicFontHeading
+{
+    font-family: 'Oswald', sans-serif;
+    font-size:22px;
+}
+.basicFont
+{
+    font-family: 'Oswald', sans-serif;
+    font-size:16px;
+}
+.myBlogEntry
+{
+    width:96%;
+   height:150px;
+}
+.adminBlogImage
+{
+    width:96%;
+}
+#newBlogDiv
+{
+    height:0px;
+    overflow:hidden;
+    -webkit-transition: height 0.8s;
+    -moz-transition: height 0.8s;
+    transition: height 0.8s;
+}
+.comment
+{
+    height:0px;
+    overflow:hidden;
+    -webkit-transition: height 0.8s;
+    -moz-transition: height 0.8s;
+    transition: height 0.8s;
+}
+
 /*---------------iPad portrait---------------*/
 @media only screen and (min-width: 768px) and (max-width: 959px) {
 .header, .content-wrapper, #footer-content, #contact-intro, .contact-popup { width: 714px; }

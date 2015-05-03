@@ -31,6 +31,7 @@ class CreateBlogsTable extends Migration {
 			$table->foreign('page_id')->references('id')->on('pages')->onDelete('cascade')->onUpdate('cascade');
 			$table->foreign('blog_id')->references('id')->on('blogs')->onDelete('cascade')->onUpdate('cascade');
 			$table->timestamps();
+            $table->softDeletes();
 		});
 	}
 

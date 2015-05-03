@@ -11,6 +11,10 @@ use Illuminate\Http\Request;
 
 class CalendarController extends Controller {
 
+   function __construct()
+   {
+       parent::__construct();
+   }
     public function index()
     {
 
@@ -30,8 +34,8 @@ class CalendarController extends Controller {
 
         $calendarMonthItems = Event::whereBetween('event_date', array($firstOfMonth, $nextMonth))->get();
        // var_dump(count($calendarMonthItems));exit();
-        $footerBlogs = Blog::all()->take(3);
-        return view('pages.calendar',compact('calendarItem','calendarMonthItems','footerBlogs'));
+        $sdh= $this->sdh->getData();
+        return view('pages.calendar',compact('calendarItem','calendarMonthItems','sdh'));
     }
     public function selectEvent($id)
     {
@@ -50,8 +54,8 @@ class CalendarController extends Controller {
 
         $calendarMonthItems = Event::whereBetween('event_date', array($firstOfMonth, $nextMonth))->orderBy('event_date')->get();
         // var_dump(count($calendarMonthItems));exit();
-        $footerBlogs = Blog::all()->take(3);
-        return view('pages.calendar',compact('calendarItem','calendarMonthItems','footerBlogs'));
+        $sdh= $this->sdh->getData();
+        return view('pages.calendar',compact('calendarItem','calendarMonthItems','sdh'));
     }
 
     public function changeTime($direction,$dateReference)
@@ -125,8 +129,8 @@ class CalendarController extends Controller {
 
         $calendarMonthItems = Event::whereBetween('event_date', array($firstOfMonth, $nextMonth))->orderBy('event_date')->get();
         // var_dump(count($calendarMonthItems));exit();
-        $footerBlogs = Blog::all()->take(3);
-        return view('pages.calendar',compact('calendarItem','calendarMonthItems','footerBlogs'));
+        $sdh= $this->sdh->getData();
+        return view('pages.calendar',compact('calendarItem','calendarMonthItems','sdh'));
     }
 
 

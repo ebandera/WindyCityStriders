@@ -23,9 +23,10 @@ class ContactController extends Controller {
      *
      * @return void
      */
+
     public function __construct()
     {
-        $this->middleware('guest');
+        parent::__construct();
     }
 
     /**
@@ -35,8 +36,14 @@ class ContactController extends Controller {
      */
     public function index()
     {
-        $footerBlogs = Blog::all()->take(3);
-        return view('pages.contact',compact('footerBlogs'));
+        $sdh= $this->sdh->getData();
+        return view('pages.contact',compact('sdh'));
+    }
+
+    public function admin()
+    {
+        $sdh= $this->sdh->getData();
+        return view('adminpages.contact',compact('sdh'));
     }
 
     public function sendMessage()

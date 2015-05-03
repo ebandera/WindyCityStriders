@@ -10,6 +10,13 @@ use Illuminate\Support\Collection;
 class BlogController extends Controller {
 
 	//
+
+    public function __construct()
+    {
+
+        parent::__construct();
+    }
+
     public function index()
     {
         // return "gallery Item";
@@ -20,8 +27,8 @@ class BlogController extends Controller {
         //$userName = Blog::find(2)->user->first_name;
         //echo $userName;exit();
 
-        $footerBlogs = Blog::all()->take(3);
-        return view('pages.blog',compact('blogs','footerBlogs'));
+        $sdh= $this->sdh->getData();
+        return view('pages.blog',compact('blogs','sdh'));
         //
 
     }
@@ -31,12 +38,12 @@ class BlogController extends Controller {
 
         //$blogs = Blog::all();
 
-        $blogs = Page::where('title','=','Blog')->first()->blog;
+        $blogs = Page::where('title','=','Blog')->first()->blog->where('blog_level','primary');
         //$userName = Blog::find(2)->user->first_name;
         //echo $userName;exit();
 
-        $footerBlogs = Blog::all()->take(3);
-        return view('adminpages.memberblog',compact('blogs','footerBlogs'));
+        $sdh= $this->sdh->getData();
+        return view('adminpages.memberblog',compact('blogs','sdh'));
         //
 
     }
@@ -46,29 +53,26 @@ class BlogController extends Controller {
 
         //$blogs = Blog::all();
 
-        $blogs = Page::where('title','=','Blog')->first()->blog;
+        $blogs = Page::where('title','=','Blog')->first()->blog->where('blog_level','primary');
         //$userName = Blog::find(2)->user->first_name;
         //echo $userName;exit();
 
-        $footerBlogs = Blog::all()->take(3);
-        return view('adminpages.blog',compact('blogs','footerBlogs'));
+        $sdh= $this->sdh->getData();
+        return view('adminpages.blog',compact('blogs','sdh'));
         //
 
     }
     public function show($id)
     {
-        // return "gallery Item";
 
-        //$blogs = Blog::all();
-        echo $id;
 
         $blog = Blog::find($id);//this will return the actual object, but the view is expecting a collection
 
         $blogs=new Collection();
         $blogs[] = $blog;
 
-        $footerBlogs = Blog::all()->take(3);
-        return view('pages.blog',compact('blogs','footerBlogs'));
+        $sdh= $this->sdh->getData();
+        return view('pages.blog',compact('blogs','s'));
         //
 
     }

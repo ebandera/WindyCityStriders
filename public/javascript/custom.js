@@ -198,6 +198,222 @@ $(document).ready(function($) {
     $('#adminCarouselListbox').change(function(){
         $('#adminCarouselImage').attr('src',$('#adminCarouselListbox option:selected').data('image'));
         $('#adminCorouselTextarea').val($('#adminCarouselListbox option:selected').data('caption'));
+
+    });
+    $('#adminAboutListbox').change(function(){
+        $('#adminAboutTitle').val($('#adminAboutListbox option:selected').data('heading'));
+        $('#adminAboutText').val($('#adminAboutListbox option:selected').data('caption'));
+    });
+
+    $.ajaxSetup({
+        headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
     });
 
 });
+
+function SaveCarouselEdits()
+{
+    var itemId = $('#adminCarouselListbox option:selected').val();
+    var caption = $('#adminCorouselTextarea').val();
+    var csrfToken = $('meta[name="csrf-token"]').attr('content');
+
+    var url = "../updateCarouselItem/" + itemId;
+
+    $.ajax({
+        type: "POST",
+        url: url,
+        data: {caption: caption, itemId:itemId,_token: csrfToken},
+        success: function (data) {
+            //alert(data);
+            //var obj=JSON.parse(data);
+           // alert(obj.caption);
+            if(data!=='false') {
+                $('#adminCarouselListbox option:selected').data('caption', caption);
+                $('#adminCarouselListbox option:selected').attr('data-caption', caption);
+                $('#carouselCaption' + itemId).html(caption);
+                alert('Data was updated');
+            }
+            else
+            {
+                alert('Data could not be saved');
+            }
+
+        },
+        error: function(xhr, status, error){
+
+            alert('error');
+            alert(xhr.responseText);
+        }
+    });
+}
+function SaveAboutEdits()
+{
+    var heading = $('#adminAboutTitle').val();
+    var html_text = $('#adminAboutText').val();
+    var itemId =  $('#adminAboutListbox option:selected').val();
+    var csrfToken = $('meta[name="csrf-token"]').attr('content');
+    var url = "../updateAboutItem/" + itemId;
+    //alert(title);
+    //alert(text);
+    //alert(itemId);
+    $.ajax({
+        type: "POST",
+        url: url,
+        data: {heading: heading, html_text: html_text,itemId:itemId,_token: csrfToken},
+        success: function (data) {
+            //alert(data);
+            var obj=JSON.parse(data);
+            obj.heading;
+            if(data!=='false') {
+                $('#adminAboutlListbox option:selected').data('heading', heading);
+                $('#adminAboutListbox option:selected').attr('data-heading', heading);
+                $('#adminAboutlListbox option:selected').data('caption', html_text);
+                $('#adminAboutListbox option:selected').attr('data-caption', html_text);
+                $('#adminAboutTitlePresent' + itemId).html(heading);
+                $('#adminAboutTextPresent' + itemId).html(html_text);
+                //$('#carouselCaption' + itemId).html(caption);
+                alert('Data was updated');
+            }
+            else
+            {
+                alert('Data could not be saved');
+            }
+
+        },
+        error: function(xhr, status, error){
+
+            alert('error');
+            alert(xhr.responseText);
+        }
+    });
+}
+function StartBlogEntry()
+{
+   // $('#newBlogDiv').show();
+    $('#newBlogDiv').height('auto');
+    //alert('yo');
+}
+function PostBlogEntry()
+{
+    var html_text = $('#adminBlogEntry').val();
+    var image_url = $('#adminBlogImageId').attr('src');
+    var heading = $('#adminBlogHeadingId').val();
+
+    var csrfToken = $('meta[name="csrf-token"]').attr('content');
+    var url = "../insertBlog";
+
+    $.ajax({
+        type: "POST",
+        url: url,
+        data: {heading: heading, html_text: html_text,image_url: image_url,_token: csrfToken},
+        success: function (data) {
+            //alert(data);
+            var obj=JSON.parse(data);
+            obj.heading;
+            if(data!=='false') {
+
+                alert('Data was updated');
+                window.location.reload();
+            }
+            else
+            {
+                alert('Data could not be saved');
+            }
+
+        },
+        error: function(xhr, status, error){
+
+            alert('error');
+            alert(xhr.responseText);
+        }
+    });
+}
+
+function StartCommentEntry(id)
+{
+    $('#newComment' + id).height('auto');
+
+}
+function CancelBlogEntry()
+{
+    //$('#newBlogDiv').hide();
+    $('#newBlogDiv').height(0);
+}
+function CancelCommentEntry(id)
+{
+    //$('#newBlogDiv').hide();
+    $('#newComment' + id).height(0);
+}
+function PostCommentEntry(id)
+{
+    var html_text = $('#adminCommentEntry'+id).val();
+
+
+    var csrfToken = $('meta[name="csrf-token"]').attr('content');
+    var url = "../insertComment";
+
+    $.ajax({
+        type: "POST",
+        url: url,
+        data: {html_text: html_text,blog_id: id,_token: csrfToken},
+        success: function (data) {
+            //alert(data);
+            var obj=JSON.parse(data);
+            obj.heading;
+            if(data!=='false') {
+
+                alert('Data was updated');
+                window.location.reload();
+            }
+            else
+            {
+                alert('Data could not be saved');
+            }
+
+        },
+        error: function(xhr, status, error){
+
+            alert('error');
+            alert(xhr.responseText);
+        }
+    });
+}
+
+function DeleteComment(id)
+{
+    var csrfToken = $('meta[name="csrf-token"]').attr('content');
+    var url = "../deleteComment";
+
+    $.ajax({
+        type: "POST",
+        url: url,
+        data: {id: id,_token: csrfToken},
+        success: function (data) {
+            //alert(data);
+            var obj=JSON.parse(data);
+            obj.heading;
+            if(data!=='false') {
+
+                alert('Data was updated');
+                window.location.reload();
+            }
+            else
+            {
+                alert('Data could not be saved');
+            }
+
+        },
+        error: function(xhr, status, error){
+
+            alert('error');
+            alert(xhr.responseText);
+        }
+    });
+}
+
+function DeleteCarouselItem()
+{
+    alert('goodbye');
+}

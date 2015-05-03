@@ -4,6 +4,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Blog;
 use App\Page;
+
 use Illuminate\Http\Request;
 
 class AboutController extends Controller {
@@ -14,17 +15,25 @@ class AboutController extends Controller {
      *
      * @return Response
      */
+
+    public function __construct()
+    {
+
+       parent::__construct();
+    }
+
     public function index()
     {
+        $sdh= $this->sdh->getData();
         $blogs = Page::where('title','=','About')->first()->blog;
-        $footerBlogs = Blog::all()->take(3);
-        return view('pages.about',compact('blogs','footerBlogs'));
+
+        return view('pages.about',compact('blogs','sdh'));
     }
     public function admin()
     {
         $blogs = Page::where('title','=','About')->first()->blog;
-        $footerBlogs = Blog::all()->take(3);
-        return view('adminpages.about',compact('blogs','footerBlogs'));
+        $sdh= $this->sdh->getData();
+        return view('adminpages.about',compact('blogs','sdh'));
     }
 
 }

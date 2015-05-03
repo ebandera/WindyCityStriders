@@ -20,18 +20,13 @@
 
 				    <div class="flexslider" id="index-slider">
 					    <ul class="slides">
+                            @foreach ($carouselItems as $carouselItem)
 						    <li>
-							    <a href="#"><img src="/img/slideshow.png" alt="" /></a>
-							    <p class="flex-caption">This is a place for a brief description.</p>
+							    <a href="#"><img src="{{ $carouselItem->image_url }}" alt="" /></a>
+							    <p class="flex-caption" id="carouselCaption{{ $carouselItem->id }}">{{ $carouselItem->caption }}</p>
 						    </li>
-						    <li>
-							    <a href="#"><img src="/img/runningSlideShow.jpg" alt="" /></a>
-							    <p class="flex-caption">It can be anysize or backround</p>
-						    </li>
-						    <li>
-							    <a href="#"><img src="/img/runningSlideShow2.jpg" alt="" /></a>
-							    <p class="flex-caption">or nothing at all</p>
-						    </li>
+                            @endforeach
+
 					    </ul><!--END UL SLIDES-->
 
 				    </div><!--END FLEXSLIDER-->
@@ -54,8 +49,9 @@
                         </div>
                         <div class="one-third last" >
                             <form>
-                                <input type="button" class="adminMyButton1" value = "Save Edits" />
-                                <input type="button" class="adminMyButton1" value = "Delete Item" />
+                                <input type="button" id="adminHomeCarouselSaveEdits" onclick="SaveCarouselEdits()" class="adminMyButton1" value = "Save Edits" />
+                                <input type="button" id="adminHomeCarouselDeleteItem" onclick="DeleteCarouselItem()" class="adminMyButton1" value = "Delete Item" />
+
                             </form>
                         </div>
                     </div>
@@ -66,9 +62,11 @@
                     <form>
                         <h3>Uploaded Carousel Images</h3>
                         <select id="adminCarouselListbox" class="adminSelectListbox" size="5">
-                            <option data-image="/img/slideshow.png" data-caption="This is a place for a brief description." value="1">Item one</option>
-                            <option data-image="/img/runningSlideShow.jpg" data-caption="It can be anysize or backround" value="2">Item two</option>
-                            <option data-image="/img/runningSlideShow2.jpg" data-caption="or nothing at all" value="3">Item three</option>
+                            @foreach ($carouselItems as $carouselItem)
+                                <option data-image="{{$carouselItem->image_url}}" data-caption="{{$carouselItem->caption}}" value="{{$carouselItem->id}}">{{$carouselItem->reference_name}}</option>
+
+                            @endforeach
+
                         </select>
                         <hr>
                         <h3>Add New</h3>

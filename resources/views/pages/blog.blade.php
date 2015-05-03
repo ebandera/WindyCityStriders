@@ -36,7 +36,7 @@
 
                                 <div class="post-meta">
                                     <ul>
-                                        <li><span>Posted by</span> <a href="#">{{ $blog->user->first_name . ' ' . $blog->user->last_name}}</a></li>
+                                        <li><span>Posted by</span> <a href="#">{{ $blog->user->name}}</a></li>
 
                                     </ul>
                                 </div><!--END POST-META-->
@@ -60,7 +60,7 @@
 
                                             <div class="post-meta">
                                                 <ul>
-                                                    <li><span>Posted by</span> <a class="black" href="#">{{ $reply->user->first_name . ' ' . $reply->user->last_name}}</a></li>
+                                                    <li><span>Posted by</span> <a class="black" href="#">{{ $reply->user->name}}</a></li>
 
                                                 </ul>
                                             </div><!--END POST-META-->

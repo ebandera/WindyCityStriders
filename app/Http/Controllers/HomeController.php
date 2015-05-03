@@ -1,10 +1,11 @@
 <?php namespace App\Http\Controllers;
 
-use Illuminate\Foundation\Bus\DispatchesCommands;
-use Illuminate\Routing\Controller as BaseController;
-use Illuminate\Foundation\Validation\ValidatesRequests;
+use App\Http\Requests;
+use App\Http\Controllers\Controller;
 use App\Blog;
 use App\Page;
+use Illuminate\Http\Request;
+use Illuminate\Support\Collection;
 
 class HomeController extends Controller {
 
@@ -25,9 +26,10 @@ class HomeController extends Controller {
 	 *
 	 * @return void
 	 */
+
 	public function __construct()
 	{
-		$this->middleware('guest');
+        parent::__construct();
 	}
 
 	/**
@@ -38,16 +40,18 @@ class HomeController extends Controller {
 	public function index()
 	{
 
-		$footerBlogs = Blog::all()->take(3);
-		//var_dump($footerBlogs);
-		return view('pages.home',compact('footerBlogs'));
+        $sdh= $this->sdh->getData();
+		$carouselItems = $this->sdh->getCarouselImages();
+       // var_dump($carouselItems);exit();
+		return view('pages.home',compact('sdh','carouselItems'));
 	}
     public function admin()
     {
 
-        $footerBlogs = Blog::all()->take(3);
+        $sdh= $this->sdh->getData();
+        $carouselItems = $this->sdh->getCarouselImages();
         //var_dump($footerBlogs);
-        return view('adminpages.home',compact('footerBlogs'));
+        return view('adminpages.home',compact('sdh', 'carouselItems'));
     }
 
 }

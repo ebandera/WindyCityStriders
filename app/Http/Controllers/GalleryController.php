@@ -9,14 +9,21 @@ use App\Blog;
 class GalleryController extends Controller {
 
 	//
+
+
+    public function __construct()
+    {
+        parent::__construct();
+    }
+
     public function index()
     {
-       // return "gallery Item";
-        echo "new";
+
+
         $galleryItems = galleryItem::all();
 
-        $footerBlogs = Blog::all()->take(3);
-        return view('pages.gallery',compact('galleryItems','footerBlogs'));
+        $sdh= $this->sdh->getData();
+        return view('pages.gallery',compact('galleryItems','sdh'));
             //
 
     }

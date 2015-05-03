@@ -4,6 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
 	<title>Laravel</title>
 
 	<!--<link href="css/app.css" rel="stylesheet">-->
@@ -58,7 +59,7 @@
 				</li>
 				<li><a href="/blog">Blog</a>
 					<ul>
-						<li><a href="#">Marlene's Blog</a><ul><li><a href="#">Adam's Blog</a></li></ul></li>
+						<li><a href="#">Marlene's Blog</a></li>
 						<li><a href="#">Adam's Blog</a></li>
 						<li><a href="#">Allisons Blog</a></li>
 						<li><a href="#">Cindy's Blog</a></li>
@@ -67,6 +68,22 @@
 				</li>
 				<li><a href="/contact">Contact</a>
 				</li>
+                @if ($sdh->theUser)
+                <li><a href="#">{{$sdh->theUser->name}}</a>
+                    <ul>
+                        <li><a href="auth/logout">Logout</a></li>
+                        <li><a href="auth/logout">Update Profile</a></li>
+                    </ul>
+                </li>
+                @else
+                <li><a href="auth/login">Login</a>
+                    <ul>
+                        <li><a href="auth/register">Register</a></li>
+                        <li><a href="password/reset">Reset Password</a></li>
+                    </ul>
+                </li>
+                @endif</a>
+
 			</ul><!--END UL-->
 
 		</div><!--END PRIMARY MENU-->
@@ -104,7 +121,7 @@
 				<h3>Latest posts</h3>
 
 				<ul>
-					@foreach($footerBlogs as $footerBlog)
+					@foreach($sdh->footerBlogs as $footerBlog)
 						<li><a href="/blogs">{{$footerBlog->heading}}</a>	</li>
 					@endforeach
 				</ul><!--END UL-->

@@ -11,6 +11,7 @@ use App\GalleryItem;
 use App\Blog;
 use App\BoardMember;
 use App\ResultItem;
+use App\CarouselItem;
 
 class DatabaseSeeder extends Seeder {
 
@@ -44,8 +45,9 @@ class TestDataSeeder extends Seeder {
 		DB::table('events')->delete();
 		DB::table('password_resets')->delete();
 		DB::table('users')->delete();
-		DB::table('user_profiles')->delete();
+
 		DB::table('board_members')->delete();
+        DB::table('carousel_items')->delete();
 
 
 		//seed our pages table
@@ -62,23 +64,30 @@ class TestDataSeeder extends Seeder {
 		));
 
 		//seed our user_profiles table
-		$adminProfile = UserProfile::create(array(
-			'profile_name'=>'admin'
-		));
-		$userProfile = UserProfile::create(array(
-			'profile_name'=>'user'
-		));
+		//$adminProfile = UserProfile::create(array(
+		//	'profile_name'=>'admin'
+		//));
+		//$userProfile = UserProfile::create(array(
+		//	'profile_name'=>'member'
+		//));
 
 		//seed our users table
 		$userEric = User::create(array(
 			'image_url'=>'http://www.ericbandera.com/images/me.jpg',
-			'first_name'=>'Eric',
-			'last_name'=>'Bandera',
-			'user_profile_id'=>$adminProfile->id,
+			'name'=>'Eric Bandera',
+			'user_profile'=>'admin',
 			'email'=>'ericbandera@gmail.com',
 			'password'=>'1234'
 
 		));
+        $userBob = User::create(array(
+            'image_url'=>'http://www.ericbandera.com/images/me.jpg',
+            'name'=>'Bob Bandera',
+            'user_profile'=>'member',
+            'email'=>'bad@gmail.com',
+            'password'=>'1234'
+
+        ));
 
 		//seed our events table
 		$evergreenParkEvent = Event::create(array(
@@ -348,7 +357,27 @@ class TestDataSeeder extends Seeder {
 			'sort_order'=>5
 		));
 
+        $carouselItem1 = CarouselItem::create(array(
+            'reference_name'=>'My First Item',
+            'image_url'=>'/img/slideshow.png',
+            'caption'=>'My First Caption',
+            'sort_order'=>1
 
+        ));
+        $carouselItem2 = CarouselItem::create(array(
+        'reference_name'=>'My Second Item',
+        'image_url'=>'/img/runningSlideShow.jpg',
+        'caption'=>'My Second Caption',
+        'sort_order'=>2
+
+        ));
+        $carouselItem3 = CarouselItem::create(array(
+        'reference_name'=>'My Third Item',
+        'image_url'=>'/img/runningSlideShow2.jpg',
+        'caption'=>'My Third Caption',
+        'sort_order'=>3
+
+        ));
 		//seed our result_items table
 
 

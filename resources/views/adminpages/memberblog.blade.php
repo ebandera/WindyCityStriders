@@ -11,8 +11,10 @@
 
                 <div class="section-title">
 
-                    <h1 class="title">Blog <span>We dont just run! We also BLOG about it!</span></h1>
-
+                    <h1 class="title">Member Blog <span>We dont just run! We also BLOG about it!</span></h1>
+                    <form>
+                        <input type="button" class="adminMyButton1" value="Add Post" />
+                    </form>
                 </div><!--END SECTION TITLE-->
 
                 <div id="inner-content" class="blog1">
@@ -36,12 +38,16 @@
 
                                     <div class="post-meta">
                                         <ul>
-                                            <li><span>Posted by</span> <a href="#">{{ $blog->user->first_name . ' ' . $blog->user->last_name}}</a></li>
+                                            <li><span>Posted by</span> <a href="#">{{ $blog->user->name}}</a></li>
 
                                         </ul>
                                     </div><!--END POST-META-->
 
                                     <p>{{ $blog->html_text }} </p>
+                                    <form>
+                                        <input class="adminMyButton1" type="button" value="Add Comment" />
+                                    </form>
+
                                     <p><a href="/blog/{{ $blog->id }}" class="more-link">View This Blog Only</a></p>
 
                                 </div><!--END POST-CONTENT -->
@@ -60,7 +66,7 @@
 
                                             <div class="post-meta">
                                                 <ul>
-                                                    <li><span>Posted by</span> <a class="black" href="#">{{ $reply->user->first_name . ' ' . $reply->user->last_name}}</a></li>
+                                                    <li><span>Posted by</span> <a class="black" href="#">{{ $reply->user->name}}</a></li>
 
                                                 </ul>
                                             </div><!--END POST-META-->

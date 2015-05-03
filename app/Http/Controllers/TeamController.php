@@ -14,14 +14,21 @@ class TeamController extends Controller {
      *
      * @return Response
      */
+
+
+    public function __construct()
+    {
+        parent::__construct();
+    }
+
     public function index()
     {
         $year = date('Y');
         //echo $year;exit();
         $board = BoardMember::where('year','=',$year)->get();
         //var_dump($board);
-        $footerBlogs = Blog::all()->take(3);
-        return view('pages.team',compact('board','footerBlogs'));
+        $sdh= $this->sdh->getData();
+        return view('pages.team',compact('board','sdh'));
     }
 
     public function admin()
@@ -30,7 +37,7 @@ class TeamController extends Controller {
         //echo $year;exit();
         $board = BoardMember::where('year','=',$year)->get();
         //var_dump($board);
-        $footerBlogs = Blog::all()->take(3);
-        return view('adminpages.team',compact('board','footerBlogs'));
+        $sdh= $this->sdh->getData();
+        return view('adminpages.team',compact('board','sdh'));
     }
 }

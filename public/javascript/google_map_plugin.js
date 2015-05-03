@@ -25,7 +25,7 @@
                         var map;
 
                         geocoder = new google.maps.Geocoder();
-                        alert("usao2")
+                        //alert("usao2")
                         var latlng = new google.maps.LatLng(40, 40); // starting default location
                         var myOptions = {
                             zoom: o.zoom,
@@ -39,7 +39,7 @@
                         }
 
                         map = new google.maps.Map(document.getElementById(obj_id), myOptions);
-                        alert("hello");
+                        //alert("hello");
                         var address = o.location;
                         geocoder.geocode( { 'address': address}, function(results, status) {
 
@@ -69,10 +69,7 @@
 /*--------------------------------------------------
  ADDITIONAL CODE
  ---------------------------------------------------*/
-$(document).ready(function() {
-    $('#bra-map').bra_google_map({location: 'PO Box 52161, Casper, WY 82605', zoom: 12});
-});
-
+//removed the document ready function to the view
 /*--------------------------------------------------
  MAP HEIGHT FIXER
  ---------------------------------------------------*/

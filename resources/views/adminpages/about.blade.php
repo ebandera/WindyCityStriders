@@ -17,13 +17,13 @@
                 @foreach($blogs as $index=>$blog)
                     @if ($index+1==count($blogs))
                         <div class="one-third last">
-                            <h3 class="title">{{ $blog->heading }} test</h3>
-                            <p>{{ $blog->html_text }}</p>
+                            <h3 id="adminAboutTitlePresent{{$blog->id}}" class="title">{{ $blog->heading }}</h3>
+                            <p id="adminAboutTextPresent{{$blog->id}}">{{ $blog->html_text }}</p>
                         </div><!--END ONE-THIRD-->
                     @else
                         <div class="one-third">
-                            <h3 class="title">{{ $blog->heading }} test</h3>
-                            <p>{{ $blog->html_text }}</p>
+                            <h3 id="adminAboutTitlePresent{{$blog->id}}" class="title">{{ $blog->heading }}</h3>
+                            <p id="adminAboutTextPresent{{$blog->id}}">{{ $blog->html_text }}</p>
                         </div><!--END ONE-THIRD-->
                     @endif
 
@@ -41,9 +41,9 @@
                             <div class="adminHomeCarouselImage">
                                 <form>
                                     <h3>Heading:</h3>
-                                    <input type="text" class="title" />
+                                    <input id="adminAboutTitle" type="text" class="title" />
                                     <h3>Content</h3>
-                                    <textarea class="adminAboutTextarea" size="10"></textarea>
+                                    <textarea id="adminAboutText" class="adminAboutTextarea" size="10"></textarea>
                                 </form>
 
                             </div>
@@ -54,12 +54,13 @@
                         <div class="one-third last adminHomeCarouselControls">
                             <form>
                                 <h3>Content Items</h3>
-                                <select id="adminCarouselListbox" class="adminSelectListbox" size="3">
-                                    <option data-image="/img/slideshow.png" data-caption="This is a place for a brief description." value="1">Item one</option>
-                                    <option data-image="/img/runningSlideShow.jpg" data-caption="It can be anysize or backround" value="2">Item two</option>
-                                    <option data-image="/img/runningSlideShow2.jpg" data-caption="or nothing at all" value="3">Item three</option>
+                                <select id="adminAboutListbox" class="adminSelectListbox" size="3">
+                                    @foreach($blogs as $index=>$blog)
+                                    <option data-heading="{{$blog->heading}}" data-caption="{{$blog->html_text}}" value="{{$blog->id}}">Item {{$index+1}}</option>
+                                    @endforeach
+
                                 </select>
-                                <input type="button" class="adminMyButton1" value = "Save Edits" />
+                                <input type="button" class="adminMyButton1" onclick="SaveAboutEdits()" value = "Save Edits" />
                                 <hr>
 
                             </form>

@@ -8,7 +8,7 @@ class Page extends Model {
 	//
     public function blog()
     {
-        return $this->hasMany('App\Blog');
+        return $this->hasMany('App\Blog')->orderBy('sort_order','desc');
     }
 
     public function initializeAllCommonContent()
