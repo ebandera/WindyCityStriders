@@ -93,10 +93,16 @@ class HandleRoles {
             case 'gallery':
                 $valid=true;
                 break;
+            case 'gallerymain':
+                $valid=true;
+                break;
             case 'blog':
                 $valid=true;
                 break;
             case 'contact':
+                $valid=true;
+                break;
+            case 'calendar':
                 $valid=true;
                 break;
            default:

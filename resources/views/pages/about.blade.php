@@ -17,12 +17,12 @@
             @foreach($blogs as $index=>$blog)
                 @if ($index+1==count($blogs))
                     <div class="one-third last">
-                        <h3 class="title">{{ $blog->heading }} test</h3>
+                        <h3 class="title">{{ $blog->heading }}</h3>
                         <p>{{ $blog->html_text }}</p>
                     </div><!--END ONE-THIRD-->
                 @else
                     <div class="one-third">
-                        <h3 class="title">{{ $blog->heading }} test</h3>
+                        <h3 class="title">{{ $blog->heading }}</h3>
                         <p>{{ $blog->html_text }}</p>
                     </div><!--END ONE-THIRD-->
                 @endif

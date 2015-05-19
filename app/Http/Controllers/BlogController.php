@@ -72,7 +72,7 @@ class BlogController extends Controller {
         $blogs[] = $blog;
 
         $sdh= $this->sdh->getData();
-        return view('pages.blog',compact('blogs','s'));
+        return view('pages.blog',compact('blogs','sdh'));
         //
 
     }

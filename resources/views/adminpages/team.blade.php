@@ -96,41 +96,65 @@
 
             </div><!--END MYAREACONTAINER-->
 
-            <h3 align="center"class="title">Modify Carousel</h3>
+            <h3 align="center"class="title">Modify Board Members</h3>
             <div class="myareacontainer" >
                 <div class="content-wrapper clear">
                     <div class="two-third">
 
-                        <div class="adminHomeCarouselImage">
-                            <img id="adminCarouselImage" src="/img/slideshow.png" />
+                        <div class="adminBoardImage one-third">
+                            <img id="adminBoardImage" src="" />
                         </div>
-                        <div class="adminHomeCarouselCaption">
-                            <h3>caption</h3>
-                            <div class="two-third last" >
-                                <textarea id="adminCorouselTextarea" rows="1" class="mycarouseladmincaption"></textarea>
+                        <div class="adminBoardCaption">
+                            <h3>Name</h3>
+                            <input id="adminBoardName" type="text" />
+                            <h3>Description</h3>
+                            <div class="one-half last" >
+                                <textarea id="adminBoardTextarea" rows="1" class="adminBoardTextarea"></textarea>
                             </div>
-                            <div class="one-third last" >
-                                <form>
-                                    <input type="button" class="adminMyButton1" value = "Save Edits" />
-                                    <input type="button" class="adminMyButton1" value = "Delete Item" />
-                                </form>
+                            <div class="one" >
+                                <h3>Title</h3>
+                                <select class="fullWidth" name="boardTitlesSelect" id="adminBoardPosition">
+                                    <option value = "PRESIDENT">PRESIDENT</option>
+                                    <option value = "VICE-PRESIDENT">VICE-PRESIDENT</option>
+                                    <option value = "TREASURER">TREASURER</option>
+                                    <option value = "SECRETARY">SECRETARY</option>
+                                    <option value = "BOARD MEMBER">BOARD MEMBER</option>
+                                </select>
+                                <h3>year</h3>
+                                <select class="fullWidth" name="adminBoardYear" id="adminBoardYear">
+                                    <option value = "2010">2010</option>
+                                    <option value = "2011">2011</option>
+                                    <option value = "2012">2012</option>
+                                    <option value = "2013">2013</option>
+                                    <option value = "2014">2014</option>
+                                </select>
+                                <h3>Facebook link</h3>
+                                <input class="fullWidth" id="adminBoardFacebook" type="text" /><br>
+                                <h3>Twitter link</h3>
+                                <input class="fullWidth" id="adminBoardTwitter" type ="text" />
+
                             </div>
                         </div>
 
 
                     </div>
                     <div class="one-third last adminHomeCarouselControls">
-                        <form>
-                            <h3>Uploaded Carousel Images</h3>
-                            <select id="adminCarouselListbox" class="adminSelectListbox" size="5">
-                                <option data-image="/img/slideshow.png" data-caption="This is a place for a brief description." value="1">Item one</option>
-                                <option data-image="/img/runningSlideShow.jpg" data-caption="It can be anysize or backround" value="2">Item two</option>
-                                <option data-image="/img/runningSlideShow2.jpg" data-caption="or nothing at all" value="3">Item three</option>
+                        <form action="uploadTeamImage" method="POST" ENCTYPE="multipart/form-data" action="../uploadTeamImage">
+                            <h3>Board Members</h3>
+                            <select id="adminBoardListbox" class="adminSelectListbox" size="5">
+                                @foreach($board as $member)
+                                <option data-image="{{$member->image_url}}" data-caption="{{$member->description}}" data-facebook="{{$member->facebook_link}}" data-twitter="{{$member->twitter_link}}" data-position="{{$member->position}}" value="{{$member->id}}">{{$member->name}}</option>
+                                @endforeach
                             </select>
+
+                            <input type="button" class="adminMyButton1" onclick="UpdateBoardMember()" value = "Save Edits" />
+                            <input type="button" class="adminMyButton1" value = "Delete Item" />
+
                             <hr>
                             <h3>Add New</h3>
-                            <input type="file" class="adminFile"/>
-                            <input type="button" class="adminMyButton2" value="upload File" />
+                            <input type="file" name="fileUpload3" id="fileUpload3" class="adminFile"/>
+                            <input type="submit" class="adminMyButton2" value="upload File" />
+                            <input type="hidden" name="_token" value = "{{ csrf_token() }}" />
                         </form>
                     </div>
                 </div>

@@ -5,6 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}" />
+    <meta name="xsrf-token" content="<?php $encrypter= app('Illuminate\Encryption\Encrypter'); echo $encrypter->encrypt(csrf_token());?>" >
 	<title>Laravel</title>
 
 	<!--<link href="css/app.css" rel="stylesheet">-->
@@ -13,14 +14,24 @@
 	<link rel="stylesheet" href="/css/main.css" type="text/css" media="screen" />
 	<link href='http://fonts.googleapis.com/css?family=Oswald:400,700,300' rel='stylesheet' type='text/css'>
     <link href="/css/style.css" rel="stylesheet">
+    <!--CAROUSEL CSS -->
+    <link rel="stylesheet" type="text/css" href="/css/carouselstyle.css" />
+    <!--GALLERY CSS-->
+    <link rel="stylesheet" type="text/css" href="/css/gallery.css" media="screen" />
 
 	<!-- Fonts -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
 	<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
 	<script type="text/javascript" src="/javascript/custom.js"></script>
 	<script type="text/javascript" src="/javascript/header.js"></script>
 	<script type="text/javascript" src="/javascript/jquery.flexslider.js"></script>
 	<script type="text/javascript" src="/javascript/google_map_plugin.js"></script>
+    <script type="text/javascript" src="/javascript/gallery.js"></script>
+    <script type="text/javascript" src="/javascript/jquery.easing.1.3.js"></script>
+    <!-- the jScrollPane script -->
+    <script type="text/javascript" src="/javascript/jquery.mousewheel.js"></script>
+    <script type="text/javascript" src="/javascript/jquery.contentcarousel.js"></script>
 
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -54,7 +65,7 @@
 						<li><a href="/join">Join Us</a></li>
 					</ul>
 				</li>
-				<li><a href="/gallery">Gallery</a>
+				<li><a href="/gallerymain">Gallery</a>
 
 				</li>
 				<li><a href="/blog">Blog</a>
@@ -71,15 +82,15 @@
                 @if ($sdh->theUser)
                 <li><a href="#">{{$sdh->theUser->name}}</a>
                     <ul>
-                        <li><a href="auth/logout">Logout</a></li>
-                        <li><a href="auth/logout">Update Profile</a></li>
+                        <li><a href="/auth/logout">Logout</a></li>
+                        <li><a href="/auth/logout">Update Profile</a></li>
                     </ul>
                 </li>
                 @else
-                <li><a href="auth/login">Login</a>
+                <li><a href="/auth/login">Login</a>
                     <ul>
-                        <li><a href="auth/register">Register</a></li>
-                        <li><a href="password/reset">Reset Password</a></li>
+                        <li><a href="/auth/register">Register</a></li>
+                        <li><a href="/password/reset">Reset Password</a></li>
                     </ul>
                 </li>
                 @endif</a>
@@ -97,7 +108,9 @@
 <!--START FOOTER -->
 
 <div id="footer">
-
+    <script type="text/javascript">
+        $('#ca-container').contentcarousel();
+    </script>
 	<div id="footer-content">
 
 		<div id="footer-top" class="clear">

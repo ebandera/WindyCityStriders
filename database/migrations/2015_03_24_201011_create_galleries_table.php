@@ -16,6 +16,8 @@ class CreateGalleriesTable extends Migration {
 		{
 			$table->increments('id');
 			$table->integer('event_id')->unsigned();
+            $table->string('title');
+            $table->string('image_url');
 			$table->integer('sort_order');
 			$table->timestamps();
 			$table->foreign('event_id')->references('id')->on('events')->onDelete('cascade')->onUpdate('cascade');

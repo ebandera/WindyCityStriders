@@ -17,30 +17,25 @@
 
 			<div class="slideshow-container">
 
-				<div class="flexslider" id="index-slider">
-					<ul class="slides">
-						<li>
-							<a href="#"><img src="img/slideshow.png" alt="" /></a>
-							<p class="flex-caption">This is a place for a brief description.</p>
-						</li>
-						<li>
-							<a href="#"><img src="img/runningSlideShow.jpg" alt="" /></a>
-							<p class="flex-caption">It can be anysize or backround</p>
-						</li>
-						<li>
-							<a href="#"><img src="img/runningSlideShow2.jpg" alt="" /></a>
-							<p class="flex-caption">or nothing at all</p>
-						</li>
-					</ul><!--END UL SLIDES-->
+                <div class="flexslider" id="index-slider">
+                    <ul class="slides">
+                        @foreach ($carouselItems as $carouselItem)
+                            <li id="carouselLineItem{{$carouselItem->id}}" >
+                                <a href="#"><img src="{{ $carouselItem->image_url }}" alt="" /></a>
+                                <p class="flex-caption" id="carouselCaption{{ $carouselItem->id }}">{{ $carouselItem->caption }}</p>
+                            </li>
+                        @endforeach
 
-				</div><!--END FLEXSLIDER-->
+                    </ul><!--END UL SLIDES-->
+
+                </div><!--END FLEXSLIDER-->
 
 			</div><!--END SLIDESHOW-CONTAINER-->
 
 
 			<ul class="grid one-third services">
 				<li>
-					<a href="calendar">
+					<a href="/calendar">
 						<div>
 							<h2>Calendar</h2>
 							<img src="img/events.png" alt="" />

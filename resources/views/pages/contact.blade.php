@@ -20,12 +20,12 @@
                 <div id="bra-map" class="google-map"></div><br />
                 <script>
                     $(document).ready(function() {
-                        $('#bra-map').bra_google_map({location: '5713 S Moody, Chicago, IL 60638', zoom: 12});
+                        $('#bra-map').bra_google_map({location: '{{$sdh->theAddress}}', zoom: 12});
                     });
 
                 </script>
                 <p><strong>Contact info</strong><br />
-                    Address: P.O. Box 52161 Casper, WY<br />
+                    {{$sdh->theAddress}}<br />
                     Email: <a href="#"> email@windycitystriders.com</a></p>
 
             </div><!--END ONE-HALF-->

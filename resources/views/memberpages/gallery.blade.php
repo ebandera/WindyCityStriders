@@ -10,20 +10,28 @@
 
             <div class="section-title">
 
-                <h1 class="title">GALLERY<span>check out some photos</span></h1>
-                @foreach($galleryItems as $galleryItem)
+                <h1 class="title">GALLERY<span> check out some photos</span></h1>
 
-                <table><tr><td>{{ $galleryItem->image_url }}</td><td>{{ $galleryItem->caption }}</td></tr></table>
-                @endforeach
 
 
             </div><!--END SECTION TITLE-->
+            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> <!-- 33 KB -->
 
+            <script type="text/javascript" src="/javascript/gallery.js"></script>
 
+            <div class="fotorama"
+                 data-nav="thumbs">
+                <img src="/img/slideshow.png">
+                <img src="/img/gallery1.jpeg">
+                <img src="/img/gallery2.jpeg">
+                <img src="/img/gallery3.jpg">
+                <img src="/img/gallery4.jpg">
+                <img src="/img/gallery5.jpg">
+                <img src="/img/gallery6.jpg">
+                <img src="/img/gallery7.jpg">
+            </div>
 
         </div><!--END CONTENT-WRAPPER-->
-
-        <!-- END GALLERY -->
-
     </div><!--END WRAPPER-->
+
 @endsection

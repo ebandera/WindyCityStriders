@@ -21,31 +21,34 @@
                         <div class="two-third">
 
                             <div class="adminBlogImage">
-                                <img id="adminBlogImageId" src="/img/runningSlideShow2.jpg" />
+                                <img id="adminBlogImageId" src="" />
                             </div>
 
 
 
                         </div>
+                        <form id="blogUploadForm" method="POST" ENCTYPE="multipart/form-data" action="../uploadBlogItem">
                         <div class="one-third last">
-                            <form>
+
                                 <h3>Add Image (optional)</h3>
-                                <input type="file" class="adminFile"/>
-                                <input type="button" class="adminMyButton1" value="upload File" />
-                                <input type="button" id="adminHomeCarouselSaveEdits" onclick="PostBlogEntry()" class="adminMyButton1" value = "Post Blog" />
+                                <input type="file" id="fileUpload2" name="fileUpload2" class="adminFile"/>
+                                <input type="submit" class="adminMyButton1"  value="Post Blog" />
+
                                 <input type="button" id="adminHomeCarouselDeleteItem" onclick="CancelBlogEntry()" class="adminMyButton1" value = "Cancel" />
+                                <input type="hidden" name="_token" value = "{{ csrf_token() }}" />
 
 
-                            </form>
+
                         </div>
                         <div class="one">
 
                             <h3>New Blog</h3>
-                            <input type="text" id="adminBlogHeadingId" class="" />
-                            <textarea id="adminBlogEntry" rows="1" class="myBlogEntry"></textarea>
+                            <input type="text" id="adminBlogHeadingId" name="adminBlogHeading" class="" />
+                            <textarea id="adminBlogEntry" name="adminBlogEntry" rows="1" class="myBlogEntry"></textarea>
 
 
                         </div>
+                        </form>
                     </div>
                 </div>
                 <div id="inner-content" class="blog1">
@@ -53,7 +56,7 @@
                         <div class="post">
 
                             <div class="post-info">
-                                <div class="date"><span class="month">{{ date_format($blog->created_at,'F') }} </span><span class="day">{{date_format($blog->created_at,'d')}} </span><span class="month">{{date_format($blog->created_at,'Y')}}</span></div>
+                                <div class="date"><span class="month">{{ date_format($blog->created_at,'F') }} </span><span class="day">{{date_format($blog->created_at,'d')}} </span><span class="month">{{date_format($blog->created_at,'Y')}}&nbsp;{{$blog->created_at->diffForHumans()}}</span></div>
                                 <div class="comments"><a href="#"><span>{{ $blog->blog_child->count() }}</span> comments</a>
                                 </div><!--END POST-INFO-->
 
@@ -77,8 +80,8 @@
                                     <p>{{ $blog->html_text }} </p>
                                     <form>
                                         <input class="adminMyButton3" type="button" onclick="StartCommentEntry({{$blog->id}})" value="Add Comment" />
-                                        <input class="adminMyButton3" type="button" value="Delete Blog" />
-                                        <input class="adminMyButton3" type="button" value="Move Up" />
+                                        <input class="adminMyButton3" type="button" onclick="DeleteComment({{$blog->id}})"value="Delete Blog" />
+                                        <input class="adminMyButton3" type="button" onclick="MoveBlogUp({{$blog->id}})" value="Move Up" />
                                     </form>
                                     <p><a href="/blog/{{ $blog->id }}" class="more-link">View This Blog Only</a></p>
 
@@ -89,7 +92,7 @@
                                 <div class="postIndent">
 
                                     <div class="post-info">
-                                        <div class="date"><span class="month">{{ date_format($reply->created_at,'F') }} </span><span class="day">{{date_format($reply->created_at,'d')}} </span><span class="month">{{date_format($blog->created_at,'Y')}} (reply)</span></div>
+                                        <div class="date"><span class="month">{{ date_format($reply->created_at,'F') }} </span><span class="day">{{date_format($reply->created_at,'d')}} </span><span class="month">{{date_format($blog->created_at,'Y')}} (reply)&nbsp;{{$reply->created_at->diffForHumans()}}</span></div>
 
 
                                         <div class="post-content">

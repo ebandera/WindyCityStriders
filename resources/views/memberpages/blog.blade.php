@@ -20,7 +20,7 @@
                         <div class="post">
 
                             <div class="post-info">
-                                <div class="date"><span class="month">{{ date_format($blog->created_at,'F') }} </span><span class="day">{{date_format($blog->created_at,'d')}} </span><span class="month">{{date_format($blog->created_at,'Y')}}</span></div>
+                                <div class="date"><span class="month">{{ date_format($blog->created_at,'F') }} </span><span class="day">{{date_format($blog->created_at,'d')}} </span><span class="month">{{date_format($blog->created_at,'Y')}}&nbsp;{{$blog->created_at->diffForHumans()}}</span></div>
                                 <div class="comments"><a href="#"><span>4</span> comments</a></div>
                             </div><!--END POST-INFO-->
 

@@ -933,6 +933,35 @@ ul.item-nav li.all a {
     width:100%;
     height:100%;
 }
+.adminBoardImage
+{
+    width:200px;
+    height:300px;
+    //margin-left:auto;
+
+
+}
+.adminBoardTextarea
+{
+    width:100%;
+    height:150px;
+
+
+}
+.adminHomeCarouselImage img
+{
+    width:100%;
+    height:100%;
+}
+.adminBoardCaption
+{
+
+    margin-left:auto;
+    margin-right:auto;
+    width:80%;
+
+
+}
 .adminHomeCarouselCaption
 {
     height:150px;
@@ -944,7 +973,7 @@ ul.item-nav li.all a {
 }
 .adminHomeCarouselCaption textarea
 {
-    width:100%;
+    width:90%;
     background-color:#444;
     color:white;
     height:60px;
@@ -953,6 +982,7 @@ ul.item-nav li.all a {
 
 
 }
+
 .adminHomeCarouselControls
 {
     height:360px;
@@ -1058,6 +1088,14 @@ div.postIndent
     -webkit-transition: height 0.8s;
     -moz-transition: height 0.8s;
     transition: height 0.8s;
+}
+input.fullWidth
+{
+    width:100%;
+}
+select.fullWidth
+{
+    width:100%;
 }
 
 /*---------------iPad portrait---------------*/

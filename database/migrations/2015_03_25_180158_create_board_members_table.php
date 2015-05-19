@@ -19,7 +19,7 @@ class CreateBoardMembersTable extends Migration {
 			$table->string('year');
 			$table->string('position');
 			$table->string('image_url');
-			$table->text('description');
+         	$table->text('description');
 			$table->string('twitter_link');
 			$table->string('facebook_link');
 			$table->integer('sort_order');

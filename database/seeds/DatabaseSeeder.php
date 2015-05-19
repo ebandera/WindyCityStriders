@@ -63,6 +63,10 @@ class TestDataSeeder extends Seeder {
 			'title'=>'About'
 		));
 
+        $contactPage = Page::create(array(
+            'title'=>'Contact'
+        ));
+
 		//seed our user_profiles table
 		//$adminProfile = UserProfile::create(array(
 		//	'profile_name'=>'admin'
@@ -125,7 +129,7 @@ class TestDataSeeder extends Seeder {
 			'event_results_path'=>'http://demo.shopced.com'
 
 		));
-		$evergreenParkEvent = Event::create(array(
+		$evergreenParkEvent4 = Event::create(array(
 			'event_date'=>'2014-05-01',
 			'event_name'=>'Run and Run 4',
 			'event_img_url'=>'/img/calendarImage.jpg',
@@ -137,8 +141,8 @@ class TestDataSeeder extends Seeder {
 
 		));
 
-		$evergreenParkEvent2 = Event::create(array(
-			'event_date'=>'2014-04-10',
+		$evergreenParkEvent5 = Event::create(array(
+			'event_date'=>'2014-04-11',
 			'event_name'=>'Run and Run5',
 			'event_img_url'=>'/img/calendarImage.jpg',
 			'event_place_text'=>'Evergreen Park',
@@ -149,7 +153,7 @@ class TestDataSeeder extends Seeder {
 
 		));
 
-		$evergreenParkEvent3 = Event::create(array(
+		$evergreenParkEvent6 = Event::create(array(
 			'event_date'=>'2016-05-20',
 			'event_name'=>'Run and Run6',
 			'event_img_url'=>'/img/calendarImage.jpg',
@@ -160,20 +164,271 @@ class TestDataSeeder extends Seeder {
 			'event_results_path'=>'http://demo.shopced.com'
 
 		));
+        $evergreenParkEvent7 = Event::create(array(
+            'event_date'=>'2015-05-21',
+            'event_name'=>'Run and Run 1',
+            'event_img_url'=>'/img/calendarImage.jpg',
+            'event_place_text'=>'Evergreen Park',
+            'event_address'=>'5713 Moody, Chicago, Il 60638',
+            'event_details'=>'Meet in playground, starts at noon',
+            'event_info_path'=>'http://www.ericbandera.com',
+            'event_results_path'=>'http://demo.shopced.com'
+
+        ));
+
+        $evergreenParkEvent8 = Event::create(array(
+            'event_date'=>'2015-04-18',
+            'event_name'=>'Run and Run2',
+            'event_img_url'=>'/img/calendarImage.jpg',
+            'event_place_text'=>'Evergreen Park',
+            'event_address'=>'5713 Moody, Chicago, Il 60638',
+            'event_details'=>'Meet in playground, starts at noon',
+            'event_info_path'=>'http://www.ericbandera.com',
+            'event_results_path'=>'http://demo.shopced.com'
+
+        ));
+
+        $evergreenParkEvent9 = Event::create(array(
+            'event_date'=>'2015-06-13',
+            'event_name'=>'Run and Run3',
+            'event_img_url'=>'/img/calendarImage.jpg',
+            'event_place_text'=>'Evergreen Park',
+            'event_address'=>'5713 Moody, Chicago, Il 60638',
+            'event_details'=>'Meet in playground, starts at noon',
+            'event_info_path'=>'http://www.ericbandera.com',
+            'event_results_path'=>'http://demo.shopced.com'
+
+        ));
+        $evergreenParkEvent10 = Event::create(array(
+            'event_date'=>'2015-06-02',
+            'event_name'=>'Run and Run 4',
+            'event_img_url'=>'/img/calendarImage.jpg',
+            'event_place_text'=>'Evergreen Park',
+            'event_address'=>'5713 Moody, Chicago, Il 60638',
+            'event_details'=>'Meet in playground, starts at noon',
+            'event_info_path'=>'http://www.ericbandera.com',
+            'event_results_path'=>'http://demo.shopced.com'
+
+        ));
+
+        $evergreenParkEvent11 = Event::create(array(
+            'event_date'=>'2015-07-15',
+            'event_name'=>'Run and Run5',
+            'event_img_url'=>'/img/calendarImage.jpg',
+            'event_place_text'=>'Evergreen Park',
+            'event_address'=>'5713 Moody, Chicago, Il 60638',
+            'event_details'=>'Meet in playground, starts at noon',
+            'event_info_path'=>'http://www.ericbandera.com',
+            'event_results_path'=>'http://demo.shopced.com'
+
+        ));
+
+        $evergreenParkEvent12 = Event::create(array(
+            'event_date'=>'2015-07-23',
+            'event_name'=>'Run and Run6',
+            'event_img_url'=>'/img/calendarImage.jpg',
+            'event_place_text'=>'Evergreen Park',
+            'event_address'=>'5713 Moody, Chicago, Il 60638',
+            'event_details'=>'Meet in playground, starts at noon',
+            'event_info_path'=>'http://www.ericbandera.com',
+            'event_results_path'=>'http://demo.shopced.com'
+
+        ));
+        $evergreenParkEvent13 = Event::create(array(
+            'event_date'=>'2015-04-29',
+            'event_name'=>'Run and Run 1',
+            'event_img_url'=>'/img/calendarImage.jpg',
+            'event_place_text'=>'Evergreen Park',
+            'event_address'=>'5713 Moody, Chicago, Il 60638',
+            'event_details'=>'Meet in playground, starts at noon',
+            'event_info_path'=>'http://www.ericbandera.com',
+            'event_results_path'=>'http://demo.shopced.com'
+
+        ));
+
+        $evergreenParkEvent14 = Event::create(array(
+            'event_date'=>'2015-04-17',
+            'event_name'=>'Run and Run2',
+            'event_img_url'=>'/img/calendarImage.jpg',
+            'event_place_text'=>'Evergreen Park',
+            'event_address'=>'5713 Moody, Chicago, Il 60638',
+            'event_details'=>'Meet in playground, starts at noon',
+            'event_info_path'=>'http://www.ericbandera.com',
+            'event_results_path'=>'http://demo.shopced.com'
+
+        ));
+
+        $evergreenParkEvent15 = Event::create(array(
+            'event_date'=>'2015-08-14',
+            'event_name'=>'Run and Run3',
+            'event_img_url'=>'/img/calendarImage.jpg',
+            'event_place_text'=>'Evergreen Park',
+            'event_address'=>'5713 Moody, Chicago, Il 60638',
+            'event_details'=>'Meet in playground, starts at noon',
+            'event_info_path'=>'http://www.ericbandera.com',
+            'event_results_path'=>'http://demo.shopced.com'
+
+        ));
+        $evergreenParkEvent16 = Event::create(array(
+            'event_date'=>'2015-03-26',
+            'event_name'=>'Run and Run 4',
+            'event_img_url'=>'/img/calendarImage.jpg',
+            'event_place_text'=>'Evergreen Park',
+            'event_address'=>'5713 Moody, Chicago, Il 60638',
+            'event_details'=>'Meet in playground, starts at noon',
+            'event_info_path'=>'http://www.ericbandera.com',
+            'event_results_path'=>'http://demo.shopced.com'
+
+        ));
+
+        $evergreenParkEvent17 = Event::create(array(
+            'event_date'=>'2014-07-09',
+            'event_name'=>'Run and Run5',
+            'event_img_url'=>'/img/calendarImage.jpg',
+            'event_place_text'=>'Evergreen Park',
+            'event_address'=>'5713 Moody, Chicago, Il 60638',
+            'event_details'=>'Meet in playground, starts at noon',
+            'event_info_path'=>'http://www.ericbandera.com',
+            'event_results_path'=>'http://demo.shopced.com'
+
+        ));
+
+        $evergreenParkEvent18 = Event::create(array(
+            'event_date'=>'2015-09-20',
+            'event_name'=>'Run and Run6',
+            'event_img_url'=>'/img/calendarImage.jpg',
+            'event_place_text'=>'Evergreen Park',
+            'event_address'=>'5713 Moody, Chicago, Il 60638',
+            'event_details'=>'Meet in playground, starts at noon',
+            'event_info_path'=>'http://www.ericbandera.com',
+            'event_results_path'=>'http://demo.shopced.com'
+
+        ));
 		//seed our galleries table
 
 		$evergreenParkGallery = Gallery::create(array(
 			'event_id'=>$evergreenParkEvent->id,
+            'title'=>'Gallery For Event 1',
+            'image_url'=>'/img/galleryTEMPimage2.jpg',
 			'sort_order'=>1
 		));
+        $evergreenParkGallery2 = Gallery::create(array(
+            'event_id'=>$evergreenParkEvent2->id,
+            'title'=>'Gallery For Event 2',
+            'image_url'=>'/img/galleryTEMPimage.jpg',
+            'sort_order'=>1
+        ));
+        $evergreenParkGallery3 = Gallery::create(array(
+            'event_id'=>$evergreenParkEvent3->id,
+            'title'=>'Gallery For Event 3',
+            'image_url'=>'/img/galleryTEMPimage2.jpg',
+            'sort_order'=>1
+        ));
+        $evergreenParkGallery4 = Gallery::create(array(
+            'event_id'=>$evergreenParkEvent4->id,
+            'title'=>'Gallery For Event 4',
+            'image_url'=>'/img/galleryTEMPimage.jpg',
+            'sort_order'=>1
+        ));
 		//seed our gallery_items table
 
 		$galleryItem1=GalleryItem::create(array(
-			'image_url'=>'http://www.ericbandera.com/images/me.jpg',
+			'image_url'=>'/img/slideshow.png',
 			'caption'=>'My first Caption Gallery',
 			'sort_order'=>1,
 			'gallery_id'=>$evergreenParkGallery->id
 		));
+        $galleryItem2=GalleryItem::create(array(
+            'image_url'=>'/img/gallery1.jpeg',
+            'caption'=>'My first Caption Gallery',
+            'sort_order'=>2,
+            'gallery_id'=>$evergreenParkGallery->id
+        ));
+        $galleryItem3=GalleryItem::create(array(
+            'image_url'=>'/img/gallery2.jpeg',
+            'caption'=>'My first Caption Gallery',
+            'sort_order'=>3,
+            'gallery_id'=>$evergreenParkGallery->id
+        ));
+        $galleryItem4=GalleryItem::create(array(
+            'image_url'=>'/img/gallery3.jpg',
+            'caption'=>'My first Caption Gallery',
+            'sort_order'=>4,
+            'gallery_id'=>$evergreenParkGallery->id
+        ));
+        $galleryItem5=GalleryItem::create(array(
+            'image_url'=>'/img/gallery4.jpg',
+            'caption'=>'My first Caption Gallery',
+            'sort_order'=>5,
+            'gallery_id'=>$evergreenParkGallery->id
+        ));
+        $galleryItem6=GalleryItem::create(array(
+            'image_url'=>'/img/gallery5.jpg',
+            'caption'=>'My first Caption Gallery',
+            'sort_order'=>6,
+            'gallery_id'=>$evergreenParkGallery->id
+        ));
+        $galleryItem7=GalleryItem::create(array(
+            'image_url'=>'/img/gallery6.jpg',
+            'caption'=>'My first Caption Gallery',
+            'sort_order'=>7,
+            'gallery_id'=>$evergreenParkGallery->id
+        ));
+        $galleryItem8=GalleryItem::create(array(
+            'image_url'=>'/img/gallery7.jpg',
+            'caption'=>'My first Caption Gallery',
+            'sort_order'=>8,
+            'gallery_id'=>$evergreenParkGallery->id
+        ));
+
+        $galleryItem9=GalleryItem::create(array(
+            'image_url'=>'/img/slideshow.png',
+            'caption'=>'My first Caption Gallery',
+            'sort_order'=>1,
+            'gallery_id'=>$evergreenParkGallery2->id
+        ));
+        $galleryItem10=GalleryItem::create(array(
+            'image_url'=>'/img/gallery1.jpeg',
+            'caption'=>'My first Caption Gallery',
+            'sort_order'=>2,
+            'gallery_id'=>$evergreenParkGallery2->id
+        ));
+        $galleryItem11=GalleryItem::create(array(
+            'image_url'=>'/img/gallery2.jpeg',
+            'caption'=>'My first Caption Gallery',
+            'sort_order'=>3,
+            'gallery_id'=>$evergreenParkGallery2->id
+        ));
+        $galleryItem12=GalleryItem::create(array(
+            'image_url'=>'/img/gallery3.jpg',
+            'caption'=>'My first Caption Gallery',
+            'sort_order'=>4,
+            'gallery_id'=>$evergreenParkGallery2->id
+        ));
+        $galleryItem13=GalleryItem::create(array(
+            'image_url'=>'/img/gallery4.jpg',
+            'caption'=>'My first Caption Gallery',
+            'sort_order'=>5,
+            'gallery_id'=>$evergreenParkGallery3->id
+        ));
+        $galleryItem14=GalleryItem::create(array(
+            'image_url'=>'/img/gallery5.jpg',
+            'caption'=>'My first Caption Gallery',
+            'sort_order'=>6,
+            'gallery_id'=>$evergreenParkGallery3->id
+        ));
+        $galleryItem15=GalleryItem::create(array(
+            'image_url'=>'/img/gallery6.jpg',
+            'caption'=>'My first Caption Gallery',
+            'sort_order'=>7,
+            'gallery_id'=>$evergreenParkGallery3->id
+        ));
+        $galleryItem16=GalleryItem::create(array(
+            'image_url'=>'/img/gallery7.jpg',
+            'caption'=>'My first Caption Gallery',
+            'sort_order'=>8,
+            'gallery_id'=>$evergreenParkGallery4->id
+        ));
 
 		//seed our blog file
 		$ericBlog = Blog::create(array(
@@ -187,7 +442,7 @@ class TestDataSeeder extends Seeder {
 			'image_url'=>'/img/running_blog.jpg',
 			'image_position'=>'top',
 			'expiration_date'=>'2015-12-09',
-			'sort_order'=>1
+			'sort_order'=>0
 
 
 		));
@@ -218,7 +473,7 @@ class TestDataSeeder extends Seeder {
 			'image_url'=>'/img/running_shoes.jpg',
 			'image_position'=>'top',
 			'expiration_date'=>'2015-12-09',
-			'sort_order'=>1
+			'sort_order'=>2
 
 
 		));
@@ -234,12 +489,12 @@ class TestDataSeeder extends Seeder {
 			'image_url'=>'/img/runBlog.jpg',
 			'image_position'=>'top',
 			'expiration_date'=>'2015-12-09',
-			'sort_order'=>1
+			'sort_order'=>3
 
 
 		));
 
-        $ericBlogFour = Blog::create(array(
+        $ericBlogFive = Blog::create(array(
             'user_id'=>$userEric->id,
             'page_id'=>$blogPage->id,
             'event_id'=>$evergreenParkEvent->id,
@@ -250,7 +505,7 @@ class TestDataSeeder extends Seeder {
             'image_url'=>'/img/runBlog.jpg',
             'image_position'=>'top',
             'expiration_date'=>'2015-12-09',
-            'sort_order'=>1
+            'sort_order'=>4
 
 
         ));
@@ -301,16 +556,30 @@ class TestDataSeeder extends Seeder {
 
 
 		));
+        $contactInformation = Blog::create(array(
+            'user_id'=>$userEric->id,
+            'page_id'=>$contactPage->id,
+
+            'blog_level'=>'primary',
+
+            'heading'=>'',
+            'image_url'=>'',
+            'html_text'=>'Address: P.O. Box 52161 Casper, WY',
+            'image_position'=>'',
+            'expiration_date'=>'2015-12-09',
+            'sort_order'=>1
+
+        ));
 		//seed out board members table
 		$marlene = BoardMember::create(array(
 			'name'=>'Marlene Short',
 			'year'=>'2015',
 			'position'=>'President',
 			'image_url'=>'/img/Marlene.jpg',
+            'twitter_link'=>'http://mytwitterurlforMarlene.com',
+            'facebook_link'=>'http://myfacebookurlforMarlene.com',
 			'description'=>'Just a little brief non-description of Marlene',
-			'twitter_link'=>'',
-			'facebook_link'=>'',
-			'sort_order'=>1
+		    'sort_order'=>1
 		));
 
 		$adam = BoardMember::create(array(
@@ -318,9 +587,9 @@ class TestDataSeeder extends Seeder {
 			'year'=>'2015',
 			'position'=>'Vice President',
 			'image_url'=>'/img/Adam_Arguello.jpg',
+            'twitter_link'=>'http://mytwitterurlforAdam.com',
+            'facebook_link'=>'http://myfacebookurlforAdam.com',
 			'description'=>'Just a little brief non-description of Adam',
-			'twitter_link'=>'',
-			'facebook_link'=>'',
 			'sort_order'=>2
 		));
 
@@ -329,9 +598,9 @@ class TestDataSeeder extends Seeder {
 			'year'=>'2015',
 			'position'=>'Treasurer',
 			'image_url'=>'/img/Allison_Linhart.jpg',
+            'twitter_link'=>'http://mytwitterurlforAllison.com',
+            'facebook_link'=>'http://myfacebookurlforAllison.com',
 			'description'=>'Just a little brief non-description of Allison',
-			'twitter_link'=>'',
-			'facebook_link'=>'',
 			'sort_order'=>3
 		));
 
@@ -340,9 +609,9 @@ class TestDataSeeder extends Seeder {
 			'year'=>'2015',
 			'position'=>'Secretary',
 			'image_url'=>'/img/Joann_True.jpg',
+            'twitter_link'=>'http://mytwitterurlforJoann.com',
+            'facebook_link'=>'http://myfacebookurlforJoann.com',
 			'description'=>'Just a little brief non-description of Joann',
-			'twitter_link'=>'',
-			'facebook_link'=>'',
 			'sort_order'=>4
 		));
 
@@ -351,9 +620,9 @@ class TestDataSeeder extends Seeder {
 			'year'=>'2015',
 			'position'=>'Board Member',
 			'image_url'=>'/img/Cindy.jpg',
+            'twitter_link'=>'http://mytwitterurlforCindy.com',
+            'facebook_link'=>'http://myfacebookurlforCindy.com',
 			'description'=>'Just a little brief non-description of Cindy',
-			'twitter_link'=>'',
-			'facebook_link'=>'',
 			'sort_order'=>5
 		));
 

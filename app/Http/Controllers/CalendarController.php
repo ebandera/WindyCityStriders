@@ -112,7 +112,7 @@ class CalendarController extends Controller {
             $calendarItem = Event::where('event_date', $op, $firstOfMonth)->orderBy('event_date',$orderBy)->firstOrFail();
 
         }
-        echo $op;
+        //echo $op;
 
         if(!$calendarItem){exit();}
         $monthNumber = date_format($calendarItem->event_date,'m');

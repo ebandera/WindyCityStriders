@@ -22,8 +22,13 @@ Route::get('memberblog', 'BlogController@member');
 Route::get('adminblog', 'BlogController@admin');
 
 
-Route::get('gallery', 'GalleryController@index');
-Route::get('admingallery', 'GalleryController@index');
+Route::get('gallerymain', 'GalleryController@main');
+Route::get('admingallerymain', 'GalleryController@adminmain');
+
+Route::get('gallery/{id}', 'GalleryController@index');
+Route::get('admingallery/{id}', 'GalleryController@adminindex');
+
+
 
 Route::get('join', 'JoinController@index');
 Route::get('adminjoin', 'JoinController@index');
@@ -41,15 +46,27 @@ Route::get('admincontact','ContactController@admin');
 Route::get('calendar','CalendarController@index');
 Route::get('calendar/{id}','CalendarController@selectEvent');
 Route::get('calendar/{direction}/{dateReference}','CalendarController@changeTime');
+Route::get('admincalendar','CalendarController@index');
+Route::get('admincalendar/{id}','CalendarController@selectEvent');
+Route::get('admincalendar/{direction}/{dateReference}','CalendarController@changeTime');
 
-Route::post('test',function(){return 'test3';});
-Route::any('test',function(){return 'test1';});
-Route::get('test',function(){return 'test2';});
+Route::get('test',function(){return phpinfo();});
+
 Route::post('updateCarouselItem/{id}','JsonRequestController@updateCarousel');
+Route::post('deleteCarouselItem','JsonRequestController@deleteCarousel');
+Route::post('uploadCarouselItem','JsonRequestController@uploadCarouselItem');
+
+Route::post('uploadBlogItem','JsonRequestController@uploadBlogItem');
+
+Route::post('uploadTeamImage','JsonRequestController@uploadTeamImage');
+Route::post('updateTeam','JsonRequestController@updateTeam');
+
 Route::post('updateAboutItem/{id}','JsonRequestController@updateAbout');
-Route::post('insertBlog','JsonRequestController@insertBlog');
+Route::post('updateAddress','JsonRequestController@updateAddress');
+//Route::post('insertBlog','JsonRequestController@insertBlog');
 Route::post('insertComment','JsonRequestController@insertComment');
 Route::post('deleteComment','JsonRequestController@deleteComment');
+Route::post('moveBlogUp','JsonRequestController@moveBlogUp');
 
 
     //'JsonRequestController@index');

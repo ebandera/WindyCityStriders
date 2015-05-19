@@ -21,7 +21,7 @@
 				    <div class="flexslider" id="index-slider">
 					    <ul class="slides">
                             @foreach ($carouselItems as $carouselItem)
-						    <li>
+						    <li id="carouselLineItem{{$carouselItem->id}}" >
 							    <a href="#"><img src="{{ $carouselItem->image_url }}" alt="" /></a>
 							    <p class="flex-caption" id="carouselCaption{{ $carouselItem->id }}">{{ $carouselItem->caption }}</p>
 						    </li>
@@ -45,7 +45,7 @@
                     <div class="adminHomeCarouselCaption">
                         <h3>caption</h3>
                         <div class="two-third last" >
-                            <textarea id="adminCorouselTextarea" rows="1" class="mycarouseladmincaption"></textarea>
+                            <textarea id="adminCarouselTextarea" rows="1" class="mycarouseladmincaption"></textarea>
                         </div>
                         <div class="one-third last" >
                             <form>
@@ -59,7 +59,7 @@
 
                 </div>
                 <div class="one-third last adminHomeCarouselControls">
-                    <form>
+                    <form id="carouselUploadForm" method="POST" ENCTYPE="multipart/form-data" action="../uploadCarouselItem">
                         <h3>Uploaded Carousel Images</h3>
                         <select id="adminCarouselListbox" class="adminSelectListbox" size="5">
                             @foreach ($carouselItems as $carouselItem)
@@ -70,8 +70,9 @@
                         </select>
                         <hr>
                         <h3>Add New</h3>
-                        <input type="file" class="adminFile"/>
-                        <input type="button" class="adminMyButton2" value="upload File" />
+                        <input type="file" id='fileUpload1' name="fileUpload1" class="adminFile"/>
+                        <input type="submit" class="adminMyButton2"  value="upload File"  />
+                        <input type="hidden" name="_token" value = "{{ csrf_token() }}" />
                     </form>
                 </div>
             </div>
@@ -81,11 +82,13 @@
             <div class="content-wrapper clear">
 		    <ul class="grid one-third services">
 			    <li>
+                    <a href="/calendar">
 				    <div>
 					    <h2>Calendar</h2>
 					    <img src="img/events.png" alt="" />
 					    <p>This will be the calendar link with image</p>
                     </div>
+                    </a>
 			    </li>
 		    </ul>
 		    <ul class="grid one-third services">

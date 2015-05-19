@@ -108,7 +108,7 @@
 }
 .event-bar .event-title h2{
     font-size: 45px;
-    border: dotted 1px black;
+    //border: dotted 1px black;
     padding: 5px;
     height: 20%;
 }
@@ -120,7 +120,7 @@
 }
 .event-bar .event-details2{
     font-size: 20px;
-    border: dotted 1px black;
+    //border: dotted 1px black;
     padding: 5px;
     height: 10%;
 }

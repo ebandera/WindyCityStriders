@@ -11,7 +11,7 @@
 
     <div class="container">  <!--CALENDAR CONTAINER. BOOTSTRAP!-->
         <div class="month-year-bar">
-            <div class="month span2">
+            <div class="month">
                 <p><a href="/calendar/previousMonth/{{date_format($calendarItem->event_date,'Y-m')}}">&lt;</a>{{date_format($calendarItem->event_date,'F')}}<a href="/calendar/nextMonth/{{date_format($calendarItem->event_date,'Y-m')}}">&gt;</a></p>
             </div>
             <div class="year span3">
@@ -37,6 +37,7 @@
 
                 <p>{{ $calendarItem->event_details }}</p>
                 <P>{{ $calendarItem->event_address }}</P>
+                <P><a href="/gallery">See Pictures of This Event</a></P>
                 <P><a href="{{ $calendarItem->event_info_path }}">Link for more details</a></P>
                 <P><a href="{{ $calendarItem->event_results_path }}">Results</a></P>
             </div>

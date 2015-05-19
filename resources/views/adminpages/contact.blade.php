@@ -20,12 +20,12 @@
                 <div id="bra-map" class="google-map"></div><br />
                 <script>
                     $(document).ready(function() {
-                        $('#bra-map').bra_google_map({location: '5713 S Moody, Chicago, IL 60638', zoom: 12});
+                        $('#bra-map').bra_google_map({location: '{{$sdh->theAddress}}', zoom: 12});
                     });
 
                 </script>
                 <p><strong>Contact info</strong><br />
-                    Address: P.O. Box 52161 Casper, WY<br />
+                    {{$sdh->theAddress}}<br />
                     Email: <a href="#"> email@windycitystriders.com</a></p>
 
             </div><!--END ONE-HALF-->
@@ -39,13 +39,13 @@
                     <ul>
                         <li>
                             <p><strong>Address</strong> <em>(*)</em></p>
-                            <input name="address" type="text" class="requiredField" />
+                            <input name="address" id="address" type="text" class="requiredField" />
                         </li>
 
 
 
                         <li class="submit-button">
-                            <input name="submit" id="submitted" value="Update" class="submit" type="submit" />
+                            <input name="submit" id="submitted" value="Update" class="submit" type="button" onclick="UpdateAddress()" />
                         </li>
                     </ul>
                 </form><!--END CONTACT FORM-->
