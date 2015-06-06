@@ -11,13 +11,27 @@
                 <div class="section-title">
 
                     <h1 class="title">BOARD MEMBERS <span>all here to promote the sport of running</span></h1>
+                    <form>
+                        <br>
+                        Change Year
+                        <select name="adminBoardYearTop" id="adminBoardYearTop">
+                            @foreach ($years as $year)
+                                @if ($year==$selectedYear)
+                                    <option value = "{{$year}}" selected>{{$year}}</option>
+                                @else
+                                    <option value = "{{$year}}">{{$year}}</option>
+                                @endif
+
+                            @endforeach
+                        </select>
+                    </form>
 
                     <div class="divider-border"></div>
                     <div class="clear"></div>
 
                     <!--	<h3 class="title">Meet the team</h3>-->
 
-                    @if(count($board)>2)
+                    @if(count($board)>=2)
 
                             <div class="one-half team">
                                 <img src="{{ $board[0]->image_url }}" alt="" />
@@ -115,18 +129,21 @@
                                 <h3>Title</h3>
                                 <select class="fullWidth" name="boardTitlesSelect" id="adminBoardPosition">
                                     <option value = "PRESIDENT">PRESIDENT</option>
-                                    <option value = "VICE-PRESIDENT">VICE-PRESIDENT</option>
+                                    <option value = "VICE PRESIDENT">VICE PRESIDENT</option>
                                     <option value = "TREASURER">TREASURER</option>
                                     <option value = "SECRETARY">SECRETARY</option>
                                     <option value = "BOARD MEMBER">BOARD MEMBER</option>
                                 </select>
                                 <h3>year</h3>
                                 <select class="fullWidth" name="adminBoardYear" id="adminBoardYear">
-                                    <option value = "2010">2010</option>
-                                    <option value = "2011">2011</option>
-                                    <option value = "2012">2012</option>
-                                    <option value = "2013">2013</option>
-                                    <option value = "2014">2014</option>
+                                    @foreach ($years as $year)
+                                        @if ($year==$selectedYear)
+                                            <option value = "{{$year}}" selected>{{$year}}</option>
+                                        @else
+                                            <option value = "{{$year}}">{{$year}}</option>
+                                        @endif
+
+                                    @endforeach
                                 </select>
                                 <h3>Facebook link</h3>
                                 <input class="fullWidth" id="adminBoardFacebook" type="text" /><br>
@@ -143,8 +160,9 @@
                             <h3>Board Members</h3>
                             <select id="adminBoardListbox" class="adminSelectListbox" size="5">
                                 @foreach($board as $member)
-                                <option data-image="{{$member->image_url}}" data-caption="{{$member->description}}" data-facebook="{{$member->facebook_link}}" data-twitter="{{$member->twitter_link}}" data-position="{{$member->position}}" value="{{$member->id}}">{{$member->name}}</option>
+                                <option data-image="{{$member->image_url}}" data-caption="{{$member->description}}" data-facebook="{{$member->facebook_link}}" data-twitter="{{$member->twitter_link}}" data-position="{{$member->position}}" data-year="{{$member->year}}" value="{{$member->id}}">{{$member->name}}</option>
                                 @endforeach
+
                             </select>
 
                             <input type="button" class="adminMyButton1" onclick="UpdateBoardMember()" value = "Save Edits" />

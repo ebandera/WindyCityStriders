@@ -17,6 +17,14 @@ class Page extends Model {
 
         return $footerBlogs;
     }
+    public function aboutContent()
+    {
+        return $this->hasMany('App\Blog')->where('heading','<>','newsletter');
+    }
+    public function newsletter()
+    {
+        return $this->hasMany('App\Blog')->where('heading','=','newsletter');
+    }
 
 
 }

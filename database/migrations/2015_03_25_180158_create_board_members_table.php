@@ -16,7 +16,7 @@ class CreateBoardMembersTable extends Migration {
 		{
 			$table->increments('id');
 			$table->string('name');
-			$table->string('year');
+			$table->integer('year');
 			$table->string('position');
 			$table->string('image_url');
          	$table->text('description');

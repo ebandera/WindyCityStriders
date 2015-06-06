@@ -35,9 +35,12 @@ Route::get('adminjoin', 'JoinController@index');
 
 Route::get('team', 'TeamController@index');
 Route::get('adminteam', 'TeamController@admin');
+Route::get('team/{selectedYear}', 'TeamController@selectYear');
+Route::get('adminteam/{selectedYear}', 'TeamController@adminSelectYear');
 
 Route::get('about', 'AboutController@index');
 Route::get('adminabout', 'AboutController@admin');
+Route::post('uploadNewsletter', 'JsonRequestController@uploadNewsletter');
 
 Route::get('contact','ContactController@index');
 Route::get('admincontact','ContactController@admin');
@@ -46,9 +49,10 @@ Route::get('admincontact','ContactController@admin');
 Route::get('calendar','CalendarController@index');
 Route::get('calendar/{id}','CalendarController@selectEvent');
 Route::get('calendar/{direction}/{dateReference}','CalendarController@changeTime');
-Route::get('admincalendar','CalendarController@index');
-Route::get('admincalendar/{id}','CalendarController@selectEvent');
-Route::get('admincalendar/{direction}/{dateReference}','CalendarController@changeTime');
+Route::get('admincalendar','CalendarController@admin');
+Route::get('admincalendar/{id}','CalendarController@selectEventAdmin');
+Route::get('admincalendar/{direction}/{dateReference}','CalendarController@changeTimeAdmin');
+Route::post('getEventsForDateRange','JsonRequestController@getEventsForDateRange');
 
 Route::get('test',function(){return phpinfo();});
 
@@ -67,6 +71,8 @@ Route::post('updateAddress','JsonRequestController@updateAddress');
 Route::post('insertComment','JsonRequestController@insertComment');
 Route::post('deleteComment','JsonRequestController@deleteComment');
 Route::post('moveBlogUp','JsonRequestController@moveBlogUp');
+Route::post('promoteToHomepage','JsonRequestController@promoteToHomepage');
+Route::post('removeFromHomepage','JsonRequestController@removeFromHomepage');
 
 
     //'JsonRequestController@index');

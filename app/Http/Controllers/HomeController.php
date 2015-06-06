@@ -43,15 +43,19 @@ class HomeController extends Controller {
         $sdh= $this->sdh->getData();
 		$carouselItems = $this->sdh->getCarouselImages();
        // var_dump($carouselItems);exit();
-		return view('pages.home',compact('sdh','carouselItems'));
+		//return view('pages.home',compact('sdh','carouselItems'));
+        $blogs = Page::where('title','=','Home')->first()->blog->where('blog_level','primary');
+        //var_dump($footerBlogs);
+        return view('pages.home',compact('sdh', 'carouselItems','blogs'));
 	}
     public function admin()
     {
 
         $sdh= $this->sdh->getData();
         $carouselItems = $this->sdh->getCarouselImages();
+        $blogs = Page::where('title','=','Home')->first()->blog->where('blog_level','primary');
         //var_dump($footerBlogs);
-        return view('adminpages.home',compact('sdh', 'carouselItems'));
+        return view('adminpages.home',compact('sdh', 'carouselItems','blogs'));
     }
 
 }

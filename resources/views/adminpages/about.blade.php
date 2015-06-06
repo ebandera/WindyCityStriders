@@ -33,6 +33,16 @@
 
             </div> <!--END MYAREACONTAINER-->
             <hr>
+            <h1 align="center" class="title">Newsletter</h1>
+            <div class="myareacontainer" >
+                <div class="newsletter">
+
+                    @foreach($newsletter as $theNewsletter)
+                        <img src = "{{$theNewsletter->image_url}}" />
+                    @endforeach
+                </div>
+            </div> <!--END MYAREACONTAINER-->
+            <hr>
             <h1 align="center" class="title">Modify About Content</h1>
                 <div class="myareacontainer" >
                     <div class="content-wrapper clear">
@@ -52,9 +62,9 @@
 
                         </div>
                         <div class="one-third last adminHomeCarouselControls">
-                            <form>
+                            <form id="newsletterUploadForm" method="POST" ENCTYPE="multipart/form-data" action="../uploadNewsletter">
                                 <h3>Content Items</h3>
-                                <select id="adminAboutListbox" class="adminSelectListbox" size="3">
+                                <select id="adminAboutListbox" class="adminSelectListShort" size="3">
                                     @foreach($blogs as $index=>$blog)
                                     <option data-heading="{{$blog->heading}}" data-caption="{{$blog->html_text}}" value="{{$blog->id}}">Item {{$index+1}}</option>
                                     @endforeach
@@ -62,8 +72,12 @@
                                 </select>
                                 <input type="button" class="adminMyButton1" onclick="SaveAboutEdits()" value = "Save Edits" />
                                 <hr>
-
+                                <h3>Set Newsletter</h3>
+                                <input type="file" name="fileUpload4" id="fileUpload4" class="adminFile"/>
+                                <input type="submit" class="adminMyButton1"  value = "Upload File" />
+                                <input type="hidden" name="_token" value = "{{ csrf_token() }}" />
                             </form>
+
                         </div>
                     </div>
 

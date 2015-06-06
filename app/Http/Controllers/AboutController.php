@@ -24,16 +24,21 @@ class AboutController extends Controller {
 
     public function index()
     {
+        $page = Page::where('title','=','About')->first();
+        $blogs = $page->aboutContent;
+        $newsletter = $page->newsletter;
         $sdh= $this->sdh->getData();
-        $blogs = Page::where('title','=','About')->first()->blog;
 
-        return view('pages.about',compact('blogs','sdh'));
+
+        return view('pages.about',compact('blogs','sdh','newsletter'));
     }
     public function admin()
     {
-        $blogs = Page::where('title','=','About')->first()->blog;
+        $page = Page::where('title','=','About')->first();
+        $blogs = $page->aboutContent;
+        $newsletter = $page->newsletter;
         $sdh= $this->sdh->getData();
-        return view('adminpages.about',compact('blogs','sdh'));
+        return view('adminpages.about',compact('blogs','sdh','newsletter'));
     }
 
 }

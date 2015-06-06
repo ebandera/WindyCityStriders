@@ -66,6 +66,9 @@ class TestDataSeeder extends Seeder {
         $contactPage = Page::create(array(
             'title'=>'Contact'
         ));
+        $homePage = Page::create(array(
+            'title'=>'Home'
+        ));
 
 		//seed our user_profiles table
 		//$adminProfile = UserProfile::create(array(
@@ -556,6 +559,21 @@ class TestDataSeeder extends Seeder {
 
 
 		));
+        $ericAboutNewsletter = Blog::create(array(
+            'user_id'=>$userEric->id,
+            'page_id'=>$aboutPage->id,
+
+            'blog_level'=>'',
+
+            'heading'=>'newsletter',
+            'html_text'=>'Emails are sent before upcoming races with detailed information regarding registration, course, fees, etc. Other club info/news is also emailed to the group throughout the year. Anyone who is interested in the club can join our group email list, simply send an email to Marlene Short to be added to the list.',
+            'image_url'=>'/img/usercontent/newsletter.jpg',
+            'image_position'=>'top',
+            'expiration_date'=>'2015-12-09',
+            'sort_order'=>1
+
+
+        ));
         $contactInformation = Blog::create(array(
             'user_id'=>$userEric->id,
             'page_id'=>$contactPage->id,
@@ -574,7 +592,7 @@ class TestDataSeeder extends Seeder {
 		$marlene = BoardMember::create(array(
 			'name'=>'Marlene Short',
 			'year'=>'2015',
-			'position'=>'President',
+			'position'=>'PRESIDENT',
 			'image_url'=>'/img/Marlene.jpg',
             'twitter_link'=>'http://mytwitterurlforMarlene.com',
             'facebook_link'=>'http://myfacebookurlforMarlene.com',
@@ -585,7 +603,7 @@ class TestDataSeeder extends Seeder {
 		$adam = BoardMember::create(array(
 			'name'=>'Adam Linhart',
 			'year'=>'2015',
-			'position'=>'Vice President',
+			'position'=>'VICE PRESIDENT',
 			'image_url'=>'/img/Adam_Arguello.jpg',
             'twitter_link'=>'http://mytwitterurlforAdam.com',
             'facebook_link'=>'http://myfacebookurlforAdam.com',
@@ -596,7 +614,7 @@ class TestDataSeeder extends Seeder {
 		$allison = BoardMember::create(array(
 			'name'=>'Allison Linhart',
 			'year'=>'2015',
-			'position'=>'Treasurer',
+			'position'=>'TREASURER',
 			'image_url'=>'/img/Allison_Linhart.jpg',
             'twitter_link'=>'http://mytwitterurlforAllison.com',
             'facebook_link'=>'http://myfacebookurlforAllison.com',
@@ -607,7 +625,7 @@ class TestDataSeeder extends Seeder {
 		$joann = BoardMember::create(array(
 			'name'=>'Joann True',
 			'year'=>'2015',
-			'position'=>'Secretary',
+			'position'=>'SECRETARY',
 			'image_url'=>'/img/Joann_True.jpg',
             'twitter_link'=>'http://mytwitterurlforJoann.com',
             'facebook_link'=>'http://myfacebookurlforJoann.com',
@@ -618,7 +636,7 @@ class TestDataSeeder extends Seeder {
 		$cindy = BoardMember::create(array(
 			'name'=>'Cindy Rogers',
 			'year'=>'2015',
-			'position'=>'Board Member',
+			'position'=>'BOARD MEMBER',
 			'image_url'=>'/img/Cindy.jpg',
             'twitter_link'=>'http://mytwitterurlforCindy.com',
             'facebook_link'=>'http://myfacebookurlforCindy.com',

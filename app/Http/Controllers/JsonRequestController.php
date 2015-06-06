@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use App\CarouselItem;
 use App\Blog;
 use App\Page;
+use App\Event;
 use App\BoardMember;
 use Auth;
 use App\ImageTool;
@@ -142,6 +143,81 @@ class JsonRequestController extends Controller {
             $this->insertCarouselItem($newFilename,$oldFilename);
         }
         return redirect('home');
+    }
+
+    public function uploadNewsletter()
+    {
+        $input= Request::all();
+
+        $file=$input['fileUpload4'];
+        //make new file name
+        $user_id=Auth::user()->id;
+        $date = new \DateTime();
+        $timestampString = $date->getTimestamp();
+        $ext = $file->getClientOriginalExtension();
+        $newFilename = $user_id . '_newsletter_' . $timestampString . '.' . $ext;
+
+        //get newsletter record
+        $page_id=Page::where('title','About')->first()->id;
+        $oldNewsletter = Blog::where('page_id',$page_id)->where('heading','newsletter')->first();
+        //dd($oldNewsletter);
+
+        if($file->isValid())
+        {
+            if($ext=='pdf'||$ext=='jpg'||$ext='png')
+            {
+                $file->move('img/usercontent',$newFilename);
+
+                $this->deleteOldNewsletterFile($oldNewsletter);
+                $oldNewsletter->image_url='/img/usercontent/' . $newFilename;
+                $oldNewsletter->save();
+            }
+
+        }
+        return redirect('adminabout');
+    }
+    public function getEventsForDateRange()
+    {
+        $input= Request::all();
+        $to = $input['to'];
+        $from = $input['from'];
+        $carbonTo = new Carbon($to);
+        $carbonFrom = new Carbon($from);
+        $events = Event::whereBetween('event_date', array($carbonFrom, $carbonTo))->orderBy('event_date')->get();
+        return json_encode($events);
+
+    }
+
+    private function deleteOldNewsletterFile($oldNewsletter)
+    {
+        //get the page ID of the about page
+
+        $image_url='';
+        if($oldNewsletter!=null) {
+            $image_url = $oldNewsletter->image_url;
+            $fileexists= $this->deleteFile($image_url);
+
+
+        }
+        echo $image_url;
+
+    }
+    private function deleteFile($filePath)
+    {
+        echo $filePath;
+        $filePath='.'.$filePath;
+        if(file_exists($filePath))
+        {
+            unlink($filePath);
+            echo 'exists';
+            return true;
+        }
+        else
+        {
+            echo 'notexists';
+            return false;
+        }
+
     }
 
     public function uploadBlogItem()
@@ -376,6 +452,25 @@ class JsonRequestController extends Controller {
         {
             return 'false';
         }
+
+    }
+
+    public function promoteToHomepage()
+    {
+        $input= Request::all();
+        $itemId=$input['id'];
+        $itemToPromote = Blog::find($itemId);
+        $itemToPromote->page_id = Page::where('title','=','Home')->first()->id;
+        $itemToPromote->save();
+
+    }
+    public function removeFromHomepage()
+    {
+        $input= Request::all();
+        $itemId=$input['id'];
+        $itemToPromote = Blog::find($itemId);
+        $itemToPromote->page_id = Page::where('title','=','Blog')->first()->id;
+        $itemToPromote->save();
 
     }
 

@@ -207,10 +207,13 @@ $(document).ready(function($) {
     $('#adminBoardListbox').change(function(){
         $('#adminBoardImage').attr('src',$('#adminBoardListbox option:selected').data('image'));
         $('#adminBoardTextarea').val($('#adminBoardListbox option:selected').data('caption'));
-        //$('#adminBoardPosition').select(1);//val($('#adminBoardListbox option:selected').data('position'));
+       // $('#adminBoardPosition').val($('#adminBoardListbox option:selected').data('position'));
+       // alert($('#adminBoardListbox option:selected').data('position'));
+        $('#adminBoardPosition').val($('#adminBoardListbox option:selected').data('position'));
         $('#adminBoardTwitter').val($('#adminBoardListbox option:selected').data('twitter'));
         $('#adminBoardFacebook').val($('#adminBoardListbox option:selected').data('facebook'));
         $('#adminBoardName').val($('#adminBoardListbox option:selected').text());
+        $('#adminBoardYear').val($('#adminBoardListbox option:selected').data('year'));
         //alert($('#adminBoardListbox option:selected').data('position'));
 
 
@@ -226,6 +229,19 @@ $(document).ready(function($) {
         $('#adminBoardImage').attr('src',tmppath);
 
     });
+    $('#adminBoardYearTop').live('change', function(){
+       var id = $('#adminBoardYearTop option:selected').val();
+       // var currentUrl = window.location.href;
+       // alert(currentUrl);
+       // var nextUrl = currentUrl.replace('adminteam','');
+       // alert(nextUrl);
+
+        window.location.href = '/adminteam/' + id;
+
+
+
+    });
+
 
     $.ajaxSetup({
         headers: {
@@ -567,6 +583,66 @@ function MoveBlogUp(id)
     });
 }
 
+function PromoteToHomePage(id)
+{
+    var csrfToken = $('meta[name="csrf-token"]').attr('content');
+    var url = "../promoteToHomepage";
+
+    $.ajax({
+        type: "POST",
+        url: url,
+        data: {id: id,_token: csrfToken},
+        success: function (data) {
+            //alert(data);
+
+            if(data!=='false') {
+
+                //alert('Data was updated');
+                window.location.reload();
+            }
+            else
+            {
+                alert('Data could not be saved');
+            }
+
+        },
+        error: function(xhr, status, error){
+
+            alert('error');
+            alert(xhr.responseText);
+        }
+    });
+}
+function RemoveFromHomePage(id)
+{
+    var csrfToken = $('meta[name="csrf-token"]').attr('content');
+    var url = "../removeFromHomepage";
+
+    $.ajax({
+        type: "POST",
+        url: url,
+        data: {id: id,_token: csrfToken},
+        success: function (data) {
+            //alert(data);
+
+            if(data!=='false') {
+
+                //alert('Data was updated');
+                window.location.reload();
+            }
+            else
+            {
+                alert('Data could not be saved');
+            }
+
+        },
+        error: function(xhr, status, error){
+
+            alert('error');
+            alert(xhr.responseText);
+        }
+    });
+}
 function UpdateAddress(){
     var address = $('#address').val();
 
@@ -644,6 +720,69 @@ function UpdateBoardMember(){
     });
 }
 
+function searchEventsByDateRange()
+{
+    var valFrom = $('#from').val();
+    var valTo = $('#to').val();
+    //alert(valFrom);
+   // alert(valTo);
+    var url = "../getEventsForDateRange" ;
 
+    var csrfToken = $('meta[name="csrf-token"]').attr('content');
+
+    $.ajax({
+        type: "POST",
+        url: url,
+        data: {from:valFrom,to:valTo,_token: csrfToken},
+        success: function (data) {
+           // alert(data);
+            $('#adminEventListbox').children().remove().end();
+            var events = jQuery.parseJSON(data);
+            $.each(events,function(){
+                var t = this.event_date.split(/[- :]/);
+
+                // Apply each element to the Date function
+                var d = new Date(t[0], t[1]-1, t[2], t[3], t[4], t[5]);
+                $('#adminEventListbox').append('<option>' + d.toFormattedString() + ' - ' + this.event_name + '</option>');
+            });
+
+
+
+
+        },
+        error: function(xhr, status, error){
+
+            alert('error');
+            alert(xhr.responseText);
+        }
+    });
+}
+/************************************
+ * Method extensions
+ */
+
+String.prototype.padLeft = function (length, character) {
+    return new Array(length - this.length + 1).join(character || ' ') + this;
+};
+
+Date.prototype.toFormattedString = function () {
+    return [String(this.getMonth()+1).padLeft(2, '0'),
+            String(this.getDate()).padLeft(2, '0'),
+            String(this.getFullYear())].join("/");
+};
+Date.prototype.addMonths = function(number) {
+    var end = new Date(+this);
+    end.setMonth(end.getMonth() + number);
+    return end;
+
+
+};
+Date.prototype.addYears = function(number) {
+    var end = new Date(+this);
+    end.setFullYear(end.getFullYear() + number );
+    return end;
+
+
+};
 
 

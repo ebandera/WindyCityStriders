@@ -8,6 +8,7 @@
 
         <div class="content-wrapper clear">
 
+            <div class="myareacontainer" >
             <div class="section-title">
 
                 <h1 class="title">CWCS <span>all here to promote the sport of running</span></h1>
@@ -30,8 +31,18 @@
 
 
             @endforeach
+            </div>
+            <hr>
+            <h1 align="center" class="title">Newsletter</h1>
+            <div class="myareacontainer" >
+                <div class="newsletter">
 
-
+                    @foreach($newsletter as $theNewsletter)
+                        <img src = "{{$theNewsletter->image_url}}" />
+                    @endforeach
+                </div>
+            </div> <!--END MYAREACONTAINER-->
+            <hr>
 
 
         </div><!--END CONTENT-WRAPPER-->

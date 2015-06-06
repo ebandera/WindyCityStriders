@@ -19,6 +19,8 @@
     <!--GALLERY CSS-->
     <link rel="stylesheet" type="text/css" href="/css/gallery.css" media="screen" />
 
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
 	<!-- Fonts -->
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
@@ -32,6 +34,8 @@
     <!-- the jScrollPane script -->
     <script type="text/javascript" src="/javascript/jquery.mousewheel.js"></script>
     <script type="text/javascript" src="/javascript/jquery.contentcarousel.js"></script>
+
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

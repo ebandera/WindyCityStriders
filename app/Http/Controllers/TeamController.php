@@ -26,9 +26,11 @@ class TeamController extends Controller {
         $year = date('Y');
         //echo $year;exit();
         $board = BoardMember::where('year','=',$year)->get();
+        $years = BoardMember::retreiveCompleteYearlist($year);
+        $selectedYear = $year;
         //var_dump($board);
         $sdh= $this->sdh->getData();
-        return view('pages.team',compact('board','sdh'));
+        return view('pages.team',compact('board','sdh','years','selectedYear'));
     }
 
     public function admin()
@@ -36,8 +38,33 @@ class TeamController extends Controller {
         $year = date('Y');
         //echo $year;exit();
         $board = BoardMember::where('year','=',$year)->get();
+        $years = BoardMember::retreiveCompleteYearlist($year);
+        $selectedYear = $year;
         //var_dump($board);
         $sdh= $this->sdh->getData();
-        return view('adminpages.team',compact('board','sdh'));
+        return view('adminpages.team',compact('board','sdh','years','selectedYear'));
+    }
+    public function selectYear($selectedYear)
+    {
+        $year = date('Y');
+        //echo $year;exit();
+        $board = BoardMember::where('year','=',$selectedYear)->get();
+        $years = BoardMember::retreiveCompleteYearlist($year);
+
+        //var_dump($board);
+        $sdh= $this->sdh->getData();
+        return view('pages.team',compact('board','sdh','years','selectedYear'));
+    }
+
+    public function adminSelectYear($selectedYear)
+    {
+        $year = date('Y');
+        //echo $year;exit();
+        $board = BoardMember::where('year','=',$selectedYear)->get();
+        $years = BoardMember::retreiveCompleteYearlist($year);
+
+        //var_dump($board);
+        $sdh= $this->sdh->getData();
+        return view('adminpages.team',compact('board','sdh','years','selectedYear'));
     }
 }

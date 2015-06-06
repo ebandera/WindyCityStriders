@@ -79,9 +79,10 @@
 
                                     <p>{{ $blog->html_text }} </p>
                                     <form>
-                                        <input class="adminMyButton3" type="button" onclick="StartCommentEntry({{$blog->id}})" value="Add Comment" />
-                                        <input class="adminMyButton3" type="button" onclick="DeleteComment({{$blog->id}})"value="Delete Blog" />
-                                        <input class="adminMyButton3" type="button" onclick="MoveBlogUp({{$blog->id}})" value="Move Up" />
+                                        <input class="adminMyButton4" type="button" onclick="StartCommentEntry({{$blog->id}})" value="Add Comment" />
+                                        <input class="adminMyButton4" type="button" onclick="DeleteComment({{$blog->id}})"value="Delete Blog" />
+                                        <input class="adminMyButton4" type="button" onclick="MoveBlogUp({{$blog->id}})" value="Move Up" />
+                                        <input class="adminMyButton4" type="button" onclick="PromoteToHomePage({{$blog->id}})" value="Send To Homepage" />
                                     </form>
                                     <p><a href="/blog/{{ $blog->id }}" class="more-link">View This Blog Only</a></p>
 
@@ -129,16 +130,8 @@
 
                                 </div>
                             </div>
-
                             @endforeach
-
-
-
-
-
-
-
-                                        </div><!--END INNER-CONTENT-->
+                        </div><!--END INNER-CONTENT-->
 
                         </div><!--END CONTENT-WRAPPER-->
 

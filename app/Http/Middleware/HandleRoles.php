@@ -20,14 +20,25 @@ class HandleRoles {
        // var_dump($test);exit();
         $isBasePage = $this->isValidBasePageRequest($requestedPage);
         //this will handle the redirecting
+        //if the user is authenticated and they are seeing a base page (that everyone can see)
         if($request->user()!=null&&$isBasePage) {
-            //echo $this->buildRoutePrefix($requestedPage,$request->user()->user_profile);exit;
+            //the prefix will determine the route if it is an authenticated user
             $prefix=$this->buildRoutePrefix($requestedPage,$request->user()->user_profile);
             if ($prefix=='') return $next($request);  //ignore redirect and authentication if they're going to public page anyways
+            //this is to handle for specific blog entry views (with id)
             if ($requestedPage=='blog'&&$secondSegment!=null) return $next($request);
+            if($prefix=='admin'&& $secondSegment!=null&&$requestedPage='calendar')
+            {
+                $theFullUrl= $request->Url();
+                $theNewUrl = str_replace('calendar','admincalendar',$theFullUrl);
+                //dd($theFullUrl . ' ' . $theNewUrl);
+                return redirect( $theNewUrl);
+            }
+           // dd('hello');
             return redirect( $prefix . $requestedPage);
 
         }
+       // dd('hello1');
         //this will handle the roles based authentication
         if($isBasePage) return $next($request);  //base page, pass!
         if($request->user()!=null)  //not base page, but user is logged in, see if they have access
