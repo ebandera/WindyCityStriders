@@ -187,7 +187,70 @@ class JsonRequestController extends Controller {
         return json_encode($events);
 
     }
+    public function getEventFromId()
+    {
+        $input= Request::all();
+        $id = $input['id'];
+        $event = Event::find($id);
+        return json_encode($event);
 
+    }
+
+    public function updateEvent()
+    {
+        $input= Request::all();
+        $id = $input['id'];
+        $eventName = $input['eventName'];
+        $eventDate = $input['eventDate'];
+        //convert the string to a carbon date so that it can be used with sql
+        $eventDate = new Carbon($eventDate);
+        $eventWhere = $input['eventWhere'];
+        $eventDescription = $input['eventDescription'];
+        $eventAddress = $input['eventAddress'];
+        $event = Event::find($id);
+        $event->event_name=$eventName;
+        $event->event_date=$eventDate;
+        $event->event_place_text=$eventWhere;
+        $event->event_details=$eventDescription;
+        $event->event_address=$eventAddress;
+        $success= $event->save();
+
+        if($success) {
+            return 'true';
+        }
+        else
+        {
+            return 'false';
+        }
+
+    }
+    public function addEvent()
+    {
+
+
+        $eventDate = new Carbon();
+
+        $event = new Event();
+        $event->event_date=$eventDate;
+        $event->event_name='default name';
+        $event->event_img_url='';
+        $event->event_place_text='default place';
+        $event->event_address='default address';
+        $event->event_details='default description';
+        $event->event_info_path='';
+        $event->event_results_path='';
+
+        $success= $event->save();
+
+        if($success) {
+            return json_encode($event);
+        }
+        else
+        {
+            return 'false';
+        }
+
+    }
     private function deleteOldNewsletterFile($oldNewsletter)
     {
         //get the page ID of the about page

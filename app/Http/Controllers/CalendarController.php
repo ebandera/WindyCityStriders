@@ -32,7 +32,7 @@ class CalendarController extends Controller {
         //var_dump($firstOfMonth);
 
 
-        $calendarMonthItems = Event::whereBetween('event_date', array($firstOfMonth, $nextMonth))->get();
+        $calendarMonthItems = Event::whereBetween('event_date', array($firstOfMonth, $nextMonth))->orderBy('event_date')->get();
        // var_dump(count($calendarMonthItems));exit();
         $sdh= $this->sdh->getData();
         return view('pages.calendar',compact('calendarItem','calendarMonthItems','sdh'));

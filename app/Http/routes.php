@@ -52,11 +52,14 @@ Route::get('calendar/{direction}/{dateReference}','CalendarController@changeTime
 Route::get('admincalendar','CalendarController@admin');
 Route::get('admincalendar/{id}','CalendarController@selectEventAdmin');
 Route::get('admincalendar/{direction}/{dateReference}','CalendarController@changeTimeAdmin');
-Route::post('getEventsForDateRange','JsonRequestController@getEventsForDateRange');
+Route::post('getEventsForDateRange','JsonRequestController@getEventsForDateRange');  //returns Json
+Route::post('getEventFromId','JsonRequestController@getEventFromId');               //returns Json
+Route::post('updateEvent','JsonRequestController@updateEvent');
+Route::post('addEvent','JsonRequestController@addEvent');
 
 Route::get('test',function(){return phpinfo();});
 
-Route::post('updateCarouselItem/{id}','JsonRequestController@updateCarousel');
+Route::post('updateCarouselItem/{id}','JsonRequestController@updateCarousel');      //not Json
 Route::post('deleteCarouselItem','JsonRequestController@deleteCarousel');
 Route::post('uploadCarouselItem','JsonRequestController@uploadCarouselItem');
 

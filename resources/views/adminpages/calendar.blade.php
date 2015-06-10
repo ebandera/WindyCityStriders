@@ -57,7 +57,7 @@
             <div class="one-half">
                 <select id="adminEventListbox" class="adminSelectListboxCalendar" size="5">
                     @foreach ($eventListItems As $eventListItem)
-                        <option>{{ date_format($eventListItem->event_date, "m/d/Y") . ' - ' . $eventListItem->event_name }}</option>
+                        <option value="{{$eventListItem->id}}">{{ date_format($eventListItem->event_date, "m/d/Y") . ' - ' . $eventListItem->event_name }}</option>
                     @endforeach
 
 
@@ -83,8 +83,8 @@
 
 
                     <input type="button" class="adminMyButton2"  value="Delete"  />
-                    <input type="button" class="adminMyButton2"  value="Edit"  />
-                    <input type="button" class="adminMyButton2"  value="Add"  />
+                    <input type="button" class="adminMyButton2"  onclick="EditEvent()" value="Edit"  />
+
                     <input type="hidden" name="_token" value = "{{ csrf_token() }}" />
                 </form>
             </div>
@@ -100,38 +100,39 @@
                 </div>
                 <div class="two-third last" >
 
-                    <input type = "text" />
+                    <input id="eventName" type = "text" />
                 </div>
                 <div class="one-third last" >
                     Date
                 </div>
                 <div class="two-third last" >
 
-                    <input type = "text" />
+                    <input id="eventDate" type = "text" />
                 </div>
                 <div class="one-third last" >
                    Where
                 </div>
                 <div class="two-third last" >
 
-                    <textarea rows="3" class="mycarouseladmincaption"></textarea>
+                    <textarea id="eventWhere" rows="3" class="mycarouseladmincaption"></textarea>
                 </div>
                 <div class="one-third last" >
                     Description
                 </div>
                 <div class="two-third last" >
 
-                    <textarea rows="3" class="mycarouseladmincaption"></textarea>
+                    <textarea id="eventDescription" rows="3" class="mycarouseladmincaption"></textarea>
                 </div>
                 <div class="one-third last" >
                     Address <br>(for google maps)
                 </div>
                 <div class="two-third last" >
 
-                    <textarea rows="1" class="mycarouseladmincaption"></textarea>
+                    <textarea id="eventAddress"rows="1" class="mycarouseladmincaption"></textarea>
                 </div>
                 <div class="one-third last" >
-                    Information Doc (flyer)
+                    Information Doc (flyer)<br>
+                    Already Posted: <input type="checkbox" id="eventInfoDoc" disabled />
                 </div>
                 <div class="two-third last" >
 
@@ -139,10 +140,11 @@
                     <input type="submit" class="adminMyButton2"  value="upload File"  />
                 </div>
                 <div class="one-third last" >
-                    Results Upload
+                    Results Upload<br>
+                    Already Posted: <input type="checkbox" id="eventResults" disabled />
                 </div>
                 <div class="two-third last" >
-
+                    <input type = "hidden" id="eventId" value="" />
                     <input type="file" id='fileUpload1' name="fileUpload1" class="adminFile"/>
                     <input type="submit" class="adminMyButton2"  value="upload File"  />
                 </div>
@@ -157,13 +159,16 @@
                 <form id="carouselUploadForm" method="POST" ENCTYPE="multipart/form-data" action="../uploadCarouselItem">
 
                     <div class="adminHomeCarouselImage">
-                        <img id="adminCarouselImage" src="/img/slideshow.png" />
+                        <img id="adminEventImage" src="/img/slideshow.png" />
                     </div>
                     <hr>
                     <h3>Event Image</h3>
                     <input type="file" id='fileUpload1' name="fileUpload1" class="adminFile"/>
                     <input type="submit" class="adminMyButton2"  value="upload File"  />
                     <input type="hidden" name="_token" value = "{{ csrf_token() }}" />
+                    <hr>
+                    <input type="button" class="adminMyButton2"  onclick="AddEvent()" value="Add New"  />
+                    <input type="button" class="adminMyButton2"  onclick="SaveEvent()" value="Save Edits"  />
 
                 </form>
             </div>

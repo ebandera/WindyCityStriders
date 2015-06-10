@@ -13,8 +13,7 @@ class HandleRoles {
 	 */
 	public function handle($request, Closure $next)
 	{
-        //var_dump($request->user());exit();
-        //var_dump($request->segment(1));exit;
+
         $requestedPage = $request->segment(1);
         $secondSegment = $request->segment(2);
        // var_dump($test);exit();

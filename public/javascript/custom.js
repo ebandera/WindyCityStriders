@@ -739,11 +739,8 @@ function searchEventsByDateRange()
             $('#adminEventListbox').children().remove().end();
             var events = jQuery.parseJSON(data);
             $.each(events,function(){
-                var t = this.event_date.split(/[- :]/);
 
-                // Apply each element to the Date function
-                var d = new Date(t[0], t[1]-1, t[2], t[3], t[4], t[5]);
-                $('#adminEventListbox').append('<option>' + d.toFormattedString() + ' - ' + this.event_name + '</option>');
+                $('#adminEventListbox').append('<option value="' + this.id +'">' + this.event_date.mysqlDateStringToFormattedString() + ' - ' + this.event_name + '</option>');
             });
 
 
@@ -757,12 +754,193 @@ function searchEventsByDateRange()
         }
     });
 }
+
+function EditEvent()
+{
+    //get ID
+    var id = $('#adminEventListbox option:selected').val();
+    //as long as an item is picked
+    if (typeof(id)!='undefined')
+    {
+        var url = "../getEventFromId" ;
+        var csrfToken = $('meta[name="csrf-token"]').attr('content');
+        //alert(url);
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: {id:id,_token: csrfToken},
+            success: function (data) {
+               // alert(data);
+
+                var event = jQuery.parseJSON(data);
+                $('#eventName').val(event.event_name);
+                $('#eventDate').val(event.event_date.mysqlDateStringToFormattedString());
+
+
+                $('#eventWhere').val(event.event_place_text);
+                $('#eventDescription').val(event.event_details);
+                $('#eventAddress').val(event.event_address);
+               // $('#eventName').val(event.event_name);
+                $('#eventId').val(event.id);
+                $('#adminEventImage').attr('src',event.event_img_url);
+                if(event.event_info_path!='')
+                {
+                    $('#eventInfoDoc').attr('checked','checked');
+
+
+                }
+                else
+                {
+                    $('#eventInfoDoc').attr('checked',false);
+
+                }
+                if(event.event_results_path!='')
+                {
+                    $('#eventResults').attr('checked','checked');
+                }
+                else
+                {
+                    $('#eventResults').attr('checked',false);
+               }
+
+
+
+
+
+            },
+            error: function(xhr, status, error){
+
+                alert('error');
+                alert(xhr.responseText);
+            }
+        });
+    }
+    else
+    {
+        alert('Please select an Event!');
+    }
+
+
+}
+
+function SaveEvent()
+{
+    var id = $('#eventId').val();
+    var eventName = $('#eventName').val();
+    var eventDate = $('#eventDate').val();
+    var eventWhere = $('#eventWhere').val();
+    var eventDescription = $('#eventDescription').val();
+    var eventAddress = $('#eventAddress').val();
+    alert(id);
+    alert('hello');
+    var url = "../updateEvent" ;
+
+    var csrfToken = $('meta[name="csrf-token"]').attr('content');
+
+    $.ajax({
+        type: "POST",
+        url: url,
+        data: {id:id,eventName:eventName,eventDate:eventDate,eventWhere:eventWhere,eventDescription:eventDescription,eventAddress:eventAddress,_token: csrfToken},
+        success: function (data) {
+            if(data!=='false') {
+                window.location.reload();
+
+
+            }
+            else
+            {
+                alert('Data could not be saved');
+            }
+
+
+
+
+
+
+        },
+        error: function(xhr, status, error){
+
+            alert('error');
+            alert(xhr.responseText);
+        }
+    });
+
+}
+function AddEvent()
+{
+
+    var url = "../addEvent" ;
+
+    var csrfToken = $('meta[name="csrf-token"]').attr('content');
+
+    $.ajax({
+        type: "POST",
+        url: url,
+        data: {_token: csrfToken},
+        success: function (data) {
+            if(data!=='false') {
+                var event = jQuery.parseJSON(data);
+                $('#eventName').val(event.event_name);
+                $('#eventDate').val(event.event_date.mysqlDateStringToFormattedString());
+
+
+                $('#eventWhere').val(event.event_place_text);
+                $('#eventDescription').val(event.event_details);
+                $('#eventAddress').val(event.event_address);
+                // $('#eventName').val(event.event_name);
+                $('#eventId').val(event.id);
+                $('#adminEventImage').attr('src',event.event_img_url);
+                if(event.event_info_path!='')
+                {
+                    $('#eventInfoDoc').attr('checked','checked');
+
+
+                }
+                else
+                {
+                    $('#eventInfoDoc').attr('checked',false);
+
+                }
+                if(event.event_results_path!='')
+                {
+                    $('#eventResults').attr('checked','checked');
+                }
+                else
+                {
+                    $('#eventResults').attr('checked',false);
+                }
+            }
+            else
+            {
+                alert('Data could not be saved');
+            }
+
+
+
+
+
+
+        },
+        error: function(xhr, status, error){
+
+            alert('error');
+            alert(xhr.responseText);
+        }
+    });
+
+}
 /************************************
  * Method extensions
  */
 
 String.prototype.padLeft = function (length, character) {
     return new Array(length - this.length + 1).join(character || ' ') + this;
+};
+
+String.prototype.mysqlDateStringToFormattedString = function(){
+    var t = this.split(/[- :]/);
+    var d = new Date(t[0], t[1]-1, t[2], t[3], t[4], t[5]);
+    return d.toFormattedString();
 };
 
 Date.prototype.toFormattedString = function () {
