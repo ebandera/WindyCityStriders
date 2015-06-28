@@ -78,6 +78,10 @@ return [
 	|
 	*/
 
+    'PHPExcelIOFactory' => app_path() . '/Includes/PHPExcel/IOFactory.php',
+    'PHPExcelWriter' => app_path() . '/Includes/PHPExcel/Writer/Excel2007.php',
+    'PHPExcelBase' => app_path() . '/Includes/PHPExcel.php',
+
 	'key' => env('APP_KEY', 'SomeRandomString'),
 
 	'cipher' => MCRYPT_RIJNDAEL_128,

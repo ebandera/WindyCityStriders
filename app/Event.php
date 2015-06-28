@@ -13,6 +13,15 @@ class Event extends Model {
         return $res;
 
     }//
+    public function resultItems()
+    {
+        return $this->hasMany('App\ResultItem')->orderBy('placement','asc');;
+    }
+    public function gallery()
+    {
+        return $this->hasOne('App\Gallery');
+    }
+
 
 
 

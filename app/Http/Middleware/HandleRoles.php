@@ -26,10 +26,20 @@ class HandleRoles {
             if ($prefix=='') return $next($request);  //ignore redirect and authentication if they're going to public page anyways
             //this is to handle for specific blog entry views (with id)
             if ($requestedPage=='blog'&&$secondSegment!=null) return $next($request);
-            if($prefix=='admin'&& $secondSegment!=null&&$requestedPage='calendar')
+            //dd($prefix);
+            if($prefix=='admin'&& $secondSegment!=null&&$requestedPage=='calendar')
             {
+
                 $theFullUrl= $request->Url();
                 $theNewUrl = str_replace('calendar','admincalendar',$theFullUrl);
+                //dd($theFullUrl . ' ' . $theNewUrl);
+                return redirect( $theNewUrl);
+            }
+            if($prefix=='admin'&& $secondSegment!=null&&$requestedPage=='gallery')
+            {
+
+                $theFullUrl= $request->Url();
+                $theNewUrl = str_replace('gallery','admingallery',$theFullUrl);
                 //dd($theFullUrl . ' ' . $theNewUrl);
                 return redirect( $theNewUrl);
             }
@@ -113,6 +123,9 @@ class HandleRoles {
                 $valid=true;
                 break;
             case 'calendar':
+                $valid=true;
+                break;
+            case 'sponsors';
                 $valid=true;
                 break;
            default:

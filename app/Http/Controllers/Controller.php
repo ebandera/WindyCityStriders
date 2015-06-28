@@ -13,6 +13,7 @@ abstract class Controller extends BaseController {
     protected $sdh;
     function __construct()
     {
+        $this->middleware('verifyApprovedUsers');
         $this->middleware('roleHandle');
         $this->sdh= new ScreenDataHelper();
 

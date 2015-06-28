@@ -15,7 +15,7 @@ class CreateResultItemsTable extends Migration {
 		Schema::create('result_items', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->integer('event_id')->unsigned();
+			$table->integer('event_id')->unsigned()->nullable();
 			$table->integer('placement');
 			$table->string('runner');
 			$table->string('time');

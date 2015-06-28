@@ -48,17 +48,22 @@ class CalendarController extends Controller {
 
         //get the events for the current month
         $firstOfMonth = new Carbon($timeString);
+
         $firstOfMonthClone = Carbon::instance($firstOfMonth);
         $nextMonth = $firstOfMonthClone->addMonth()->subSecond();
         $calendarMonthItems = Event::whereBetween('event_date', array($firstOfMonth, $nextMonth))->orderBy('event_date')->get();
 
         //to return the events for the bottom list over the next year
         $todayDate = new Carbon();
+
+        $todayDate->setTime(0,0);
         $todayDateClone = Carbon::instance($todayDate);
         $oneYear = $todayDateClone->addYear()->subSecond();
         $eventListItems = Event::whereBetween('event_date', array($todayDate, $oneYear))->orderBy('event_date')->get();
-        //dd($eventListItems);
+
         $sdh= $this->sdh->getData();
+       //dd($calendarItem);
+
         return view('adminpages.calendar',compact('calendarItem','calendarMonthItems','eventListItems','sdh'));
     }
     public function selectEvent($id)
@@ -82,6 +87,37 @@ class CalendarController extends Controller {
         return view('pages.calendar',compact('calendarItem','calendarMonthItems','sdh'));
     }
 
+    public function editEvent($id)
+    {
+
+        $calendarItem = Event::where('event_date', '>', Carbon::now())->orderBy('event_date')->firstOrFail();
+        if(!$calendarItem){exit();}
+        $monthNumber = date_format($calendarItem->event_date,'m');
+        $yearNumber = date_format($calendarItem->event_date,'Y');
+        $timeString = $yearNumber . '-' . $monthNumber . '-01 00:00:00';
+
+        //get the events for the current month
+        $firstOfMonth = new Carbon($timeString);
+
+        $firstOfMonthClone = Carbon::instance($firstOfMonth);
+        $nextMonth = $firstOfMonthClone->addMonth()->subSecond();
+        $calendarMonthItems = Event::whereBetween('event_date', array($firstOfMonth, $nextMonth))->orderBy('event_date')->get();
+
+        //to return the events for the bottom list over the next year
+        $todayDate = new Carbon();
+
+        $todayDate->setTime(0,0);
+        $todayDateClone = Carbon::instance($todayDate);
+        $oneYear = $todayDateClone->addYear()->subSecond();
+        $eventListItems = Event::whereBetween('event_date', array($todayDate, $oneYear))->orderBy('event_date')->get();
+
+        $editingEvent = Event::find($id);
+
+
+        $sdh= $this->sdh->getData();
+        return view('adminpages.calendar',compact('calendarItem','calendarMonthItems','eventListItems','sdh','editingEvent'));
+    }
+
     public function selectEventAdmin($id)
     {
         $calendarItem = Event::find($id);
@@ -98,6 +134,7 @@ class CalendarController extends Controller {
 
         //to return the events for the bottom list over the next year
         $todayDate = new Carbon();
+        $todayDate->setTime(0,0);
         $todayDateClone = Carbon::instance($todayDate);
         $oneYear = $todayDateClone->addYear()->subSecond();
         $eventListItems = Event::whereBetween('event_date', array($todayDate, $oneYear))->orderBy('event_date')->get();
@@ -254,6 +291,7 @@ class CalendarController extends Controller {
 
         //to return the events for the bottom list over the next year
         $todayDate = new Carbon();
+        $todayDate->setTime(0,0);
         $todayDateClone = Carbon::instance($todayDate);
         $oneYear = $todayDateClone->addYear()->subSecond();
         $eventListItems = Event::whereBetween('event_date', array($todayDate, $oneYear))->orderBy('event_date')->get();

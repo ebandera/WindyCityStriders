@@ -27,6 +27,7 @@ Route::get('admingallerymain', 'GalleryController@adminmain');
 
 Route::get('gallery/{id}', 'GalleryController@index');
 Route::get('admingallery/{id}', 'GalleryController@adminindex');
+Route::post('insertGallery','GalleryController@insert');
 
 
 
@@ -50,14 +51,18 @@ Route::get('calendar','CalendarController@index');
 Route::get('calendar/{id}','CalendarController@selectEvent');
 Route::get('calendar/{direction}/{dateReference}','CalendarController@changeTime');
 Route::get('admincalendar','CalendarController@admin');
+Route::get('admincalendar/editEvent/{id}','CalendarController@editEvent');
 Route::get('admincalendar/{id}','CalendarController@selectEventAdmin');
 Route::get('admincalendar/{direction}/{dateReference}','CalendarController@changeTimeAdmin');
 Route::post('getEventsForDateRange','JsonRequestController@getEventsForDateRange');  //returns Json
 Route::post('getEventFromId','JsonRequestController@getEventFromId');               //returns Json
 Route::post('updateEvent','JsonRequestController@updateEvent');
+Route::post('updateEventData','JsonRequestController@updateEventData');
 Route::post('addEvent','JsonRequestController@addEvent');
+Route::post('deleteEvent','JsonRequestController@deleteEvent');
 
-Route::get('test',function(){return phpinfo();});
+
+//Route::get('admincalendar/editEvent/{id}',function(){return phpinfo();});
 
 Route::post('updateCarouselItem/{id}','JsonRequestController@updateCarousel');      //not Json
 Route::post('deleteCarouselItem','JsonRequestController@deleteCarousel');
@@ -77,6 +82,31 @@ Route::post('moveBlogUp','JsonRequestController@moveBlogUp');
 Route::post('promoteToHomepage','JsonRequestController@promoteToHomepage');
 Route::post('removeFromHomepage','JsonRequestController@removeFromHomepage');
 
+Route:get('results','ResultsController@index');
+Route::get('results/{id}','ResultsController@show');
+Route::post('getResultsFromEventId','JsonRequestController@getResultsFromEventId');
+Route::any('exportResultsToExcel/{id}','JsonRequestController@exportResultsToExcel');
+
+Route::post('saveGalleryCaption','JsonRequestController@saveGalleryCaption');
+Route::post('saveGalleryEdits','JsonRequestController@saveGalleryEdits');
+Route::post('deleteGalleryItem','JsonRequestController@deleteGalleryItem');
+Route::post('deleteGallery','JsonRequestController@deleteGallery');
+Route::post('updateGalleryData','JsonRequestController@updateGalleryData');
+
+Route::get('approveLogin','ApproveLoginController@index');
+Route::get('sponsors','SponsorsController@index');
+Route::get('adminsponsors','SponsorsController@admin');
+Route::post('saveSponsorEdits','JsonRequestController@saveSponsorEdits');
+Route::post('deleteSponsor','JsonRequestController@deleteSponsor');
+Route::post('updateSponsorHeading','JsonRequestController@updateSponsorHeading');
+Route::post('uploadSponsorImage','JsonRequestController@uploadSponsorImage');
+Route::post('moveSponsorUp','JsonRequestController@moveSponsorUp');
+Route::post('moveSponsorDown','JsonRequestController@moveSponsorDown');
+
+Route::post('approveUser','JsonRequestController@approveUser');
+Route::post('deleteUser','JsonRequestController@deleteUser');
+Route::get('systemSettings','SystemSettingsController@index');
+Route::post('updateSystemSettings','JsonRequestController@updateSystemSettings');
 
     //'JsonRequestController@index');
 Route::any('sendMessage',function(){

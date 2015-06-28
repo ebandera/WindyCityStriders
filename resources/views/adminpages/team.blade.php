@@ -180,4 +180,24 @@
 
         </div><!--END CONTENTWRAPPER-->
     </div> <!--END WRAPPER
+    <script>
+    $('#fileUpload3').live('change', function(){
+        var tmppath = URL.createObjectURL(event.target.files[0]);
+        $('#adminBoardImage').attr('src',tmppath);
+
+    });
+
+    $('#adminBoardYearTop').live('change', function(){
+       var id = $('#adminBoardYearTop option:selected').val();
+       // var currentUrl = window.location.href;
+       // alert(currentUrl);
+       // var nextUrl = currentUrl.replace('adminteam','');
+       // alert(nextUrl);
+
+        window.location.href = '/adminteam/' + id;
+
+
+
+    });
+    </script>
 @endsection

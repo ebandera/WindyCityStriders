@@ -20,7 +20,7 @@ class ImageTool
     }
 
 
-    function modifyToOptimalSize($optimalWidth,$optimalHeight,$r,$g,$b)
+    function modifyToOptimalSize($optimalWidth,$optimalHeight,$r,$g,$b,$position='center')
     {
         $imageInfo = getimagesize($this->_imagePath);
         $currentWidth= $imageInfo[0];
@@ -48,7 +48,22 @@ class ImageTool
             $tempHeight = $currentHeight*$multiplier;
         }
         // echo 'tempw:'.$tempWidth,'temph:'.$tempHeight,'currentw:' .$currentWidth,'currentHieght:' . $currentHeight,'multiplier:'.$multiplier;
-        $pixelL=($optimalWidth-$tempWidth)/2;
+        if($position=='center') {
+            $pixelL = ($optimalWidth - $tempWidth) / 2;
+        }
+        elseif($position=='left')
+        {
+            $pixelL = 0;
+
+        }
+        elseif($position=='right')
+        {
+            $pixelL = ($optimalWidth - $tempWidth) ;
+        }
+        else
+        {
+            $pixelL = ($optimalWidth - $tempWidth) / 2;
+        }
         $pixelT=($optimalHeight-$tempHeight)/2;
         // echo 'tempw:'.$tempWidth,'temph:'.$tempHeight,'currentw:' .$currentWidth,'currentHieght:' . $currentHeight,'multiplier:'.$multiplier,'pixelL:'.$pixelL,'pixelT:'.$pixelT;
 

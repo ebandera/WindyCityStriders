@@ -11,12 +11,7 @@ class Page extends Model {
         return $this->hasMany('App\Blog')->orderBy('sort_order','desc');
     }
 
-    public function initializeAllCommonContent()
-    {
-        $footerBlogs = Blog::all()->take(3);
-
-        return $footerBlogs;
-    }
+   //
     public function aboutContent()
     {
         return $this->hasMany('App\Blog')->where('heading','<>','newsletter');
@@ -25,6 +20,16 @@ class Page extends Model {
     {
         return $this->hasMany('App\Blog')->where('heading','=','newsletter');
     }
+    public function sponsors()
+    {
+        return $this->hasMany('App\Blog')->where('heading','<>','sponsors')->orderBy('sort_order','desc');
+    }
+    public function sponsorHeading()
+    {
+        return $this->hasOne('App\Blog')->where('heading','=','sponsors');
+    }
+
+
 
 
 }

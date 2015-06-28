@@ -4,8 +4,11 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\GalleryItem;
 use App\Gallery;
-use Illuminate\Http\Request;
-use App\Blog;
+
+use Carbon\Carbon;
+use App\Event;
+
+
 
 class GalleryController extends Controller {
 
@@ -44,10 +47,35 @@ class GalleryController extends Controller {
     {
 
 
-        $galleryItems = galleryItem::where('gallery_id',$galleryId)->get();
+        $galleryItems = GalleryItem::where('gallery_id',$galleryId)->get();
+        $gallery = Gallery::find($galleryId);
+        $begDate=null;
+        $endDate=null;
+        //if the event is alreadyselected, define strict date range for that day
+        if($gallery->event_id==null)
+        {
+
+            $endDate = new Carbon();
+
+            $endDate->setTime(0,0);
+            $endDateClone = Carbon::instance($endDate);
+            $begDate = $endDateClone->subYear();
+
+        }
+        else
+        {
+            $begDate= new Carbon($gallery->event->event_date);
+            $endDate= new Carbon($gallery->event->event_date);
+            $endDate->setTime(23,59);
+
+
+        }
+
+        $eventList = Event::whereBetween('event_date', array($begDate, $endDate))->orderBy('event_date')->get();
+
 
         $sdh= $this->sdh->getData();
-        return view('pages.gallery',compact('galleryItems','sdh'));
+        return view('adminpages.gallery',compact('galleryItems','sdh','gallery','begDate','endDate','eventList'));
         //
 
     }
@@ -58,9 +86,35 @@ class GalleryController extends Controller {
         //$galleryItems = galleryItem::all();
         $galleries = gallery::all();
         $sdh= $this->sdh->getData();
-        return view('pages.gallerymain',compact('galleries','sdh'));
+        return view('adminpages.gallerymain',compact('galleries','sdh'));
         //
 
+    }
+    public function insert()
+    {
+        $gallery = new gallery();
+        $gallery->event_id=null;
+        $gallery->title='default';
+        $gallery->image_url='/img/galleryTEMPimage.jpg';
+        $gallery->sort_order=0;
+        $gallery->save();
+
+
+      return 'true';
+    }
+
+    public function saveGalleryCaption()
+    {
+        dd(Request);
+        $input= Request::all();
+        $id = $input['id'];
+        $caption=$input['caption'];
+        $gallery=Gallery::find($id);
+        $gallery->caption=$caption;
+        $gallery->save();
+        return 'true';
+
+        //dd($submitButton);
     }
 
 }

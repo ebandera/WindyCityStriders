@@ -22,6 +22,7 @@ class CreateEventsTable extends Migration {
 			$table->string('event_address');
 			$table->string('event_details');
 			$table->string('event_info_path');
+            $table->string('event_url_path');
 			$table->string('event_results_path');
 			$table->timestamps();
 		});

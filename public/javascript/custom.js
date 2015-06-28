@@ -23,12 +23,12 @@ function is_touch_device() {
  * CHANGELOG: http://users.tpg.com.au/j_birch/plugins/superfish/changelog.txt
  */
 
-(function($){$.fn.superfish=function(op){var sf=$.fn.superfish,c=sf.c,$arrow=$(['<span class="',c.arrowClass,'"> &#187;</span>'].join("")),over=function(){var $$=$(this),menu=getMenu($$);clearTimeout(menu.sfTimer);$$.showSuperfishUl().siblings().hideSuperfishUl();},out=function(){var $$=$(this),menu=getMenu($$),o=sf.op;clearTimeout(menu.sfTimer);menu.sfTimer=setTimeout(function(){o.retainPath=($.inArray($$[0],o.$path)>-1);$$.hideSuperfishUl();if(o.$path.length&&$$.parents(["li.",o.hoverClass].join("")).length<1){over.call(o.$path);}},o.delay);},getMenu=function($menu){var menu=$menu.parents(["ul.",c.menuClass,":first"].join(""))[0];sf.op=sf.o[menu.serial];return menu;},addArrow=function($a){$a.addClass(c.anchorClass).append($arrow.clone());};return this.each(function(){var s=this.serial=sf.o.length;var o=$.extend({},sf.defaults,op);o.$path=$("li."+o.pathClass,this).slice(0,o.pathLevels).each(function(){$(this).addClass([o.hoverClass,c.bcClass].join(" ")).filter("li:has(ul)").removeClass(o.pathClass);});sf.o[s]=sf.op=o;$("li:has(ul)",this)[($.fn.hoverIntent&&!o.disableHI)?"hoverIntent":"hover"](over,out).each(function(){if(o.autoArrows){addArrow($(">a:first-child",this));}}).not("."+c.bcClass).hideSuperfishUl();var $a=$("a",this);$a.each(function(i){var $li=$a.eq(i).parents("li");$a.eq(i).focus(function(){over.call($li);}).blur(function(){out.call($li);});});o.onInit.call(this);}).each(function(){var menuClasses=[c.menuClass];if(sf.op.dropShadows&&!($.browser.msie&&$.browser.version<7)){menuClasses.push(c.shadowClass);}$(this).addClass(menuClasses.join(" "));});};var sf=$.fn.superfish;sf.o=[];sf.op={};sf.IE7fix=function(){var o=sf.op;if($.browser.msie&&$.browser.version>6&&o.dropShadows&&o.animation.opacity!=undefined){this.toggleClass(sf.c.shadowClass+"-off");}};sf.c={bcClass:"sf-breadcrumb",menuClass:"sf-js-enabled",anchorClass:"sf-with-ul",arrowClass:"sf-sub-indicator",shadowClass:"sf-shadow"};sf.defaults={hoverClass:"sfHover",pathClass:"overideThisToUse",pathLevels:1,delay:800,animation:{opacity:"show"},speed:"normal",autoArrows:true,dropShadows:true,disableHI:false,onInit:function(){},onBeforeShow:function(){},onShow:function(){},onHide:function(){}};$.fn.extend({hideSuperfishUl:function(){var o=sf.op,not=(o.retainPath===true)?o.$path:"";o.retainPath=false;var $ul=$(["li.",o.hoverClass].join(""),this).add(this).not(not).removeClass(o.hoverClass).find(">ul").hide().css("visibility","hidden");o.onHide.call($ul);return this;},showSuperfishUl:function(){var o=sf.op,sh=sf.c.shadowClass+"-off",$ul=this.addClass(o.hoverClass).find(">ul:hidden").css("visibility","visible");sf.IE7fix.call($ul);o.onBeforeShow.call($ul);$ul.animate(o.animation,o.speed,function(){sf.IE7fix.call($ul);o.onShow.call($ul);});return this;}});})(jQuery);
+//(function($){$.fn.superfish=function(op){var sf=$.fn.superfish,c=sf.c,$arrow=$(['<span class="',c.arrowClass,'"> &#187;</span>'].join("")),over=function(){var $$=$(this),menu=getMenu($$);clearTimeout(menu.sfTimer);$$.showSuperfishUl().siblings().hideSuperfishUl();},out=function(){var $$=$(this),menu=getMenu($$),o=sf.op;clearTimeout(menu.sfTimer);menu.sfTimer=setTimeout(function(){o.retainPath=($.inArray($$[0],o.$path)>-1);$$.hideSuperfishUl();if(o.$path.length&&$$.parents(["li.",o.hoverClass].join("")).length<1){over.call(o.$path);}},o.delay);},getMenu=function($menu){var menu=$menu.parents(["ul.",c.menuClass,":first"].join(""))[0];sf.op=sf.o[menu.serial];return menu;},addArrow=function($a){$a.addClass(c.anchorClass).append($arrow.clone());};return this.each(function(){var s=this.serial=sf.o.length;var o=$.extend({},sf.defaults,op);o.$path=$("li."+o.pathClass,this).slice(0,o.pathLevels).each(function(){$(this).addClass([o.hoverClass,c.bcClass].join(" ")).filter("li:has(ul)").removeClass(o.pathClass);});sf.o[s]=sf.op=o;$("li:has(ul)",this)[($.fn.hoverIntent&&!o.disableHI)?"hoverIntent":"hover"](over,out).each(function(){if(o.autoArrows){addArrow($(">a:first-child",this));}}).not("."+c.bcClass).hideSuperfishUl();var $a=$("a",this);$a.each(function(i){var $li=$a.eq(i).parents("li");$a.eq(i).focus(function(){over.call($li);}).blur(function(){out.call($li);});});o.onInit.call(this);}).each(function(){var menuClasses=[c.menuClass];if(sf.op.dropShadows&&!($.browser.msie&&$.browser.version<7)){menuClasses.push(c.shadowClass);}$(this).addClass(menuClasses.join(" "));});};var sf=$.fn.superfish;sf.o=[];sf.op={};sf.IE7fix=function(){var o=sf.op;if($.browser.msie&&$.browser.version>6&&o.dropShadows&&o.animation.opacity!=undefined){this.toggleClass(sf.c.shadowClass+"-off");}};sf.c={bcClass:"sf-breadcrumb",menuClass:"sf-js-enabled",anchorClass:"sf-with-ul",arrowClass:"sf-sub-indicator",shadowClass:"sf-shadow"};sf.defaults={hoverClass:"sfHover",pathClass:"overideThisToUse",pathLevels:1,delay:800,animation:{opacity:"show"},speed:"normal",autoArrows:true,dropShadows:true,disableHI:false,onInit:function(){},onBeforeShow:function(){},onShow:function(){},onHide:function(){}};$.fn.extend({hideSuperfishUl:function(){var o=sf.op,not=(o.retainPath===true)?o.$path:"";o.retainPath=false;var $ul=$(["li.",o.hoverClass].join(""),this).add(this).not(not).removeClass(o.hoverClass).find(">ul").hide().css("visibility","hidden");o.onHide.call($ul);return this;},showSuperfishUl:function(){var o=sf.op,sh=sf.c.shadowClass+"-off",$ul=this.addClass(o.hoverClass).find(">ul:hidden").css("visibility","visible");sf.IE7fix.call($ul);o.onBeforeShow.call($ul);$ul.animate(o.animation,o.speed,function(){sf.IE7fix.call($ul);o.onShow.call($ul);});return this;}});})(jQuery);
 
 /*--------------------------------------------------
  ADDITIONAL CODE FOR DROPDOWN MENU
  ---------------------------------------------------*/
-jQuery(document).ready(function($) {
+/*jQuery(document).ready(function($) {
     $('ul.menu').superfish({
         delay:       200,                            // one second delay on mouseout
         animation:   {opacity:'show',height:'show'},  // fade-in and slide-down animation
@@ -36,7 +36,7 @@ jQuery(document).ready(function($) {
         autoArrows:  false                           // disable generation of arrow mark-up
     });
 });
-
+*/
 
 /***************************************************
  PORTFOLIO ITEM IMAGE HOVER
@@ -219,28 +219,13 @@ $(document).ready(function($) {
 
     });
 
-    $('#fileUpload2').live('change', function(){
-        var tmppath = URL.createObjectURL(event.target.files[0]);
-        $('#adminBlogImageId').attr('src',tmppath);
-
-    });
-    $('#fileUpload3').live('change', function(){
-        var tmppath = URL.createObjectURL(event.target.files[0]);
-        $('#adminBoardImage').attr('src',tmppath);
-
-    });
-    $('#adminBoardYearTop').live('change', function(){
-       var id = $('#adminBoardYearTop option:selected').val();
-       // var currentUrl = window.location.href;
-       // alert(currentUrl);
-       // var nextUrl = currentUrl.replace('adminteam','');
-       // alert(nextUrl);
-
-        window.location.href = '/adminteam/' + id;
 
 
 
-    });
+
+
+
+
 
 
     $.ajaxSetup({
@@ -726,7 +711,7 @@ function searchEventsByDateRange()
     var valTo = $('#to').val();
     //alert(valFrom);
    // alert(valTo);
-    var url = "../getEventsForDateRange" ;
+    var url = window.location.origin + "/getEventsForDateRange" ;
 
     var csrfToken = $('meta[name="csrf-token"]').attr('content');
 
@@ -754,15 +739,55 @@ function searchEventsByDateRange()
         }
     });
 }
-
-function EditEvent()
+function searchEventsByDateRangeForGallery()
 {
+    var valFrom = $('#fromGallery').val();
+    var valTo = $('#toGallery').val();
+    var url = window.location.origin + "/getEventsForDateRange" ;
+
+    var csrfToken = $('meta[name="csrf-token"]').attr('content');
+
+    $.ajax({
+        type: "POST",
+        url: url,
+        data: {from:valFrom,to:valTo,_token: csrfToken},
+        success: function (data) {
+            // alert(data);
+            $('#adminEventDropdown').children().remove().end();
+            var events = jQuery.parseJSON(data);
+            $('#adminEventDropdown').append('<option value="none">No Event</option>');
+            $.each(events,function(){
+
+                $('#adminEventDropdown').append('<option value="' + this.id +'">' + this.event_date.mysqlDateStringToFormattedString() + ' - ' + this.event_name + '</option>');
+            });
+
+
+
+
+        },
+        error: function(xhr, status, error){
+
+            alert('error');
+            alert(xhr.responseText);
+        }
+    });
+}
+
+function EditEvent(id) {
     //get ID
-    var id = $('#adminEventListbox option:selected').val();
+    var id;
+    if (typeof(id) == 'undefined')
+    {
+        id = $('#adminEventListbox option:selected').val();
+    }
+
+
+
     //as long as an item is picked
     if (typeof(id)!='undefined')
     {
-        var url = "../getEventFromId" ;
+        var url = window.location.origin + "/getEventFromId" ;
+
         var csrfToken = $('meta[name="csrf-token"]').attr('content');
         //alert(url);
         $.ajax({
@@ -781,6 +806,7 @@ function EditEvent()
                 $('#eventDescription').val(event.event_details);
                 $('#eventAddress').val(event.event_address);
                // $('#eventName').val(event.event_name);
+                $('#eventWebUrl').val(event.event_url_path);
                 $('#eventId').val(event.id);
                 $('#adminEventImage').attr('src',event.event_img_url);
                 if(event.event_info_path!='')
@@ -822,6 +848,49 @@ function EditEvent()
 
 
 }
+function DeleteEvent()
+{
+    //get ID
+    var id = $('#adminEventListbox option:selected').val();
+    //as long as an item is picked
+    if (typeof(id)!='undefined')
+    {
+        var url = window.location.origin + "/deleteEvent" ;
+        var csrfToken = $('meta[name="csrf-token"]').attr('content');
+        //alert(url);
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: {id:id,_token: csrfToken},
+            success: function (data) {
+                if(data!=='false') {
+                    window.location.reload();
+
+
+                }
+                else
+                {
+                    alert('Data could not be saved');
+                }
+
+
+
+
+
+            },
+            error: function(xhr, status, error){
+
+                alert('error');
+                alert(xhr.responseText);
+            }
+        });
+    }
+    else
+    {
+        alert('Please select an Event!');
+    }
+
+}
 
 function SaveEvent()
 {
@@ -831,16 +900,17 @@ function SaveEvent()
     var eventWhere = $('#eventWhere').val();
     var eventDescription = $('#eventDescription').val();
     var eventAddress = $('#eventAddress').val();
+    var eventWebUrl = $('#eventWebUrl').val();
     alert(id);
     alert('hello');
-    var url = "../updateEvent" ;
+    var url = window.location.origin + "/updateEvent" ;
 
     var csrfToken = $('meta[name="csrf-token"]').attr('content');
 
     $.ajax({
         type: "POST",
         url: url,
-        data: {id:id,eventName:eventName,eventDate:eventDate,eventWhere:eventWhere,eventDescription:eventDescription,eventAddress:eventAddress,_token: csrfToken},
+        data: {id:id,eventName:eventName,eventDate:eventDate,eventWhere:eventWhere,eventDescription:eventDescription,eventAddress:eventAddress,eventWebUrl:eventWebUrl,_token: csrfToken},
         success: function (data) {
             if(data!=='false') {
                 window.location.reload();
@@ -866,10 +936,172 @@ function SaveEvent()
     });
 
 }
+
+function SaveGalleryCaption()
+{
+    var id =  $('#adminGalleryListbox option:selected').val();
+    var caption = $('#galleryCaption').val();
+
+    var url = window.location.origin + "/saveGalleryCaption" ;
+
+    var csrfToken = $('meta[name="csrf-token"]').attr('content');
+
+    $.ajax({
+        type: "POST",
+        url: url,
+        data: {id:id,caption:caption,_token: csrfToken},
+        success: function (data) {
+            if(data!=='false') {
+                window.location.reload();
+
+
+            }
+            else
+            {
+                alert('Data could not be saved');
+            }
+
+
+
+
+
+
+        },
+        error: function(xhr, status, error){
+
+            alert('error');
+            alert(xhr.responseText);
+        }
+    });
+}
+
+function SaveGalleryEdits()
+{
+    var id = $('#galleryId').val();
+    var title = $('#galleryTitle').val();
+    var event_id =  $('#adminEventDropdown option:selected').val();
+
+    var url = window.location.origin + "/saveGalleryEdits" ;
+
+    var csrfToken = $('meta[name="csrf-token"]').attr('content');
+
+    $.ajax({
+        type: "POST",
+        url: url,
+        data: {id:id,title:title,event_id:event_id,_token: csrfToken},
+        success: function (data) {
+            if(data!=='false') {
+                window.location.reload();
+
+
+            }
+            else
+            {
+                alert('Data could not be saved');
+            }
+
+
+
+
+
+
+        },
+        error: function(xhr, status, error){
+
+            alert('error');
+            alert(xhr.responseText);
+        }
+    });
+}
+
+function DeleteGalleryItem()
+{
+    var id =  $('#adminGalleryListbox option:selected').val();
+
+    if(typeof(id) !='undefined')
+    {
+
+        var url = window.location.origin + "/deleteGalleryItem" ;
+
+        var csrfToken = $('meta[name="csrf-token"]').attr('content');
+
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: {id:id,_token: csrfToken},
+            success: function (data) {
+                if(data!=='false') {
+                    window.location.reload();
+
+
+                }
+                else
+                {
+                    alert('Data could not be saved');
+                }
+
+
+
+
+
+
+            },
+            error: function(xhr, status, error){
+
+                alert('error');
+                alert(xhr.responseText);
+            }
+        });
+    }
+    else
+    {
+        alert('Please select an item to delete!');
+    }
+
+}
+
+function DeleteGallery()
+{
+    var id =  $('#galleryId').val();
+
+
+    var url = window.location.origin + "/deleteGallery" ;
+
+    var csrfToken = $('meta[name="csrf-token"]').attr('content');
+
+    $.ajax({
+        type: "POST",
+        url: url,
+        data: {id:id,_token: csrfToken},
+        success: function (data) {
+            if(data!=='Items Remaining') {
+                //alert(data);
+                window.location.assign('/gallerymain');
+
+
+            }
+            else
+            {
+                alert('All Galery Items must be deleted before you can delete the gallery.');
+            }
+
+
+
+
+
+
+        },
+        error: function(xhr, status, error){
+
+            alert('error');
+            alert(xhr.responseText);
+        }
+    });
+}
 function AddEvent()
 {
 
-    var url = "../addEvent" ;
+    var url = window.location.origin + "/addEvent" ;
 
     var csrfToken = $('meta[name="csrf-token"]').attr('content');
 
@@ -922,6 +1154,337 @@ function AddEvent()
 
         },
         error: function(xhr, status, error){
+
+            alert('error');
+            alert(xhr.responseText);
+        }
+    });
+
+}
+
+function GetResultsFromEventId(eventId)
+{
+    var url = window.location.origin + "/getResultsFromEventId" ;
+
+    var csrfToken = $('meta[name="csrf-token"]').attr('content');
+
+    $.ajax({
+        type: "POST",
+        url: url,
+        data: {eventId:eventId,_token: csrfToken},
+        success: function (data) {
+            if(data!=='false') {
+                //$('#adminResultEventListbox').children().remove().end();
+                $('#resultsTable').empty();
+                var results = jQuery.parseJSON(data);
+                $('#resultsTable').append('<thead><tr><th>Placement</th><th>Runner</th><th>Time</th><th>Pace</th></tr></thead><tfoot><tr><td colspan="4"><div id="paging"><ul><li><a href="exportResultsToExcel/' + eventId + '"><span>Export To Excel</span></a></li></ul></div></tr></tfoot><tbody>');
+
+
+                $.each(results,function(i,item){
+
+                    var alt="";
+                    if(i%2==1){alt=' class = "alt" ';}
+                    var $tr = $('<tr' + alt + '>').append(
+                        $('<td>').text(item.placement),
+                        $('<td>').text(item.runner),
+                        $('<td>').text(item.time),
+                        $('<td>').text(item.pace)
+                    ).appendTo($('#resultsTable'));
+                   // $('#resultsTable').append
+                });
+                $('#resultsTable').append('</tbody>');
+            }
+            else
+            {
+                alert('Data could not be saved');
+            }
+        },
+        error: function(xhr, status, error){
+
+            alert('error');
+            alert(xhr.responseText);
+        }
+    });
+
+}
+function AddGallery()
+{
+    var url = window.location.origin + "/insertGallery" ;
+
+    var csrfToken = $('meta[name="csrf-token"]').attr('content');
+
+    $.ajax({
+        type: "POST",
+        url: url,
+        data: {_token: csrfToken},
+        success: function (data) {
+            if(data!=='false') {
+               window.location.reload();
+            }
+            else
+            {
+                alert('Data could not be saved');
+            }
+        },
+        error: function(xhr, status, error){
+
+            alert('error');
+            alert(xhr.responseText);
+        }
+    });
+}
+function ApproveUser(id)
+{
+
+    var url = window.location.origin + "/approveUser" ;
+    var radGroupName = 'type' +id;
+   // alert(radGroupName);
+    var user_profile = $("input[type='radio'][name=" + radGroupName + "]:checked").val();
+    //alert(type);
+    var csrfToken = $('meta[name="csrf-token"]').attr('content');
+
+    $.ajax({
+        type: "POST",
+        url: url,
+        data: {id:id,user_profile:user_profile,_token: csrfToken},
+        success: function (data) {
+            if(data!=='false') {
+                window.location.reload();
+            }
+            else
+            {
+                alert('Data could not be saved');
+            }
+        },
+        error: function(xhr, status, error){
+
+            alert('error');
+            alert(xhr.responseText);
+        }
+    });
+}
+function EraseUser(id)
+{
+
+    var url = window.location.origin + "/deleteUser" ;
+
+    var csrfToken = $('meta[name="csrf-token"]').attr('content');
+
+    $.ajax({
+        type: "POST",
+        url: url,
+        data: {id:id,_token: csrfToken},
+        success: function (data) {
+            if(data!=='false') {
+                window.location.reload();
+            }
+            else
+            {
+                alert('Data could not be saved');
+            }
+        },
+        error: function(xhr, status, error){
+
+            alert('error');
+            alert(xhr.responseText);
+        }
+    });
+}
+
+function SaveSponsorEdits()
+{
+
+
+    var url = window.location.origin + "/saveSponsorEdits" ;
+    var id =  $('#adminSponsorsListbox option:selected').val();
+    if(typeof(id) !='undefined') {
+        var heading = $('#sponsorName').val();
+        var html_text = $('#sponsorLink').val();
+        var csrfToken = $('meta[name="csrf-token"]').attr('content');
+
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: {id: id, heading: heading, html_text: html_text, _token: csrfToken},
+            success: function (data) {
+                if (data !== 'false') {
+                    window.location.reload();
+                }
+                else {
+                    alert('Data could not be saved');
+                }
+            },
+            error: function (xhr, status, error) {
+
+                alert('error');
+                alert(xhr.responseText);
+            }
+        });
+    }
+    else
+    {
+        alert('Please select an item to update!');
+    }
+}
+function DeleteSponsor()
+{
+    var url = window.location.origin + "/deleteSponsor" ;
+    var id =  $('#adminSponsorsListbox option:selected').val();
+    if(typeof(id) !='undefined') {
+        var csrfToken = $('meta[name="csrf-token"]').attr('content');
+
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: {id: id, _token: csrfToken},
+            success: function (data) {
+                if (data !== 'false') {
+                    window.location.reload();
+                }
+                else {
+                    alert('Data could not be saved');
+                }
+            },
+            error: function (xhr, status, error) {
+
+                alert('error');
+                alert(xhr.responseText);
+            }
+        });
+    }
+    else
+    {
+        alert('Please select an item to delete!');
+    }
+
+}
+function UpdateSponsorHeading()
+{
+    var url = window.location.origin + "/updateSponsorHeading" ;
+    var heading = $('#adminSponsorHeadingEntry').val();
+
+    var csrfToken = $('meta[name="csrf-token"]').attr('content');
+
+    $.ajax({
+        type: "POST",
+        url: url,
+        data: {heading: heading, _token: csrfToken},
+        success: function (data) {
+            if (data !== 'false') {
+                alert(data);
+                window.location.reload();
+            }
+            else {
+                alert('Data could not be saved');
+            }
+        },
+        error: function (xhr, status, error) {
+
+            alert('error');
+            alert(xhr.responseText);
+        }
+    });
+
+}
+function MoveSponsorUp()
+{
+
+    var id =  $('#adminSponsorsListbox option:selected').val();
+    var url = window.location.origin + "/moveSponsorUp" ;
+    if(typeof(id) !='undefined') {
+        var csrfToken = $('meta[name="csrf-token"]').attr('content');
+
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: {id: id, _token: csrfToken},
+            success: function (data) {
+                if (data !== 'false') {
+                    window.location.reload();
+                }
+                else {
+                    alert('Data could not be saved');
+                }
+            },
+            error: function (xhr, status, error) {
+
+                alert('error');
+                alert(xhr.responseText);
+            }
+        });
+    }
+    else
+    {
+        alert('Please select an item to move!');
+    }
+}
+
+function MoveSponsorDown()
+{
+    {
+
+        var id =  $('#adminSponsorsListbox option:selected').val();
+        var url = window.location.origin + "/moveSponsorDown" ;
+        if(typeof(id) !='undefined') {
+            var csrfToken = $('meta[name="csrf-token"]').attr('content');
+
+            $.ajax({
+                type: "POST",
+                url: url,
+                data: {id: id, _token: csrfToken},
+                success: function (data) {
+                    if (data !== 'false') {
+                        window.location.reload();
+                    }
+                    else {
+                        alert('Data could not be saved');
+                    }
+                },
+                error: function (xhr, status, error) {
+
+                    alert('error');
+                    alert(xhr.responseText);
+                }
+            });
+        }
+        else
+        {
+            alert('Please select an item to move!');
+        }
+    }
+}
+function SaveSystemSettings()
+{
+    var collectionOfItems = new Array();
+    var index = 0;
+    $("form#systemSettingsForm :input[type=text]").each(function(){
+        var item= new Array();
+        item[0]=$(this).attr('id');
+        item[1]=$(this).val();
+        collectionOfItems[index]=item;
+       index +=1;
+    });
+    var settings = JSON.stringify(collectionOfItems, null);
+    //alert(json_text);
+
+    var url = window.location.origin + "/updateSystemSettings" ;
+
+    var csrfToken = $('meta[name="csrf-token"]').attr('content');
+
+    $.ajax({
+        type: "POST",
+        url: url,
+        data: {settings: settings, _token: csrfToken},
+        success: function (data) {
+            if (data !== 'false') {
+
+                window.location.reload();
+            }
+            else {
+                alert('Data could not be saved');
+            }
+        },
+        error: function (xhr, status, error) {
 
             alert('error');
             alert(xhr.responseText);

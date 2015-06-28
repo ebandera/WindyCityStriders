@@ -179,11 +179,13 @@
                 </ul>
                 <ul class="grid one-third services">
                     <li>
+                        <a href="/results">
                         <div>
                             <h2>Results</h2>
                             <img src="img/results.jpeg" alt="" />
                             <p>This will be the results link with image</p>
                         </div>
+                        </a>
                     </li>
                 </ul>
                 <ul class="grid one-third services">

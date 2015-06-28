@@ -20,7 +20,7 @@
                     <div class="content-wrapper clear">
                         <div class="two-third">
 
-                            <div class="adminBlogImage">
+                            <div class="adminBloagImage">
                                 <img id="adminBlogImageId" src="" />
                             </div>
 
@@ -138,5 +138,13 @@
                         <!-- END BLOG -->
 
                 </div><!--END WRAPPER-->
+    <script>
+        $('#fileUpload2').change(function(){
+            alert('hello');
+         var tmppath = URL.createObjectURL(event.target.files[0]);
+          $('#adminBlogImageId').attr('src',tmppath);
+
+        });
+    </script>
 
 @endsection

@@ -20,22 +20,29 @@
     <link rel="stylesheet" type="text/css" href="/css/gallery.css" media="screen" />
 
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> <!-- 33 KB -->
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 
-	<!-- Fonts -->
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
-	<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
-	<script type="text/javascript" src="/javascript/custom.js"></script>
+    <script type="text/javascript" src="/javascript/google_map_plugin.js"></script>
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+
+
+
+
 	<script type="text/javascript" src="/javascript/header.js"></script>
 	<script type="text/javascript" src="/javascript/jquery.flexslider.js"></script>
-	<script type="text/javascript" src="/javascript/google_map_plugin.js"></script>
-    <script type="text/javascript" src="/javascript/gallery.js"></script>
+
+
     <script type="text/javascript" src="/javascript/jquery.easing.1.3.js"></script>
-    <!-- the jScrollPane script -->
+    <!-- the jScrollPane script-->
     <script type="text/javascript" src="/javascript/jquery.mousewheel.js"></script>
     <script type="text/javascript" src="/javascript/jquery.contentcarousel.js"></script>
 
-    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+   <script type="text/javascript" src="/javascript/custom.js"></script>
+
+
+
+
 
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -69,16 +76,22 @@
 						<li><a href="/join">Join Us</a></li>
 					</ul>
 				</li>
-				<li><a href="/gallerymain">Gallery</a>
+                <li><a href="#" class="">Content</a>
+                    <ul>
+                        <li><a href="/gallerymain">Gallery</a>
+                        <li><a href="/calendar">Calendar</a>
+                        <li><a href="/results">Results</a>
+                        <li><a href="/sponsors">Sponsors</a>
+                    </ul>
+
 
 				</li>
 				<li><a href="/blog">Blog</a>
 					<ul>
-						<li><a href="#">Marlene's Blog</a></li>
-						<li><a href="#">Adam's Blog</a></li>
-						<li><a href="#">Allisons Blog</a></li>
-						<li><a href="#">Cindy's Blog</a></li>
-						<li><a href="#">Joann's Blog</a></li>
+                        @foreach($sdh->footerBlogs as $footerBlog)
+                            <li><a href="/blog/{{$footerBlog->id}}">{{$footerBlog->heading}}</a>	</li>
+                        @endforeach
+
 					</ul>
 				</li>
 				<li><a href="/contact">Contact</a>
@@ -87,7 +100,12 @@
                 <li><a href="#">{{$sdh->theUser->name}}</a>
                     <ul>
                         <li><a href="/auth/logout">Logout</a></li>
-                        <li><a href="/auth/logout">Update Profile</a></li>
+                        @if($sdh->theUser->user_profile=='admin')
+                            <li><a href="/approveLogin">Manage Requests</a></li>
+                            <li><a href="/systemSettings">System Settings</a></li>
+                        @endif
+
+
                     </ul>
                 </li>
                 @else
@@ -112,9 +130,7 @@
 <!--START FOOTER -->
 
 <div id="footer">
-    <script type="text/javascript">
-        $('#ca-container').contentcarousel();
-    </script>
+
 	<div id="footer-content">
 
 		<div id="footer-top" class="clear">
@@ -139,7 +155,7 @@
 
 				<ul>
 					@foreach($sdh->footerBlogs as $footerBlog)
-						<li><a href="/blogs">{{$footerBlog->heading}}</a>	</li>
+						<li><a href="/blog/{{$footerBlog->id}}">{{$footerBlog->heading}}</a>	</li>
 					@endforeach
 				</ul><!--END UL-->
 			</div><!--END ONE-FOURTH-->

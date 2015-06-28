@@ -2,6 +2,8 @@
 
 @section('content')
 
+
+
     <div class="content-wrapper clear">
 
         <div class="section-title">
@@ -37,12 +39,31 @@
 
                 <p>{{ $calendarItem->event_details }}</p>
                 <P>{{ $calendarItem->event_address }}</P>
-                <P><a href="/gallery">See Pictures of This Event</a></P>
-                <P><a href="{{ $calendarItem->event_info_path }}">Link for more details</a></P>
-                <P><a href="{{ $calendarItem->event_results_path }}">Results</a></P>
+                <div id="bra-map" class="google-map"></div><br />
+                <script>
+                    $(document).ready(function() {
+                        $('#bra-map').bra_google_map({location: '{{$calendarItem->event_address}}', zoom: 12});
+                    });
+
+                </script>
+
             </div>
             <div class="event-img span4">
                 <img src="{{ $calendarItem->event_img_url }}" alt="race"/>
+                <hr>
+
+                @if($calendarItem->gallery)
+
+                <P><a href="/gallery/{{$calendarItem->gallery->id}}">Event Picture Gallery</a></P>
+                @endif
+                @if($calendarItem->event_info_path!='')
+                    <P><a target="_blank" href="{{ $calendarItem->event_info_path }}">Event Flyer</a></P>
+                @endif
+                @if($calendarItem->event_url_path!='')
+                    <P><a target="_blank" href="{{ $calendarItem->event_url_path }}">Website for more details</a></P>
+                @endif
+
+                <P><a href="{{ $calendarItem->event_results_path }}">Results</a></P>
             </div>
             <div class="event-details2 span11">
                 <p>Secondary details</p>
@@ -50,6 +71,7 @@
         </div> <!--END EVENT-BAR-->
     </div> <!--END CONTAINER BOOTSTRAP-->
     <br><br><br>
+    <form id="eventUploadForm" method="POST" ENCTYPE="multipart/form-data" action="/updateEventData">
     <div class="myareacontainer" >
 
         <div class="content-wrapper clear">
@@ -69,122 +91,134 @@
 
             </div>
             <div class="one-half last adminHomeCarouselControls">
-                <form id="carouselUploadForm" method="POST" ENCTYPE="multipart/form-data" action="../uploadCarouselItem">
+
 
                     <h5>Filter By Date</h5>
                     <div id="datepickerContainer">
                         <label for="from">From</label>
-                        <input type="text" id="from" name="from">
+                        <input type="text" id="from" name="from" >
                         <label for="to">To</label>
                         <input type="text" id="to" name="to">
+
                     </div>
                     <input type="button" class="adminMyButton2"  value="Search" onclick="searchEventsByDateRange()" />
                     <hr>
 
 
-                    <input type="button" class="adminMyButton2"  value="Delete"  />
+                    <input type="button" class="adminMyButton2"  value="Delete" onclick="DeleteEvent()" />
                     <input type="button" class="adminMyButton2"  onclick="EditEvent()" value="Edit"  />
 
-                    <input type="hidden" name="_token" value = "{{ csrf_token() }}" />
-                </form>
+
+
             </div>
         </div>
     </div>
 
     <div class="myareacontainer" >
         <div class="content-wrapper clear">
-            <h3>Event Details</h3>
-            <div class="one-half">
-                <div class="one-third last" >
-                    Name
-                </div>
-                <div class="two-third last" >
 
-                    <input id="eventName" type = "text" />
-                </div>
-                <div class="one-third last" >
-                    Date
-                </div>
-                <div class="two-third last" >
-
-                    <input id="eventDate" type = "text" />
-                </div>
-                <div class="one-third last" >
-                   Where
-                </div>
-                <div class="two-third last" >
-
-                    <textarea id="eventWhere" rows="3" class="mycarouseladmincaption"></textarea>
-                </div>
-                <div class="one-third last" >
-                    Description
-                </div>
-                <div class="two-third last" >
-
-                    <textarea id="eventDescription" rows="3" class="mycarouseladmincaption"></textarea>
-                </div>
-                <div class="one-third last" >
-                    Address <br>(for google maps)
-                </div>
-                <div class="two-third last" >
-
-                    <textarea id="eventAddress"rows="1" class="mycarouseladmincaption"></textarea>
-                </div>
-                <div class="one-third last" >
-                    Information Doc (flyer)<br>
-                    Already Posted: <input type="checkbox" id="eventInfoDoc" disabled />
-                </div>
-                <div class="two-third last" >
-
-                    <input type="file" id='fileUpload1' name="fileUpload1" class="adminFile"/>
-                    <input type="submit" class="adminMyButton2"  value="upload File"  />
-                </div>
-                <div class="one-third last" >
-                    Results Upload<br>
-                    Already Posted: <input type="checkbox" id="eventResults" disabled />
-                </div>
-                <div class="two-third last" >
-                    <input type = "hidden" id="eventId" value="" />
-                    <input type="file" id='fileUpload1' name="fileUpload1" class="adminFile"/>
-                    <input type="submit" class="adminMyButton2"  value="upload File"  />
-                </div>
-
-
-
-
-
-
-            </div>
-            <div class="one-half last adminHomeCarouselControls">
-                <form id="carouselUploadForm" method="POST" ENCTYPE="multipart/form-data" action="../uploadCarouselItem">
-
-                    <div class="adminHomeCarouselImage">
-                        <img id="adminEventImage" src="/img/slideshow.png" />
+                <h3>Event Details</h3>
+                <div class="one-half">
+                    <div class="one-third last" >
+                        Name
                     </div>
-                    <hr>
-                    <h3>Event Image</h3>
-                    <input type="file" id='fileUpload1' name="fileUpload1" class="adminFile"/>
-                    <input type="submit" class="adminMyButton2"  value="upload File"  />
-                    <input type="hidden" name="_token" value = "{{ csrf_token() }}" />
-                    <hr>
-                    <input type="button" class="adminMyButton2"  onclick="AddEvent()" value="Add New"  />
-                    <input type="button" class="adminMyButton2"  onclick="SaveEvent()" value="Save Edits"  />
+                    <div class="two-third last" >
 
-                </form>
-            </div>
+                        <input id="eventName" name="eventName" type = "text" />
+                    </div>
+                    <div class="one-third last" >
+                        Date
+                    </div>
+                    <div class="two-third last" >
+
+                        <input id="eventDate" name="eventDate" type = "text" />
+                    </div>
+                    <div class="one-third last" >
+                       Where
+                    </div>
+                    <div class="two-third last" >
+
+                        <textarea id="eventWhere" name="eventWhere" rows="3" class="mycarouseladmincaption"></textarea>
+                    </div>
+                    <div class="one-third last" >
+                        Description
+                    </div>
+                    <div class="two-third last" >
+
+                        <textarea id="eventDescription" name="eventDescription" rows="3" class="mycarouseladmincaption"></textarea>
+                    </div>
+                    <div class="one-third last" >
+                        Address <br>(for google maps)
+                    </div>
+                    <div class="two-third last" >
+
+                        <textarea id="eventAddress" name="eventAddress" rows="1" class="mycarouseladmincaption"></textarea>
+                    </div>
+                    <div class="one-third last" >
+                        Event Web Address
+                    </div>
+                    <div class="two-third last" >
+
+                        <input id="eventWebUrl" name="eventWebUrl" type = "text" />
+                    </div>
+                    <div class="one-third last" >
+                        Information Doc (flyer)<br>
+                        Already Posted: <input type="checkbox" id="eventInfoDoc" disabled /><br>
+
+                    </div>
+                    <div class="two-third last" >
+
+                        <input type="file" id='fileUploadInfo' name="fileUploadInfo" class="adminFile"/>
+                        <input type="submit" class="adminMyButton2"  name="fileEventBtn" value="Upload Info"  />
+                    </div>
+                    <div class="one-third last" >
+                        Results Upload<br> (Excel and csv only)<br>
+                        Already Posted: <input type="checkbox" id="eventResults" disabled />
+                        <a href = "/img/usercontent/ResultsTemplate.xlsx">Download Template</a>
+                    </div>
+                    <div class="two-third last" >
+                        <input type = "hidden" id="eventId" name="eventId" value="" />
+                        <input type="file" id='fileUploadResults' name="fileUploadResults" class="adminFile"/>
+                        <input type="submit" class="adminMyButton2"  name="fileEventBtn" value="Upload Results"  />
+                    </div>
+
+
+
+
+
+
+                </div>
+                <div class="one-half last adminHomeCarouselControls">
+
+
+                        <div class="adminHomeCarouselImage">
+                            <img id="adminEventImage" src="/img/slideshow.png" />
+                        </div>
+                        <hr>
+                        <h3>Event Image</h3>
+                        <input type="file" id='fileUploadImage' name="fileUploadImage" class="adminFile"/>
+                        <input type="submit" class="adminMyButton2"  name="fileEventBtn" value="Upload Image"  />
+                        <input type="hidden" name="_token" value = "{{ csrf_token() }}" />
+                        <hr>
+                        <input type="button" class="adminMyButton2"  onclick="AddEvent()" value="Add New"  />
+                        <input type="button" class="adminMyButton2"  onclick="SaveEvent()" value="Save Edits"  />
+
+
+                </div>
+
         </div>
     </div>
+    </form>
     <script>
         $(function() {
             $( "#from" ).datepicker({
-
                 changeMonth: true,
                 numberOfMonths: 1,
                 onClose: function( selectedDate ) {
                     $( "#to" ).datepicker( "option", "minDate", selectedDate );
                 }
             });
-           var today = new Date();
+            var today = new Date();
            var range = today.addYears(1);
            $( "#from").val(today.toFormattedString());
 
@@ -196,6 +230,26 @@
                 }
             });
             $( "#to").val(range.toFormattedString());
+            $( "#eventDate" ).datepicker({
+
+                changeMonth: true,
+                numberOfMonths: 1,
+                onClose: function( selectedDate ) {
+                    $( "#to" ).datepicker( "option", "minDate", selectedDate );
+                }
+            });
+
+            $('#fileUploadImage').live('change', function(){
+                var tmppath = URL.createObjectURL(event.target.files[0]);
+                $('#adminEventImage').attr('src',tmppath);
+            });
+
+
+
+            @if(isset($editingEvent))
+            var eventId={{$editingEvent->id}};
+            EditEvent(eventId);
+            @endif
         });
     </script>
 @endsection

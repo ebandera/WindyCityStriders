@@ -12,7 +12,13 @@ use App\Event;
 use App\BoardMember;
 use Auth;
 use App\ImageTool;
+use App\ResultItem;
 use Carbon\Carbon;
+use App\GalleryItem;
+use App\Gallery;
+use App\User;
+use App\SystemSetting;
+
 
 
 use Request;
@@ -31,7 +37,7 @@ class JsonRequestController extends Controller {
     }
 	public function updateCarousel()
 	{
-       $input= Request::all();
+        $input= Request::all();
 
         $itemId=$input['itemId'];
         $caption=$input['caption'];
@@ -207,12 +213,14 @@ class JsonRequestController extends Controller {
         $eventWhere = $input['eventWhere'];
         $eventDescription = $input['eventDescription'];
         $eventAddress = $input['eventAddress'];
+        $eventWebUrl = $input['eventWebUrl'];
         $event = Event::find($id);
         $event->event_name=$eventName;
         $event->event_date=$eventDate;
         $event->event_place_text=$eventWhere;
         $event->event_details=$eventDescription;
         $event->event_address=$eventAddress;
+        $event->event_url_path=$eventWebUrl;
         $success= $event->save();
 
         if($success) {
@@ -221,6 +229,292 @@ class JsonRequestController extends Controller {
         else
         {
             return 'false';
+        }
+
+    }
+    public function updateEventData()
+    {
+        $input= Request::all();
+        $submitButton = $input['fileEventBtn'];
+        $returnUrl='admincalendar';
+        switch($submitButton)
+        {
+            Case 'Upload Info':
+                $returnUrl=$this->updateEventInfo($input);
+
+                break;
+            Case 'Upload Results':
+                $returnUrl=$this->updateEventResults($input);
+                break;
+            Case 'Upload Image':
+                $returnUrl=$this->updateEventImage($input);
+                break;
+        }
+        return redirect($returnUrl);
+        //dd($submitButton);
+
+    }
+    private function updateEventInfo($input)
+    {
+
+        //first verify that the file object is populated
+        if (isset($input['fileUploadInfo']))
+        {
+            $file=$input['fileUploadInfo'];
+            $eventId = $input['eventId'];
+
+
+            $updatedEvent = Event::find($eventId);
+
+            //dd($updatedEvent);
+
+            //make new file name
+            $user_id=Auth::user()->id;
+            $date = new \DateTime();
+            $timestampString = $date->getTimestamp();
+            $ext = $file->getClientOriginalExtension();
+            $newFilename = $user_id . '_eventInfo_' . $timestampString . '.' . $ext;
+
+            if($file->isValid())
+            {
+                if($ext=='pdf'||$ext=='jpg'||$ext='png'||'doc'||'docx')
+                {
+                    $file->move('img/usercontent',$newFilename);
+                    if($updatedEvent->event_info_path!='')
+                    {
+                        $this->deleteFile($updatedEvent->event_info_path);
+                    }
+
+                    $updatedEvent->event_info_path='/img/usercontent/' . $newFilename;
+                    $updatedEvent->save();
+                }
+
+            }
+            return "admincalendar/editEvent/" . $eventId;
+
+
+        }
+
+
+    }
+    private function updateEventResults($input)
+    {
+        // $input= Request::all();
+        //first verify that the file object is populated
+        if (isset($input['fileUploadResults']))
+        {
+            $file=$input['fileUploadResults'];
+            $eventId = $input['eventId'];
+
+
+
+            $ext = $file->getClientOriginalExtension();
+
+
+            //need to validate file type to be pdf or word .doc or .docx
+
+            //get newsletter record
+            $page_id=Page::where('title','About')->first()->id;
+            $oldNewsletter = Blog::where('page_id',$page_id)->where('heading','newsletter')->first();
+            //dd($oldNewsletter);
+
+            if($file->isValid())
+            {
+                if($ext=='xls'||$ext=='xlsx')
+                {
+                    $fileName = $file->getRealPath();
+                    $resultsArray = $this->getResultsArrayFromXLSX($fileName);
+                    $success = $this->insertResults($resultsArray,$eventId);
+
+                }
+
+            }
+            return "admincalendar/editEvent/" . $eventId;
+
+        }
+    }
+
+    private function getResultsArrayFromXLSX($inputFileName)
+    {
+        $PHPExcel=config('app.PHPExcelIOFactory');
+       // dd($PHPExcel);
+        include_once($PHPExcel);
+
+
+        //  Read your Excel workbook
+        try {
+            $inputFileType = \PHPExcel_IOFactory::identify($inputFileName);
+            $objReader = \PHPExcel_IOFactory::createReader($inputFileType);
+            $objPHPExcel = $objReader->load($inputFileName);
+        } catch(Exception $e) {
+            die('Error loading file "'.pathinfo($inputFileName,PATHINFO_BASENAME).'": '.$e->getMessage());
+        }
+        //  Get worksheet dimensions
+        $sheet = $objPHPExcel->getSheet(0);
+        $highestRow = $sheet->getHighestRow();
+        $highestColumn = $sheet->getHighestColumn();
+
+//  Loop through each row of the worksheet in turn
+        //for ($row = 2; $row <= $highestRow; $row++){
+            //  Read a row of data into an array
+            $rowData = $sheet->rangeToArray('A2:D' . $highestRow,
+                NULL,
+                TRUE,
+                TRUE);
+            //  Insert row data array into your database of choice here
+        //}
+        return $rowData;
+
+    }
+    public function exportResultsToExcel($eventId)
+    {
+        $event = Event::find($eventId);
+        $eventName = $event->event_name;
+        $results =  $event->resultItems;
+        //dd($results);
+        $PHPExcel=config('app.PHPExcelBase');
+        $PHPExcelWriter=config('app.PHPExcelWriter');
+       // dd($PHPExcel);
+        /** PHPExcel */
+        include_once($PHPExcel);
+        /** PHPExcel_Writer_Excel2007 */
+        include_once($PHPExcelWriter);
+        //dd($PHPExcelWriter);
+
+        // Create new PHPExcel object
+        //echo date('H:i:s') . " Create new PHPExcel object\n";
+        $objPHPExcel = new \PHPExcel();
+        header('Content-Type: application/vnd.ms-excel');
+        header('Content-Disposition: attachment;filename="'.$eventName.'.xlsx"');
+        header('Cache-Control: max-age=0');
+        // Set properties
+       // echo date('H:i:s') . " Set properties\n";
+        $objPHPExcel->getProperties()->setCreator("WindyCityStridersSite");
+        $objPHPExcel->getProperties()->setLastModifiedBy("WindyCityStridersSite");
+        $objPHPExcel->getProperties()->setTitle("Results");
+        $objPHPExcel->getProperties()->setSubject("Results");
+        $objPHPExcel->getProperties()->setDescription("Results");
+
+        $objPHPExcel->setActiveSheetIndex(0);
+        $sheet=$objPHPExcel->getActiveSheet();
+        $sheet->SetCellValue('A1','Placement');
+        $sheet->SetCellValue('B1','Runner');
+        $sheet->SetCellValue('C1','Time');
+        $sheet->SetCellValue('D1','Pace');
+
+        foreach($results as $index=>$result)
+        {
+            $rowNumber = $index +2;
+            $sheet->SetCellValue('A' . $rowNumber, $result->placement);
+            $sheet->SetCellValue('B' . $rowNumber, $result->runner);
+            $sheet->SetCellValue('C' . $rowNumber, $result->time);
+            $sheet->SetCellValue('D' . $rowNumber, $result->pace);
+
+        }
+        $styleArray = [
+            'font' => [
+                'bold' => true,
+                'color' => ['rgb' => 'FFFFFF'],
+                'size' => 14
+            ],
+            'fill' => [
+                'type' => \PHPExcel_Style_Fill::FILL_SOLID,
+                'color' => array('rgb' => '4466FF')
+            ]
+        ];
+       // $sheet->getStyle('A1:D1')->getFill()->setFillType(\PHPExcel_Style_Fill::FILL_SOLID)->getStartColor()->setRGB('4466FF');
+        //$sheet->getStyle('A1:D1')->getFont()->setSize(14)->setBold(true);//setColor(\PHPExcel_Style_Color::COLOR_WHITE);
+        $sheet->getStyle('A1:D1')->applyFromArray($styleArray);
+        $sheet->getColumnDimension('A')->setWidth(20);
+        $sheet->getColumnDimension('B')->setWidth(20);
+        $sheet->getColumnDimension('C')->setWidth(20);
+        $sheet->getColumnDimension('D')->setWidth(20);
+        // Rename sheet
+       // echo date('H:i:s') . " Rename sheet\n";
+        $objPHPExcel->getActiveSheet()->setTitle('Results');
+
+
+// Save Excel 2007 file
+       // echo date('H:i:s') . " Write to Excel2007 format\n";
+       // $objWriter = new \PHPExcel_Writer_Excel2007($objPHPExcel);
+        //$objWriter->save(str_replace('.php', '.xlsx', __FILE__));
+        // We'll be outputting an excel file
+        //header('Content-type: application/vnd.ms-excel');
+        $objWriter = \PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel2007');
+// It will be called file.xls
+        //header('Content-Disposition: attachment; filename="file.xlsx"');
+        $objWriter->save('php://output');
+
+// Echo done
+       // echo date('H:i:s') . " Done writing file.\r\n";
+
+
+    }
+    private function insertResults($resultsArray,$eventId)
+    {
+        //delete all results with a specific event id
+        //var_dump($resultsArray);
+
+        ResultItem::where('event_id',$eventId)->delete();
+        foreach($resultsArray As $index=>$result)
+        {
+           // var_dump($result);
+            $newResult = new ResultItem();
+            $newResult->event_id=$eventId;
+            $newResult->placement = $result[0];
+            $newResult->runner = $result[1];
+            $newResult->time=$result[2];
+            $newResult->pace=$result[3];
+            $newResult->save();
+        }
+
+        $event=Event::find($eventId);
+        $event->event_results_path='/results/' . $eventId;
+        $event->save();
+       // dd('end');
+
+
+    }
+    private function updateEventImage($input)
+    {
+        //first verify that the file object is populated
+        if (isset($input['fileUploadImage']))
+        {
+            $file=$input['fileUploadImage'];
+            $eventId = $input['eventId'];
+
+
+            $updatedEvent = Event::find($eventId);
+
+
+            //make new file name
+            $user_id=Auth::user()->id;
+            $date = new \DateTime();
+            $timestampString = $date->getTimestamp();
+            $ext = $file->getClientOriginalExtension();
+            $newFilename = $user_id . '_eventImage_' . $timestampString . '.' . $ext;
+            $tempPath = $file->getRealPath();
+            $newImage = new ImageTool($tempPath);
+            $newImage->modifyToOptimalSize(400, 300, 200, 200, 200); //op width,height ,r,g,b
+
+            if($file->isValid())
+            {
+                if($ext=='pdf'||$ext=='jpg'||$ext='png')
+                {
+                    $file->move('img/usercontent',$newFilename);
+                    if($updatedEvent->event_img_url!='')
+                    {
+                        $this->deleteFile($updatedEvent->event_img_url);
+                    }
+
+                    $updatedEvent->event_img_url='/img/usercontent/' . $newFilename;
+                    $updatedEvent->save();
+                }
+
+            }
+            return "admincalendar/editEvent/" . $eventId;
+
+
         }
 
     }
@@ -237,6 +531,7 @@ class JsonRequestController extends Controller {
         $event->event_place_text='default place';
         $event->event_address='default address';
         $event->event_details='default description';
+        $event->event_url_path='';
         $event->event_info_path='';
         $event->event_results_path='';
 
@@ -250,6 +545,29 @@ class JsonRequestController extends Controller {
             return 'false';
         }
 
+    }
+    public function deleteEvent()
+    {
+        $input= Request::all();
+        $id = $input['id'];
+        $event = Event::find($id);
+        if($event->event_img_url!='')
+        {
+            $this->deleteFile($event->event_img_url);
+        }
+        if($event->event_info_path!='')
+        {
+            $this->deleteFile($event->event_info_path);
+        }
+        $success= $event->delete();
+
+        if($success) {
+            return 'true';
+        }
+        else
+        {
+            return 'false';
+        }
     }
     private function deleteOldNewsletterFile($oldNewsletter)
     {
@@ -265,6 +583,7 @@ class JsonRequestController extends Controller {
         echo $image_url;
 
     }
+
     private function deleteFile($filePath)
     {
         echo $filePath;
@@ -537,6 +856,352 @@ class JsonRequestController extends Controller {
 
     }
 
+    public function getResultsFromEventId()
+    {
+        $input = Request::all();
+        $eventId = $input['eventId'];
+       // echo $eventId;
+        $results = Event::find($eventId)->resultItems;
+        return json_encode($results);
+
+    }
+
+    public function saveGalleryCaption()
+    {
+
+        $input= Request::all();
+        $id = $input['id'];
+        $caption=$input['caption'];
+        $galleryItem=GalleryItem::find($id);
+        $galleryItem->caption=$caption;
+        $galleryItem->save();
+        return 'true';
+
+        //dd($submitButton);
+    }
+
+    public function saveGalleryEdits()
+    {
+
+        $input= Request::all();
+        $id = $input['id'];
+        $title = $input['title'];
+        $event_id=$input['event_id'];
+        $gallery=Gallery::find($id);
+        $gallery->title=$title;
+        if($event_id!='none')
+        {
+            $gallery->event_id=$event_id;
+            //$event=Event::find($event_id);
+            //$event->
+        }
+        else
+        {
+            $gallery->event_id=null;
+        }
+        $gallery->save();
+        return 'true';
+
+        //dd($submitButton);
+    }
+
+    public function deleteGalleryItem()
+    {
+        $input= Request::all();
+        $id = $input['id'];
+        $galleryItem = GalleryItem::find($id);
+        $oldFilePath = $galleryItem->image_url;
+        $fileIsDeleted = $this->deleteFile($oldFilePath);
+        $galleryItem->delete();
+
+
+
+    }
+    public function deleteGallery()
+    {
+        $input=Request::all();
+        $id = $input['id'];
+        $gallery = Gallery::find($id);
+        if($gallery->galleryItems->count()>0)
+        {
+            return 'Items Remaining';
+        }
+        else
+        {
+            $gallery->delete();
+        }
+
+
+
+    }
+    public function updateGalleryData()
+    {
+        $input= Request::all();
+        $submitButton = $input['fileGalleryBtn'];
+
+        //dd($submitButton);
+        $returnUrl='admingallery';
+        switch($submitButton)
+        {
+            Case 'Upload Image':
+                $returnUrl=$this->insertGalleryItemImage($input);
+
+                break;
+            Case 'Update Tile Image':
+                $returnUrl=$this->updateGalleryTileImage($input);
+                break;
+
+        }
+        return redirect($returnUrl);
+    }
+    private function updateGalleryTileImage($input)
+    {
+
+        if (isset($input['fileUploadGalleryTileImage']))
+        {
+
+            $file=$input['fileUploadGalleryTileImage'];
+            $galleryId = $input['galleryId'];
+            $gallery = Gallery::find($galleryId);
+
+
+            //make new file name
+            $user_id=Auth::user()->id;
+            $date = new \DateTime();
+            $timestampString = $date->getTimestamp();
+            $ext = $file->getClientOriginalExtension();
+            $newFilename = $user_id . '_galleryTileImage_' . $timestampString . '.' . $ext;
+            $tempPath = $file->getRealPath();
+            $newImage = new ImageTool($tempPath);
+            $newImage->modifyToOptimalSize(300, 300, 255, 255, 255); //op width,height ,r,g,b
+
+            if($file->isValid())
+            {
+                if($ext=='gif'||$ext=='jpg'||$ext='png'||$ext='jpeg')
+                {
+                    $file->move('img/usercontent',$newFilename);
+                    if($gallery->image_url!='')
+                    {
+                        $this->deleteFile($gallery->image_url);
+                    }
+
+                    $gallery->image_url='/img/usercontent/' . $newFilename;
+                    $gallery->save();
+                }
+
+            }
+            return "admingallery/" . $galleryId;
+
+
+        }
+
+
+    }
+    private function insertGalleryItemImage($input)
+    {
+        if (isset($input['fileUploadGalleryImage']))
+        {
+            $file=$input['fileUploadGalleryImage'];
+            $galleryId = $input['galleryId'];
+            $galleryItem = New GalleryItem();
+            $galleryItem->caption='default caption';
+            $galleryItem->sort_order=0;
+            $galleryItem->gallery_id = $galleryId;
+
+
+            //make new file name
+            $user_id=Auth::user()->id;
+            $date = new \DateTime();
+            $timestampString = $date->getTimestamp();
+            $ext = $file->getClientOriginalExtension();
+            $newFilename = $user_id . '_galleryItem_' . $timestampString . '.' . $ext;
+            $tempPath = $file->getRealPath();
+            $newImage = new ImageTool($tempPath);
+            //$newImage->modifyToOptimalSize(400, 400, 255, 255, 255); //op width,height ,r,g,b
+
+            if($file->isValid())
+            {
+                if($ext=='gif'||$ext=='jpg'||$ext='png'||$ext='jpeg')
+                {
+                    $file->move('img/usercontent',$newFilename);
+
+                    $galleryItem->image_url='/img/usercontent/' . $newFilename;
+                    $galleryItem->save();
+                }
+
+            }
+            return "admingallery/" . $galleryId;
+
+
+        }
+    }
+
+    public function approveUser()
+    {
+        $input= Request::all();
+        $id = $input['id'];
+        $user_profile = $input['user_profile'];
+        $user = User::find($id);
+        $user->approved=1;
+        $user->user_profile=$user_profile;
+        $user->save();
+
+
+    }
+
+    public function deleteUser()
+    {
+        $input= Request::all();
+        $id = $input['id'];
+
+        $user = User::find($id);
+
+        $user->delete();
+
+
+    }
+    public function saveSponsorEdits()
+    {
+        $input= Request::all();
+        $id = $input['id'];
+        $heading = $input['heading'];
+        $html_text = $input['html_text'];
+        $html_text = str_replace('http://','',$html_text);
+        $html_text = str_replace('https://','',$html_text);
+        $sponsor = Blog::find($id);
+        $sponsor->heading=$heading;
+        $sponsor->html_text=$html_text;
+        $sponsor->save();
+
+
+    }
+    public function deleteSponsor()
+    {
+        $input= Request::all();
+        $id = $input['id'];
+        $sponsor = Blog::find($id);
+        $filePathForImage = $sponsor->image_url;
+        $this->deleteFile($filePathForImage);
+        $sponsor->delete();
+    }
+    public function updateSponsorHeading()
+    {
+        $input= Request::all();
+
+        $heading = $input['heading'];
+
+
+        $page_id = Page::where('title','=','Sponsors')->first()->id;
+        $user_id = Auth::user()->id;
+        Blog::where('heading','=','sponsors')->delete();
+
+        $sponsor = new Blog();
+        $sponsor->user_id = $user_id;
+        $sponsor->page_id = $page_id;
+        $sponsor->blog_level = 'primary';
+        $sponsor->heading = 'sponsors';
+        $sponsor->html_text = $heading; //this is confusing, but the html_text is the heading content of the sponsors page
+        $carbon=new Carbon();
+        $sponsor->expiration_date=$carbon->now()->addYears(1);
+
+        $sponsor->save();
+    }
+    public function uploadSponsorImage()
+    {
+        $input= Request::all();
+        if (isset($input['fileUploadSponsorImage']))
+        {
+            $file=$input['fileUploadSponsorImage'];
+            //will need
+            $page_id = Page::where('title','=','Sponsors')->first()->id;
+            $user_id = Auth::user()->id;
+            $sponsor = New Blog();
+            $sponsor->user_id = $user_id;
+            $sponsor->page_id = $page_id;
+            $sponsor->blog_level = 'primary';
+            $sponsor->heading = 'New Sponsor';
+            $sponsor->html_text = '';
+            $sponsor->sort_order= Blog::where('page_id','=',$sponsor->page_id)->max('sort_order') + 1;
+
+
+
+
+            //make new file name
+
+            $date = new \DateTime();
+            $timestampString = $date->getTimestamp();
+            $ext = $file->getClientOriginalExtension();
+            $newFilename = $user_id . '_sponsor_' . $timestampString . '.' . $ext;
+            $tempPath = $file->getRealPath();
+            $newImage = new ImageTool($tempPath);
+            $newImage->modifyToOptimalSize(350, 100, 255, 255, 255,'left'); //op width,height ,r,g,b,position
+
+            if($file->isValid())
+            {
+                if($ext=='gif'||$ext=='jpg'||$ext='png'||$ext='jpeg')
+                {
+                    $file->move('img/usercontent',$newFilename);
+
+                    $sponsor->image_url='/img/usercontent/' . $newFilename;
+                    $sponsor->save();
+                }
+
+            }
+            return redirect("adminsponsors") ;
+
+
+        }
+    }
+    public function moveSponsorUp()
+    {
+        $input= Request::all();
+        $id = $input['id'];
+        $itemToMoveUp = Blog::find($id);
+        $page_id = $itemToMoveUp->page_id;
+        $sort_order = $itemToMoveUp->sort_order;
+        $itemToSwitchWith = Blog::where('page_id','=',$page_id)->where('sort_order', '>', $sort_order)->where('heading','<>','sponsors')->orderBy('sort_order','asc')->first();
+        $success1=false;
+        $success2=false;
+        if($itemToSwitchWith!=null) {
+            $new_sort_order = $itemToSwitchWith->sort_order;
+            $itemToMoveUp->sort_order = $new_sort_order;
+            $success1 = $itemToMoveUp->save();
+            $itemToSwitchWith->sort_order = $sort_order;
+            $success2 = $itemToSwitchWith->save();
+        }
+    }
+    public function moveSponsorDown()
+    {
+        $input= Request::all();
+        $id = $input['id'];
+        $itemToMoveUp = Blog::find($id);
+        $page_id = $itemToMoveUp->page_id;
+        $sort_order = $itemToMoveUp->sort_order;
+        $itemToSwitchWith = Blog::where('page_id','=',$page_id)->where('sort_order', '<', $sort_order)->where('heading','<>','sponsors')->orderBy('sort_order','desc')->first();
+        $success1=false;
+        $success2=false;
+        if($itemToSwitchWith!=null) {
+            $new_sort_order = $itemToSwitchWith->sort_order;
+            $itemToMoveUp->sort_order = $new_sort_order;
+            $success1 = $itemToMoveUp->save();
+            $itemToSwitchWith->sort_order = $sort_order;
+            $success2 = $itemToSwitchWith->save();
+        }
+    }
+    public function updateSystemSettings()
+    {
+        $input= Request::all();
+        $settings = $input['settings'];
+        $decodedSettings = json_decode($settings);
+        //dd($decodedSettings);
+        foreach($decodedSettings as $setting)
+        {
+            $updatedItem = SystemSetting::where('key','=',$setting[0])->first();
+            $updatedItem->value=$setting[1];
+            $updatedItem->save();
+        }
+
+    }
 	/**
 	 * Show the form for creating a new resource.
 	 *

@@ -15,7 +15,7 @@ use Auth;
 class ScreenDataHelper {
 
 
-    public $footerBlogs,$theUser,$theAddress;
+    public $footerBlogs,$theUser,$theAddress,$page;
 
     function __construct()
     {
@@ -23,7 +23,7 @@ class ScreenDataHelper {
     }
     function getData()
     {
-        $this->footerBlogs=Blog::all()->take(3);
+        $this->getFooterBlogs();
         $this->getUser();
         $this->getAddress();
         return $this;
@@ -43,6 +43,13 @@ class ScreenDataHelper {
         //var_dump(Auth::user());exit();
         //var_dump($this->theUser);exit();
 
+
+    }
+    private function getFooterBlogs()
+    {
+        $page_id = Page::where('title','Blog')->first()->id;
+        //dd($page_id);
+        $this->footerBlogs = Blog::where('page_id','=',$page_id)->where('blog_level','=','primary')->orderBy('sort_order','desc')->get();
 
     }
     private function getAddress()

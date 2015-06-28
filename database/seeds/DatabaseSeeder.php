@@ -12,6 +12,7 @@ use App\Blog;
 use App\BoardMember;
 use App\ResultItem;
 use App\CarouselItem;
+use App\SystemSetting;
 
 class DatabaseSeeder extends Seeder {
 
@@ -48,6 +49,7 @@ class TestDataSeeder extends Seeder {
 
 		DB::table('board_members')->delete();
         DB::table('carousel_items')->delete();
+        DB::table('system_settings')->delete();
 
 
 		//seed our pages table
@@ -70,6 +72,10 @@ class TestDataSeeder extends Seeder {
             'title'=>'Home'
         ));
 
+        $sponsorsPage = Page::create(array(
+            'title'=>'Sponsors'
+        ));
+
 		//seed our user_profiles table
 		//$adminProfile = UserProfile::create(array(
 		//	'profile_name'=>'admin'
@@ -81,20 +87,30 @@ class TestDataSeeder extends Seeder {
 		//seed our users table
 		$userEric = User::create(array(
 			'image_url'=>'http://www.ericbandera.com/images/me.jpg',
-			'name'=>'Eric Bandera',
+			'name'=>'Primary Admin',
 			'user_profile'=>'admin',
-			'email'=>'ericbandera@gmail.com',
-			'password'=>'1234'
+			'email'=>'ericbandera@yahoo.com',
+            'approved'=>1,
+			'password'=>'$2y$10$MQeVSrxLr6H0eeyPZ4cWDOVeGGh660/DtXFTRXvZq23vcKnORrXg6'
 
 		));
-        $userBob = User::create(array(
+        $unapprovedUserEric = User::create(array(
             'image_url'=>'http://www.ericbandera.com/images/me.jpg',
-            'name'=>'Bob Bandera',
-            'user_profile'=>'member',
-            'email'=>'bad@gmail.com',
-            'password'=>'1234'
+            'name'=>'EB Unapproved',
+            'user_profile'=>'admin',
+            'email'=>'ericbandera@gmail.com',
+            'password'=>'$2y$10$MQeVSrxLr6H0eeyPZ4cWDOVeGGh660/DtXFTRXvZq23vcKnORrXg6'
 
         ));
+        $unapprovedUserMinnie = User::create(array(
+            'image_url'=>'http://www.ericbandera.com/images/me.jpg',
+            'name'=>'Minnie Unapproved',
+            'user_profile'=>'member',
+            'email'=>'minniebandera@gmail.com',
+            'password'=>'$2y$10$MQeVSrxLr6H0eeyPZ4cWDOVeGGh660/DtXFTRXvZq23vcKnORrXg6'
+
+        ));
+
 
 		//seed our events table
 		$evergreenParkEvent = Event::create(array(
@@ -104,7 +120,7 @@ class TestDataSeeder extends Seeder {
 		'event_place_text'=>'Evergreen Park',
 		'event_address'=>'5713 Moody, Chicago, Il 60638',
 		'event_details'=>'Meet in playground, starts at noon',
-		'event_info_path'=>'http://www.ericbandera.com',
+		'event_url_path'=>'http://www.ericbandera.com',
 		'event_results_path'=>'http://demo.shopced.com'
 
 	));
@@ -116,7 +132,7 @@ class TestDataSeeder extends Seeder {
 			'event_place_text'=>'Evergreen Park',
 			'event_address'=>'5713 Moody, Chicago, Il 60638',
 			'event_details'=>'Meet in playground, starts at noon',
-			'event_info_path'=>'http://www.ericbandera.com',
+			'event_url_path'=>'http://www.ericbandera.com',
 			'event_results_path'=>'http://demo.shopced.com'
 
 		));
@@ -128,7 +144,7 @@ class TestDataSeeder extends Seeder {
 			'event_place_text'=>'Evergreen Park',
 			'event_address'=>'5713 Moody, Chicago, Il 60638',
 			'event_details'=>'Meet in playground, starts at noon',
-			'event_info_path'=>'http://www.ericbandera.com',
+			'event_url_path'=>'http://www.ericbandera.com',
 			'event_results_path'=>'http://demo.shopced.com'
 
 		));
@@ -139,7 +155,7 @@ class TestDataSeeder extends Seeder {
 			'event_place_text'=>'Evergreen Park',
 			'event_address'=>'5713 Moody, Chicago, Il 60638',
 			'event_details'=>'Meet in playground, starts at noon',
-			'event_info_path'=>'http://www.ericbandera.com',
+			'event_url_path'=>'http://www.ericbandera.com',
 			'event_results_path'=>'http://demo.shopced.com'
 
 		));
@@ -151,7 +167,7 @@ class TestDataSeeder extends Seeder {
 			'event_place_text'=>'Evergreen Park',
 			'event_address'=>'5713 Moody, Chicago, Il 60638',
 			'event_details'=>'Meet in playground, starts at noon',
-			'event_info_path'=>'http://www.ericbandera.com',
+			'event_url_path'=>'http://www.ericbandera.com',
 			'event_results_path'=>'http://demo.shopced.com'
 
 		));
@@ -163,7 +179,7 @@ class TestDataSeeder extends Seeder {
 			'event_place_text'=>'Evergreen Park',
 			'event_address'=>'5713 Moody, Chicago, Il 60638',
 			'event_details'=>'Meet in playground, starts at noon',
-			'event_info_path'=>'http://www.ericbandera.com',
+			'event_url_path'=>'http://www.ericbandera.com',
 			'event_results_path'=>'http://demo.shopced.com'
 
 		));
@@ -174,7 +190,7 @@ class TestDataSeeder extends Seeder {
             'event_place_text'=>'Evergreen Park',
             'event_address'=>'5713 Moody, Chicago, Il 60638',
             'event_details'=>'Meet in playground, starts at noon',
-            'event_info_path'=>'http://www.ericbandera.com',
+            'event_url_path'=>'http://www.ericbandera.com',
             'event_results_path'=>'http://demo.shopced.com'
 
         ));
@@ -186,30 +202,30 @@ class TestDataSeeder extends Seeder {
             'event_place_text'=>'Evergreen Park',
             'event_address'=>'5713 Moody, Chicago, Il 60638',
             'event_details'=>'Meet in playground, starts at noon',
-            'event_info_path'=>'http://www.ericbandera.com',
+            'event_url_path'=>'http://www.ericbandera.com',
             'event_results_path'=>'http://demo.shopced.com'
 
         ));
 
         $evergreenParkEvent9 = Event::create(array(
-            'event_date'=>'2015-06-13',
+            'event_date'=>'2015-07-13',
             'event_name'=>'Run and Run3',
             'event_img_url'=>'/img/calendarImage.jpg',
             'event_place_text'=>'Evergreen Park',
             'event_address'=>'5713 Moody, Chicago, Il 60638',
             'event_details'=>'Meet in playground, starts at noon',
-            'event_info_path'=>'http://www.ericbandera.com',
+            'event_url_path'=>'http://www.ericbandera.com',
             'event_results_path'=>'http://demo.shopced.com'
 
         ));
         $evergreenParkEvent10 = Event::create(array(
-            'event_date'=>'2015-06-02',
+            'event_date'=>'2015-08-02',
             'event_name'=>'Run and Run 4',
             'event_img_url'=>'/img/calendarImage.jpg',
             'event_place_text'=>'Evergreen Park',
             'event_address'=>'5713 Moody, Chicago, Il 60638',
             'event_details'=>'Meet in playground, starts at noon',
-            'event_info_path'=>'http://www.ericbandera.com',
+            'event_url_path'=>'http://www.ericbandera.com',
             'event_results_path'=>'http://demo.shopced.com'
 
         ));
@@ -221,7 +237,7 @@ class TestDataSeeder extends Seeder {
             'event_place_text'=>'Evergreen Park',
             'event_address'=>'5713 Moody, Chicago, Il 60638',
             'event_details'=>'Meet in playground, starts at noon',
-            'event_info_path'=>'http://www.ericbandera.com',
+            'event_url_path'=>'http://www.ericbandera.com',
             'event_results_path'=>'http://demo.shopced.com'
 
         ));
@@ -233,7 +249,7 @@ class TestDataSeeder extends Seeder {
             'event_place_text'=>'Evergreen Park',
             'event_address'=>'5713 Moody, Chicago, Il 60638',
             'event_details'=>'Meet in playground, starts at noon',
-            'event_info_path'=>'http://www.ericbandera.com',
+            'event_url_path'=>'http://www.ericbandera.com',
             'event_results_path'=>'http://demo.shopced.com'
 
         ));
@@ -244,7 +260,7 @@ class TestDataSeeder extends Seeder {
             'event_place_text'=>'Evergreen Park',
             'event_address'=>'5713 Moody, Chicago, Il 60638',
             'event_details'=>'Meet in playground, starts at noon',
-            'event_info_path'=>'http://www.ericbandera.com',
+            'event_url_path'=>'http://www.ericbandera.com',
             'event_results_path'=>'http://demo.shopced.com'
 
         ));
@@ -256,7 +272,7 @@ class TestDataSeeder extends Seeder {
             'event_place_text'=>'Evergreen Park',
             'event_address'=>'5713 Moody, Chicago, Il 60638',
             'event_details'=>'Meet in playground, starts at noon',
-            'event_info_path'=>'http://www.ericbandera.com',
+            'event_url_path'=>'http://www.ericbandera.com',
             'event_results_path'=>'http://demo.shopced.com'
 
         ));
@@ -268,7 +284,7 @@ class TestDataSeeder extends Seeder {
             'event_place_text'=>'Evergreen Park',
             'event_address'=>'5713 Moody, Chicago, Il 60638',
             'event_details'=>'Meet in playground, starts at noon',
-            'event_info_path'=>'http://www.ericbandera.com',
+            'event_url_path'=>'http://www.ericbandera.com',
             'event_results_path'=>'http://demo.shopced.com'
 
         ));
@@ -279,7 +295,7 @@ class TestDataSeeder extends Seeder {
             'event_place_text'=>'Evergreen Park',
             'event_address'=>'5713 Moody, Chicago, Il 60638',
             'event_details'=>'Meet in playground, starts at noon',
-            'event_info_path'=>'http://www.ericbandera.com',
+            'event_url_path'=>'http://www.ericbandera.com',
             'event_results_path'=>'http://demo.shopced.com'
 
         ));
@@ -291,7 +307,7 @@ class TestDataSeeder extends Seeder {
             'event_place_text'=>'Evergreen Park',
             'event_address'=>'5713 Moody, Chicago, Il 60638',
             'event_details'=>'Meet in playground, starts at noon',
-            'event_info_path'=>'http://www.ericbandera.com',
+            'event_url_path'=>'http://www.ericbandera.com',
             'event_results_path'=>'http://demo.shopced.com'
 
         ));
@@ -303,10 +319,124 @@ class TestDataSeeder extends Seeder {
             'event_place_text'=>'Evergreen Park',
             'event_address'=>'5713 Moody, Chicago, Il 60638',
             'event_details'=>'Meet in playground, starts at noon',
-            'event_info_path'=>'http://www.ericbandera.com',
+            'event_url_path'=>'http://www.ericbandera.com',
             'event_results_path'=>'http://demo.shopced.com'
 
         ));
+        //seed a few results
+        $runner1 = ResultItem::create(array(
+            'event_id'=>$evergreenParkEvent9->id,
+            'placement'=>'1',
+            'runner'=>'Eric Bandera',
+            'time'=>'1:00',
+            'pace'=>'1:00'
+        ));
+        $runner1 = ResultItem::create(array(
+            'event_id'=>$evergreenParkEvent9->id,
+            'placement'=>'2',
+            'runner'=>'Minnie Bandera',
+            'time'=>'1:00',
+            'pace'=>'1:00'
+        ));
+        $runner1 = ResultItem::create(array(
+            'event_id'=>$evergreenParkEvent9->id,
+            'placement'=>'3',
+            'runner'=>'Bill Bandera',
+            'time'=>'1:40',
+            'pace'=>'2:00'
+        ));
+        $runner1 = ResultItem::create(array(
+            'event_id'=>$evergreenParkEvent9->id,
+            'placement'=>'4',
+            'runner'=>'Erika Riley',
+            'time'=>'1:03',
+            'pace'=>'1:12'
+        ));
+        $runner1 = ResultItem::create(array(
+            'event_id'=>$evergreenParkEvent10->id,
+            'placement'=>'1',
+            'runner'=>'Joyce Bandera',
+            'time'=>'11:10',
+            'pace'=>'1:34'
+        ));
+        $runner1 = ResultItem::create(array(
+            'event_id'=>$evergreenParkEvent10->id,
+            'placement'=>'5',
+            'runner'=>'Chuck Bandera',
+            'time'=>'2:00',
+            'pace'=>'1:00'
+        ));
+        $runner1 = ResultItem::create(array(
+            'event_id'=>$evergreenParkEvent10->id,
+            'placement'=>'2',
+            'runner'=>'Dick Bandera',
+            'time'=>'3:00',
+            'pace'=>'1:40'
+        ));
+        $runner1 = ResultItem::create(array(
+            'event_id'=>$evergreenParkEvent10->id,
+            'placement'=>'6',
+            'runner'=>'Chester Wisniewski',
+            'time'=>'1:04',
+            'pace'=>'1:34'
+        ));
+        $runner1 = ResultItem::create(array(
+            'event_id'=>$evergreenParkEvent11->id,
+            'placement'=>'2',
+            'runner'=>'Michael Gould',
+            'time'=>'1:00',
+            'pace'=>'1:30'
+        ));
+        $runner1 = ResultItem::create(array(
+            'event_id'=>$evergreenParkEvent11->id,
+            'placement'=>'3',
+            'runner'=>'Tori Gould',
+            'time'=>'1:02',
+            'pace'=>'1:00'
+        ));
+        $runner1 = ResultItem::create(array(
+            'event_id'=>$evergreenParkEvent11->id,
+            'placement'=>'4',
+            'runner'=>'Brian Gould',
+            'time'=>'2:00',
+            'pace'=>'1:00'
+        ));
+        $runner1 = ResultItem::create(array(
+            'event_id'=>$evergreenParkEvent9->id,
+            'placement'=>'5',
+            'runner'=>'Mike Brady',
+            'time'=>'2:00',
+            'pace'=>'1:12'
+        ));
+        $runner1 = ResultItem::create(array(
+            'event_id'=>$evergreenParkEvent11->id,
+            'placement'=>'6',
+            'runner'=>'Joe Palermo',
+            'time'=>'1:00',
+            'pace'=>'1:05'
+        ));
+        $runner1 = ResultItem::create(array(
+            'event_id'=>$evergreenParkEvent12->id,
+            'placement'=>'7',
+            'runner'=>'Stone Riley',
+            'time'=>'1:00',
+            'pace'=>'1:20'
+        ));
+        $runner1 = ResultItem::create(array(
+            'event_id'=>$evergreenParkEvent12->id,
+            'placement'=>'8',
+            'runner'=>'Grandma Kalkins',
+            'time'=>'1:44',
+            'pace'=>'1:00'
+        ));
+        $runner1 = ResultItem::create(array(
+            'event_id'=>$evergreenParkEvent9->id,
+            'placement'=>'9',
+            'runner'=>'Grandpa Kalkins',
+            'time'=>'1:12',
+            'pace'=>'1:45'
+        ));
+
 		//seed our galleries table
 
 		$evergreenParkGallery = Gallery::create(array(
@@ -588,6 +718,47 @@ class TestDataSeeder extends Seeder {
             'sort_order'=>1
 
         ));
+        //seed a few sponsors
+        $sponsorHeading = Blog::create(array(
+            'user_id'=>$userEric->id,
+            'page_id'=>$sponsorsPage->id,
+
+            'blog_level'=>'primary',
+            'heading'=>'sponsors',
+            'image_url'=>'',
+            'html_text'=>'With your membership card you will get 15% off running shoes and running apparel at Bush-Wells Sporting Goods, 15% off merchandise at Gear Up, 15% discount at Ragged Edge Sports, 30% discount at Sierra Trading Post, and Mountain Sports will provide race awards.',
+            'image_position'=>'',
+            'expiration_date'=>'2015-12-09',
+            'sort_order'=>0
+
+        ));
+        $sponsorBushWells = Blog::create(array(
+            'user_id'=>$userEric->id,
+            'page_id'=>$sponsorsPage->id,
+
+            'blog_level'=>'primary',
+            'heading'=>'Bush-Wells Sporting Goods',
+            'image_url'=>'/img/usercontent/BushWells.png',
+            'html_text'=>'bushwellssportinggoods.com',
+            'image_position'=>'',
+            'expiration_date'=>'2015-12-09',
+            'sort_order'=>1
+
+        ));
+
+        $sponsorGearUp = Blog::create(array(
+        'user_id'=>$userEric->id,
+        'page_id'=>$sponsorsPage->id,
+
+        'blog_level'=>'primary',
+        'heading'=>'Gear Up',
+        'image_url'=>'/img/usercontent/GearUp.png',
+        'html_text'=>'gearupandgetoutthere.com',
+        'image_position'=>'',
+        'expiration_date'=>'2015-12-09',
+        'sort_order'=>2
+
+        ));
 		//seed out board members table
 		$marlene = BoardMember::create(array(
 			'name'=>'Marlene Short',
@@ -665,9 +836,22 @@ class TestDataSeeder extends Seeder {
         'sort_order'=>3
 
         ));
+
 		//seed our result_items table
 
-
+        //seed the system settings
+        $primaryEmailSetting = SystemSetting::create(array(
+            'key'=>'primaryWebsiteAdministratorEmail',
+            'value'=>'ericbandera@gmail.com'
+        ));
+        $facebookPageSetting =  SystemSetting::create(array(
+            'key'=>'facebookPage',
+            'value'=>'http://facebook.com'
+        ));
+        $twitterPageSetting =  SystemSetting::create(array(
+            'key'=>'twitterPage',
+            'value'=>'http://twitter.com'
+        ));
 
 
 

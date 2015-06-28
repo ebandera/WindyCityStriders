@@ -100,7 +100,7 @@
 }
 .event-bar{
     border-top: gray solid 1px;
-    height: 500px;
+    height: 650px;
     font-size : 30px;
     font-weight : 400;
     padding : 15px;
@@ -128,4 +128,5 @@
     border: dotted 1px black;
     padding: 5px;
     height: 70%;
+    font-size : 20px;
 }
