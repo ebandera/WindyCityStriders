@@ -109,12 +109,37 @@ class JsonRequestController extends Controller {
         }
     }
 
+    public function deleteTeam()
+    {
+        $input= Request::all();
+
+        $id = $input['id'];
+
+
+
+        $deletedItem = BoardMember::find($id);
+        $this->deleteFile($deletedItem->image_url);
+
+        $success= $deletedItem->delete();
+
+
+        if($success) {
+            return 'true';
+        }
+        else
+        {
+            return 'false';
+        }
+    }
+
     public function deleteCarousel()
     {
         $input= Request::all();
         $itemId=$input['itemId'];
 
         $deletedItem=CarouselItem::find($itemId);
+
+        $this->deleteFile($deletedItem->image_url);
         $success= $deletedItem->delete();
 
 
@@ -334,6 +359,24 @@ class JsonRequestController extends Controller {
         }
     }
 
+    public function updateBulkEvents()
+    {
+        $input= Request::all();
+        if (isset($input['fileUploadBulkEvents'])) {
+
+            $file = $input['fileUploadBulkEvents'];
+            $ext = $file->getClientOriginalExtension();
+            if ($file->isValid()) {
+                if ($ext == 'xls' || $ext == 'xlsx') {
+                    $fileName = $file->getRealPath();
+                    $eventsArray = $this->getEventArrayFromXLSX($fileName);
+                    $success = $this->insertEventsFromBulk($eventsArray);
+
+                }
+
+            }
+        }
+    }
     private function getResultsArrayFromXLSX($inputFileName)
     {
         $PHPExcel=config('app.PHPExcelIOFactory');
@@ -364,6 +407,79 @@ class JsonRequestController extends Controller {
             //  Insert row data array into your database of choice here
         //}
         return $rowData;
+
+    }
+    private function getEventArrayFromXLSX($inputFileName)
+    {
+        $PHPExcel=config('app.PHPExcelIOFactory');
+
+        include_once($PHPExcel);
+
+
+        //  Read your Excel workbook
+        try {
+            $inputFileType = \PHPExcel_IOFactory::identify($inputFileName);
+            $objReader = \PHPExcel_IOFactory::createReader($inputFileType);
+            $objPHPExcel = $objReader->load($inputFileName);
+        } catch(Exception $e) {
+            die('Error loading file "'.pathinfo($inputFileName,PATHINFO_BASENAME).'": '.$e->getMessage());
+        }
+        //  Get worksheet dimensions
+        $sheet = $objPHPExcel->getSheet(0);
+        $highestRow = $sheet->getHighestRow();
+        $highestColumn = $sheet->getHighestColumn();
+
+//  Loop through each row of the worksheet in turn
+        //for ($row = 2; $row <= $highestRow; $row++){
+        //  Read a row of data into an array
+        $rowData = $sheet->rangeToArray('A2:D' . $highestRow);
+        //  Insert row data array into your database of choice here
+        //}
+        return $rowData;
+    }
+    private function insertEventsFromBulk($eventsArray)
+    {
+        //delete all results with a specific event id
+        //var_dump($resultsArray);
+
+       // dd($eventsArray);
+        foreach($eventsArray As $index=>$event)
+        {
+            $theEvent=null;
+            $theDate=null;
+            $theDate = Carbon::createFromFormat('m/d/Y',$event[0]);
+           // var_dump($event[0]);
+            $theDate->setTime(0,0,0);
+            $theEvent = Event::where('event_date','=',$theDate)->first();
+         // dd($theEvent);
+            // var_dump($result);
+            if($theEvent == null)
+            {
+                $newEvent = new Event();
+
+                $newEvent->event_date = $theDate;
+                $newEvent->event_name = (isset($event[1]))?$event[1]:'';
+                $newEvent->event_place_text = (isset($event[2]))?$event[2]:'';
+                $newEvent->event_details = (isset($event[3]))?$event[3]:'';
+               // dd($newEvent);
+                $newEvent->event_img_url='';
+                $newEvent->event_address='';
+                $newEvent->event_info_path='';
+                $newEvent->event_url_path='';
+                $newEvent->event_results_path='';
+                $newEvent->save();
+            }
+            else
+            {
+                $theEvent->event_name=(isset($event[1]))?$event[1]:'';
+                $theEvent->event_place_text = (isset($event[2]))?$event[2]:'';
+                $theEvent->event_details = (isset($event[3]))?$event[3]:'';
+                $theEvent->save();
+            }
+
+        }
+
+        return redirect('admincalendar');
 
     }
     public function exportResultsToExcel($eventId)
@@ -1201,6 +1317,56 @@ class JsonRequestController extends Controller {
             $updatedItem->save();
         }
 
+    }
+    public function saveJoinTextEdits()
+    {
+        $input= Request::all();
+        $html_text=$input['html_text'];
+        $pageId = Page::where('title', '=','Join')->first()->id;
+        $joinHtmlTextBlog = Blog::where('page_id','=',$pageId)->where('heading','=','joinText')->first();
+        $joinHtmlTextBlog->html_text=$html_text;
+        $joinHtmlTextBlog->save();
+
+    }
+    public function uploadMembershipForm()
+    {
+        $input= Request::all();
+        if (isset($input['fileUploadMembershipForm']))
+        {
+            $file=$input['fileUploadMembershipForm'];
+            //will need
+            $pageId = Page::where('title', '=','Join')->first()->id;
+            $membershipForm = Blog::where('page_id','=',$pageId)->where('heading','=','joinForm')->first();
+
+            $user_id = Auth::user()->id;
+
+            $membershipForm->user_id = $user_id;
+
+           //make new file name
+
+            $date = new \DateTime();
+            $timestampString = $date->getTimestamp();
+            $ext = $file->getClientOriginalExtension();
+            $newFilename = $user_id . '_membershipForm_' . $timestampString . '.' . $ext;
+
+
+
+            if($file->isValid())
+            {
+                if($ext=='pdf')
+                {
+                    $file->move('img/usercontent',$newFilename);
+
+                    $this->deleteFile($membershipForm->image_url);
+                    $membershipForm->image_url='/img/usercontent/' . $newFilename;
+                    $membershipForm->save();
+                }
+
+            }
+            return redirect("adminjoin") ;
+
+
+        }
     }
 	/**
 	 * Show the form for creating a new resource.

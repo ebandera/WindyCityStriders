@@ -28,6 +28,14 @@ class Page extends Model {
     {
         return $this->hasOne('App\Blog')->where('heading','=','sponsors');
     }
+    public function joinForm()
+    {
+        return $this->hasOne('App\Blog')->where('heading','=','joinForm');
+    }
+    public function joinText()
+    {
+        return $this->hasOne('App\Blog')->where('heading','=','joinText');
+    }
 
 
 

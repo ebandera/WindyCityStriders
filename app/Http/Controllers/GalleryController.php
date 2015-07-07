@@ -4,6 +4,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\GalleryItem;
 use App\Gallery;
+use Auth;
 
 use Carbon\Carbon;
 use App\Event;
@@ -92,15 +93,26 @@ class GalleryController extends Controller {
     }
     public function insert()
     {
+        $defaultGalleryTileImage=config('app.DefaultGalleryTile');
+
+
+        //make new file name
+        $user_id=Auth::user()->id;
+        $date = new \DateTime();
+        $timestampString = $date->getTimestamp();
+        $ext = pathinfo($defaultGalleryTileImage, PATHINFO_EXTENSION);
+        $newFilename = $user_id . '_galleryTileImage_' . $timestampString . '.' . $ext;
+
+        copy($defaultGalleryTileImage,'img/usercontent/' . $newFilename);
         $gallery = new gallery();
         $gallery->event_id=null;
         $gallery->title='default';
-        $gallery->image_url='/img/galleryTEMPimage.jpg';
+        $gallery->image_url='/img/usercontent/' . $newFilename;
         $gallery->sort_order=0;
         $gallery->save();
 
 
-      return 'true';
+        return 'true';
     }
 
     public function saveGalleryCaption()

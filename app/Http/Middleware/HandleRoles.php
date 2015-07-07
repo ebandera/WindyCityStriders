@@ -15,9 +15,11 @@ class HandleRoles {
 	{
 
         $requestedPage = $request->segment(1);
+       // dd($requestedPage);
         $secondSegment = $request->segment(2);
        // var_dump($test);exit();
         $isBasePage = $this->isValidBasePageRequest($requestedPage);
+        //dd($requestedPage);
         //this will handle the redirecting
         //if the user is authenticated and they are seeing a base page (that everyone can see)
         if($request->user()!=null&&$isBasePage) {
@@ -54,6 +56,7 @@ class HandleRoles {
         {
             if($this->doesUserHaveAccess($requestedPage,$request->user()->user_profile))
             {
+                //dd($requestedPage);
                 return $next($request);
             }
             else
@@ -65,6 +68,7 @@ class HandleRoles {
 	}
     private function buildRoutePrefix($page,$role) //this builds the prefix to the base page to redirect admins to adminpages etc
     {
+        //dd($page);
         $prefix='';
         if($role=='member')
         {
@@ -81,9 +85,16 @@ class HandleRoles {
         }
         else if($role=='admin')
         {
+           // dd($page);
             switch($page)
             {
                 //if there are any pages that the admin sees the same as an unauthenticated user, a switch should be added
+                case 'auth':
+                    $prefix='';
+                    break;
+                case 'password':
+                    $prefix='';
+                    break;
                 default:
                     $prefix='admin';
                     break;
@@ -125,7 +136,10 @@ class HandleRoles {
             case 'calendar':
                 $valid=true;
                 break;
-            case 'sponsors';
+            case 'sponsors':
+                $valid=true;
+                break;
+            case 'testEmail':
                 $valid=true;
                 break;
            default:

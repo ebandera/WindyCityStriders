@@ -15,7 +15,7 @@ use Auth;
 class ScreenDataHelper {
 
 
-    public $footerBlogs,$theUser,$theAddress,$page;
+    public $footerBlogs,$theUser,$theAddress,$page,$defaultImage;
 
     function __construct()
     {
@@ -26,6 +26,7 @@ class ScreenDataHelper {
         $this->getFooterBlogs();
         $this->getUser();
         $this->getAddress();
+        $this->getDefaultImagePath();
         return $this;
     }
     function getCarouselImages()
@@ -57,6 +58,9 @@ class ScreenDataHelper {
         $page_id = Page::where('title','Contact')->first()->id;
         $this->theAddress=Blog::where('page_id',$page_id)->first()->html_text;
     }
-
+    private function getDefaultImagePath()
+    {
+        $this->defaultImage=config('app.DefaultPrimaryImage');
+    }
 
 }

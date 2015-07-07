@@ -76,6 +76,10 @@ class TestDataSeeder extends Seeder {
             'title'=>'Sponsors'
         ));
 
+        $joinPage = Page::create(array(
+            'title'=>'Join'
+        ));
+
 		//seed our user_profiles table
 		//$adminProfile = UserProfile::create(array(
 		//	'profile_name'=>'admin'
@@ -466,7 +470,7 @@ class TestDataSeeder extends Seeder {
 		//seed our gallery_items table
 
 		$galleryItem1=GalleryItem::create(array(
-			'image_url'=>'/img/slideshow.png',
+			'image_url'=>'/img/defaultPrimary.png',
 			'caption'=>'My first Caption Gallery',
 			'sort_order'=>1,
 			'gallery_id'=>$evergreenParkGallery->id
@@ -515,7 +519,7 @@ class TestDataSeeder extends Seeder {
         ));
 
         $galleryItem9=GalleryItem::create(array(
-            'image_url'=>'/img/slideshow.png',
+            'image_url'=>'/img/defaultPrimary.png',
             'caption'=>'My first Caption Gallery',
             'sort_order'=>1,
             'gallery_id'=>$evergreenParkGallery2->id
@@ -759,6 +763,36 @@ class TestDataSeeder extends Seeder {
         'sort_order'=>2
 
         ));
+        $joinHeading = Blog::create(array(
+            'user_id'=>$userEric->id,
+            'page_id'=>$joinPage->id,
+
+            'blog_level'=>'primary',
+            'heading'=>'joinText',
+            'image_url'=>'',
+            'html_text'=>"The purpose of the Casper Windy City Striders is to promote and encourage running related activities for runners of all ages and abilities. Membership in the Striders provides discounted race fees, enrollment in the Road Runners Club of America (including RRCA insurance), a year's subscription to The Colorado Runner magazine, and a long sleeve WCS tech shirt. With your membership card you will get 15% off running shoes and running apparel at Bush-Wells Sporting Goods, 15% off merchandise at Gear Up, 15% discount at Ragged Edge Sports, 30% discount at Sierra Trading Post, and Mountain Sports will provide race awards." .
+            "The Casper Windy City Striders is an entirely volunteer organization and your help with any of the club's activities will be appreciated. Please feel free to contact any board member if you would like to volunteer, suggest new ideas, or have any comments (good or bad) regarding any of the Strider events.".
+            "Instructions: Make check payable to 'Windy City Striders' and mail application to CWCS, PO Box 52161, Casper, WY 82605 or hand deliver it at the next race.".
+            "Note: Please be sure to include your email address on the form. We use email to communicate with our membership throughout the year.",
+            'image_position'=>'',
+            'expiration_date'=>'2015-12-09',
+            'sort_order'=>0
+
+        ));
+
+        $joinForm = Blog::create(array(
+            'user_id'=>$userEric->id,
+            'page_id'=>$joinPage->id,
+
+            'blog_level'=>'primary',
+            'heading'=>'joinForm',
+            'image_url'=>'/img/15CWCSMbrship.pdf',
+            'html_text'=>'Membership Form (click to download)',
+            'image_position'=>'',
+            'expiration_date'=>'2015-12-09',
+            'sort_order'=>0
+
+        ));
 		//seed out board members table
 		$marlene = BoardMember::create(array(
 			'name'=>'Marlene Short',
@@ -817,7 +851,7 @@ class TestDataSeeder extends Seeder {
 
         $carouselItem1 = CarouselItem::create(array(
             'reference_name'=>'My First Item',
-            'image_url'=>'/img/slideshow.png',
+            'image_url'=>'/img/defaultPrimary.png',
             'caption'=>'My First Caption',
             'sort_order'=>1
 

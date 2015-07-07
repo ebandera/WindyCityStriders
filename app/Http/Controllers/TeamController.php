@@ -26,6 +26,7 @@ class TeamController extends Controller {
         $year = date('Y');
         //echo $year;exit();
         $board = BoardMember::where('year','=',$year)->get();
+        BoardMember::sortCustom($board);
         $years = BoardMember::retreiveCompleteYearlist($year);
         $selectedYear = $year;
         //var_dump($board);
@@ -38,9 +39,14 @@ class TeamController extends Controller {
         $year = date('Y');
         //echo $year;exit();
         $board = BoardMember::where('year','=',$year)->get();
+      // dd($board);
+      //  var_dump($board);
+        BoardMember::sortCustom($board);
+        $board->values()->all();
+
         $years = BoardMember::retreiveCompleteYearlist($year);
         $selectedYear = $year;
-        //var_dump($board);
+
         $sdh= $this->sdh->getData();
         return view('adminpages.team',compact('board','sdh','years','selectedYear'));
     }
@@ -49,6 +55,7 @@ class TeamController extends Controller {
         $year = date('Y');
         //echo $year;exit();
         $board = BoardMember::where('year','=',$selectedYear)->get();
+        BoardMember::sortCustom($board);
         $years = BoardMember::retreiveCompleteYearlist($year);
 
         //var_dump($board);
@@ -61,6 +68,7 @@ class TeamController extends Controller {
         $year = date('Y');
         //echo $year;exit();
         $board = BoardMember::where('year','=',$selectedYear)->get();
+        BoardMember::sortCustom($board);
         $years = BoardMember::retreiveCompleteYearlist($year);
 
         //var_dump($board);

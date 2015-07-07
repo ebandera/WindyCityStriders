@@ -32,7 +32,9 @@ Route::post('insertGallery','GalleryController@insert');
 
 
 Route::get('join', 'JoinController@index');
-Route::get('adminjoin', 'JoinController@index');
+Route::get('adminjoin', 'JoinController@admin');
+Route::post('saveJoinTextEdits','JsonRequestController@saveJoinTextEdits');
+Route::post('uploadMembershipForm','JsonRequestController@uploadMembershipForm');
 
 Route::get('team', 'TeamController@index');
 Route::get('adminteam', 'TeamController@admin');
@@ -60,6 +62,7 @@ Route::post('updateEvent','JsonRequestController@updateEvent');
 Route::post('updateEventData','JsonRequestController@updateEventData');
 Route::post('addEvent','JsonRequestController@addEvent');
 Route::post('deleteEvent','JsonRequestController@deleteEvent');
+Route::post('updateBulkEvents','JsonRequestController@updateBulkEvents');
 
 
 //Route::get('admincalendar/editEvent/{id}',function(){return phpinfo();});
@@ -72,6 +75,7 @@ Route::post('uploadBlogItem','JsonRequestController@uploadBlogItem');
 
 Route::post('uploadTeamImage','JsonRequestController@uploadTeamImage');
 Route::post('updateTeam','JsonRequestController@updateTeam');
+Route::post('deleteTeam','JsonRequestController@deleteTeam');
 
 Route::post('updateAboutItem/{id}','JsonRequestController@updateAbout');
 Route::post('updateAddress','JsonRequestController@updateAddress');
@@ -108,6 +112,9 @@ Route::post('deleteUser','JsonRequestController@deleteUser');
 Route::get('systemSettings','SystemSettingsController@index');
 Route::post('updateSystemSettings','JsonRequestController@updateSystemSettings');
 
+Route::post('contactusemail','EmailController@contactusemail');
+Route::post('admincontactusemail','EmailController@index');
+Route::post('approveuseremail','EmailController@approveuseremail');
     //'JsonRequestController@index');
 Route::any('sendMessage',function(){
 	//return current request data

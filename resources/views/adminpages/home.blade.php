@@ -39,7 +39,7 @@
                     <div class="two-third">
 
                         <div class="adminHomeCarouselImage">
-                            <img id="adminCarouselImage" src="/img/slideshow.png" />
+                            <img id="adminCarouselImage" src="{{$sdh->defaultImage}}" />
                         </div>
                         <div class="adminHomeCarouselCaption">
                             <h3>caption</h3>
@@ -210,4 +210,21 @@
 		<!-- END HOME -->
 
 	</div><!-- END WRAPPER -->
+    <script>
+        $(document).ready(function($) {
+            $('#adminCarouselListbox').change(function () {
+                $('#adminCarouselImage').attr('src', $('#adminCarouselListbox option:selected').data('image'));
+                $('#adminCarouselTextarea').val($('#adminCarouselListbox option:selected').data('caption'));
+
+            });
+            $('#fileUpload1').change(function(){
+
+                var tmppath = URL.createObjectURL(event.target.files[0]);
+                $('#adminCarouselImage').attr('src',tmppath);
+
+            });
+        });
+
+
+    </script>
 @endsection

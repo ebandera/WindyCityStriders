@@ -20,11 +20,11 @@
         </div>                              <!--END MONTH-YEAR-BAR-->
         <div class="date-bar">
             @foreach($calendarMonthItems as $eventDate)
-            <div class="date-cube span3">
-                <a href="/calendar/{{$eventDate->id}}"><p>{{date_format($eventDate->event_date,'d')}}</p></a>
-            </div>
-            @endforeach
-              <!--END DATE-BAR-->
+                <div class="date-cube span3">
+                    <a href="/calendar/{{$eventDate->id}}"><p>{{date_format($eventDate->event_date,'d')}}</p></a>
+                </div>
+                @endforeach
+                        <!--END DATE-BAR-->
 
         </div>
         <div class="event-bar">
@@ -37,15 +37,40 @@
 
                 <p>{{ $calendarItem->event_details }}</p>
                 <P>{{ $calendarItem->event_address }}</P>
-                <P><a href="/gallery">See Pictures of This Event</a></P>
-                <P><a href="{{ $calendarItem->event_info_path }}">Link for more details</a></P>
-                <P><a href="{{ $calendarItem->event_results_path }}">Results</a></P>
+                <div id="bra-map" class="google-map"></div><br />
+                @if($calendarItem->event_address!='')
+                    <script>
+                        $(document).ready(function() {
+                            $('#bra-map').bra_google_map({location: '{{$calendarItem->event_address}}', zoom: 12});
+                        });
+
+                    </script>
+                @endif
+
             </div>
             <div class="event-img span4">
-                <img src="{{ $calendarItem->event_img_url }}" alt="race"/>
+                @if($calendarItem->event_img_url!='')
+
+                    <img src="{{ $calendarItem->event_img_url }}" alt="race"/>
+                @endif
+                <hr>
+
+                @if($calendarItem->gallery)
+
+                    <P><a href="/gallery/{{$calendarItem->gallery->id}}">Event Picture Gallery</a></P>
+                @endif
+                @if($calendarItem->event_info_path!='')
+                    <P><a target="_blank" href="{{ $calendarItem->event_info_path }}">Event Flyer</a></P>
+                @endif
+                @if($calendarItem->event_url_path!='')
+                    <P><a target="_blank" href="{{ $calendarItem->event_url_path }}">Website for more details</a></P>
+                @endif
+                @if($calendarItem->event_results_path!='')
+                    <P><a href="{{ $calendarItem->event_results_path }}">Results</a></P>
+                @endif
             </div>
             <div class="event-details2 span11">
-                <p>Secondary details</p>
+
             </div>
         </div> <!--END EVENT-BAR-->
     </div> <!--END CONTAINER BOOTSTRAP-->

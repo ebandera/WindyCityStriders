@@ -195,29 +195,12 @@ Eric's Scripts
  ***************************************************/
 
 $(document).ready(function($) {
-    $('#adminCarouselListbox').change(function(){
-        $('#adminCarouselImage').attr('src',$('#adminCarouselListbox option:selected').data('image'));
-        $('#adminCarouselTextarea').val($('#adminCarouselListbox option:selected').data('caption'));
 
-    });
     $('#adminAboutListbox').change(function(){
         $('#adminAboutTitle').val($('#adminAboutListbox option:selected').data('heading'));
         $('#adminAboutText').val($('#adminAboutListbox option:selected').data('caption'));
     });
-    $('#adminBoardListbox').change(function(){
-        $('#adminBoardImage').attr('src',$('#adminBoardListbox option:selected').data('image'));
-        $('#adminBoardTextarea').val($('#adminBoardListbox option:selected').data('caption'));
-       // $('#adminBoardPosition').val($('#adminBoardListbox option:selected').data('position'));
-       // alert($('#adminBoardListbox option:selected').data('position'));
-        $('#adminBoardPosition').val($('#adminBoardListbox option:selected').data('position'));
-        $('#adminBoardTwitter').val($('#adminBoardListbox option:selected').data('twitter'));
-        $('#adminBoardFacebook').val($('#adminBoardListbox option:selected').data('facebook'));
-        $('#adminBoardName').val($('#adminBoardListbox option:selected').text());
-        $('#adminBoardYear').val($('#adminBoardListbox option:selected').data('year'));
-        //alert($('#adminBoardListbox option:selected').data('position'));
 
-
-    });
 
 
 
@@ -377,41 +360,49 @@ function SaveAboutEdits()
     var heading = $('#adminAboutTitle').val();
     var html_text = $('#adminAboutText').val();
     var itemId =  $('#adminAboutListbox option:selected').val();
-    var csrfToken = $('meta[name="csrf-token"]').attr('content');
-    var url = "../updateAboutItem/" + itemId;
-    //alert(title);
-    //alert(text);
-    //alert(itemId);
-    $.ajax({
-        type: "POST",
-        url: url,
-        data: {heading: heading, html_text: html_text,itemId:itemId,_token: csrfToken},
-        success: function (data) {
-            //alert(data);
-            var obj=JSON.parse(data);
-            obj.heading;
-            if(data!=='false') {
-                $('#adminAboutlListbox option:selected').data('heading', heading);
-                $('#adminAboutListbox option:selected').attr('data-heading', heading);
-                $('#adminAboutlListbox option:selected').data('caption', html_text);
-                $('#adminAboutListbox option:selected').attr('data-caption', html_text);
-                $('#adminAboutTitlePresent' + itemId).html(heading);
-                $('#adminAboutTextPresent' + itemId).html(html_text);
-                //$('#carouselCaption' + itemId).html(caption);
-               // alert('Data was updated');
-            }
-            else
-            {
-                alert('Data could not be saved');
-            }
 
-        },
-        error: function(xhr, status, error){
+    //as long as an item is picked
+    if (typeof(itemId)!='undefined') {
+        var csrfToken = $('meta[name="csrf-token"]').attr('content');
+        var url = "../updateAboutItem/" + itemId;
+        //alert(title);
+        //alert(text);
+        //alert(itemId);
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: {heading: heading, html_text: html_text, itemId: itemId, _token: csrfToken},
+            success: function (data) {
+                //alert(data);
+                var obj = JSON.parse(data);
+                obj.heading;
+                if (data !== 'false') {
+                    $('#adminAboutlListbox option:selected').data('heading', heading);
+                    $('#adminAboutListbox option:selected').attr('data-heading', heading);
+                    $('#adminAboutlListbox option:selected').data('caption', html_text);
+                    $('#adminAboutListbox option:selected').attr('data-caption', html_text);
+                    $('#adminAboutTitlePresent' + itemId).html(heading);
+                    $('#adminAboutTextPresent' + itemId).html(html_text);
+                    //$('#carouselCaption' + itemId).html(caption);
+                    // alert('Data was updated');
+                    alert('Updates Saved!');
+                }
+                else {
+                    alert('Data could not be saved');
+                }
 
-            alert('error');
-            alert(xhr.responseText);
-        }
-    });
+            },
+            error: function (xhr, status, error) {
+
+                alert('error');
+                alert(xhr.responseText);
+            }
+        });
+    }
+    else
+    {
+        alert('Please Select a Content Item to Edit!');
+    }
 }
 function StartBlogEntry()
 {
@@ -664,45 +655,91 @@ function UpdateAddress(){
 
 function UpdateBoardMember(){
     var id =  $('#adminBoardListbox option:selected').val();
-    var year = $('#adminBoardYear').val();
-    var name = $('#adminBoardName').val();
-    var description = $('#adminBoardTextarea').val();
-    var position = $('#adminBoardPosition').val();
-    var twitter = $('#adminBoardTwitter').val();
-    var facebook = $('#adminBoardFacebook').val();
+    if (typeof(id) != 'undefined')
+    {
+        var year = $('#adminBoardYear').val();
+        var name = $('#adminBoardName').val();
+        var description = $('#adminBoardTextarea').val();
+        var position = $('#adminBoardPosition').val();
+        var twitter = $('#adminBoardTwitter').val();
+        var facebook = $('#adminBoardFacebook').val();
 
 
-    var url = "../updateTeam" ;
+        var url = window.location.origin + "/updateTeam" ;
 
-    var csrfToken = $('meta[name="csrf-token"]').attr('content');
+        var csrfToken = $('meta[name="csrf-token"]').attr('content');
 
-    //alert(title);
-    //alert(text);
-    //alert(itemId);
-    $.ajax({
-        type: "POST",
-        url: url,
-        data: {id:id,year:year,name: name,description:description,position:position,twitter:twitter,facebook:facebook,_token: csrfToken},
-        success: function (data) {
-            //alert(data);
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: {id:id,year:year,name: name,description:description,position:position,twitter:twitter,facebook:facebook,_token: csrfToken},
+            success: function (data) {
+                //alert(data);
 
-            if(data!=='false') {
-                window.location.reload();
+                if(data!=='false') {
+                    window.location.reload();
 
-                // alert('Data was updated');
+                }
+                else
+                {
+                    alert('Data could not be saved');
+                }
+
+            },
+            error: function(xhr, status, error){
+
+                alert('error');
+                alert(xhr.responseText);
             }
-            else
-            {
-                alert('Data could not be saved');
+        });
+    }
+    else
+    {
+        alert('Please Select a Board Member to update!');
+    }
+
+}
+
+function DeleteBoardMember()
+{
+    var id =  $('#adminBoardListbox option:selected').val();
+    if (typeof(id) != 'undefined')
+    {
+
+
+        var url = window.location.origin + "/deleteTeam" ;
+
+        var csrfToken = $('meta[name="csrf-token"]').attr('content');
+
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: {id:id,_token: csrfToken},
+            success: function (data) {
+                //alert(data);
+
+                if(data!=='false') {
+                    window.location.reload();
+
+
+                }
+                else
+                {
+                    alert('Data could not be saved');
+                }
+
+            },
+            error: function(xhr, status, error){
+
+                alert('error');
+                alert(xhr.responseText);
             }
-
-        },
-        error: function(xhr, status, error){
-
-            alert('error');
-            alert(xhr.responseText);
-        }
-    });
+        });
+    }
+    else
+    {
+        alert('Please Select a Board Member to delete!');
+    }
 }
 
 function searchEventsByDateRange()
@@ -901,8 +938,7 @@ function SaveEvent()
     var eventDescription = $('#eventDescription').val();
     var eventAddress = $('#eventAddress').val();
     var eventWebUrl = $('#eventWebUrl').val();
-    alert(id);
-    alert('hello');
+
     var url = window.location.origin + "/updateEvent" ;
 
     var csrfToken = $('meta[name="csrf-token"]').attr('content');
@@ -913,7 +949,7 @@ function SaveEvent()
         data: {id:id,eventName:eventName,eventDate:eventDate,eventWhere:eventWhere,eventDescription:eventDescription,eventAddress:eventAddress,eventWebUrl:eventWebUrl,_token: csrfToken},
         success: function (data) {
             if(data!=='false') {
-                window.location.reload();
+                window.location.assign('/admincalendar/editEvent/' + id);
 
 
             }
@@ -1263,6 +1299,32 @@ function ApproveUser(id)
         }
     });
 }
+function ApproveUserEmail(id)
+{
+    var url = window.location.origin + "/approveuseremail" ;
+
+    var csrfToken = $('meta[name="csrf-token"]').attr('content');
+
+    $.ajax({
+        type: "POST",
+        url: url,
+        data: {id:id,_token: csrfToken},
+        success: function (data) {
+            if(data!=='false') {
+               alert('User has been sent an email');
+            }
+            else
+            {
+                alert('Data could not be saved');
+            }
+        },
+        error: function(xhr, status, error){
+
+            alert('error');
+            alert(xhr.responseText);
+        }
+    });
+}
 function EraseUser(id)
 {
 
@@ -1491,6 +1553,68 @@ function SaveSystemSettings()
         }
     });
 
+}
+function sendContactMessage()
+{
+    var name=$('#name').val();
+    var email=$('#email').val();
+    var contacturl=$('#url').val();
+    var message = $('#message').val();
+    var url = window.location.origin + "/contactusemail";
+    var csrfToken = $('meta[name="csrf-token"]').attr('content');
+    //alert(name);
+    //alert(email);
+    //alert(url);
+    //alert(message);
+    $.ajax({
+        type: "POST",
+        url: url,
+        data: {name: name, email:email,contacturl:contacturl,message:message, _token: csrfToken},
+        success: function (data) {
+            if (data !== 'false') {
+                alert('Your message was transmitted successfully!')
+                window.location.reload();
+            }
+            else {
+                alert('Data could not be saved');
+            }
+        },
+        error: function (xhr, status, error) {
+
+            alert('error');
+            alert(xhr.responseText);
+        }
+    });
+}
+function SaveJoinTextEdits()
+{
+    //get the content
+    var html_text=  CKEDITOR.instances['adminJoinText'].getData();
+
+    var url = window.location.origin + "/saveJoinTextEdits";
+    var csrfToken = $('meta[name="csrf-token"]').attr('content');
+    //alert(name);
+    //alert(email);
+    //alert(url);
+    //alert(message);
+    $.ajax({
+        type: "POST",
+        url: url,
+        data: {html_text:html_text, _token: csrfToken},
+        success: function (data) {
+            if (data !== 'false') {
+                 window.location.reload();
+            }
+            else {
+                alert('Data could not be saved');
+            }
+        },
+        error: function (xhr, status, error) {
+
+            alert('error');
+            alert(xhr.responseText);
+        }
+    });
 }
 /************************************
  * Method extensions

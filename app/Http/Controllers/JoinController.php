@@ -4,6 +4,7 @@ use Illuminate\Foundation\Bus\DispatchesCommands;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use App\Blog;
+use App\Page;
 
 
 class JoinController extends Controller {
@@ -38,7 +39,30 @@ class JoinController extends Controller {
     public function index()
     {
         $sdh= $this->sdh->getData();
-        return view('pages.join',compact('sdh'));
+        $page = Page::where('title','=','Join')->first();
+        $joinForm = $page->joinForm;
+        $joinText = $page->joinText;
+
+        //get header blog (page content)
+       // dd($headerBlog);
+
+        //get blogs (1 blog for the image download etc
+
+        return view('pages.join',compact('sdh','joinForm','joinText'));
+    }
+    public function admin()
+    {
+
+        $sdh= $this->sdh->getData();
+        $page = Page::where('title','=','Join')->first();
+        $joinForm = $page->joinForm;
+        $joinText = $page->joinText;
+        //get header blog (page content)
+        // dd($headerBlog);
+
+        //get blogs (1 blog for the image download etc
+
+        return view('adminpages.join',compact('sdh','joinForm','joinText'));
     }
 
 }

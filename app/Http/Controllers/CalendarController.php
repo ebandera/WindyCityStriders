@@ -90,7 +90,8 @@ class CalendarController extends Controller {
     public function editEvent($id)
     {
 
-        $calendarItem = Event::where('event_date', '>', Carbon::now())->orderBy('event_date')->firstOrFail();
+        //$calendarItem = Event::where('event_date', '>', Carbon::now())->orderBy('event_date')->firstOrFail();
+        $calendarItem = Event::find($id);
         if(!$calendarItem){exit();}
         $monthNumber = date_format($calendarItem->event_date,'m');
         $yearNumber = date_format($calendarItem->event_date,'Y');
@@ -112,7 +113,7 @@ class CalendarController extends Controller {
         $eventListItems = Event::whereBetween('event_date', array($todayDate, $oneYear))->orderBy('event_date')->get();
 
         $editingEvent = Event::find($id);
-
+        //dd($editingEvent);
 
         $sdh= $this->sdh->getData();
         return view('adminpages.calendar',compact('calendarItem','calendarMonthItems','eventListItems','sdh','editingEvent'));
@@ -121,6 +122,10 @@ class CalendarController extends Controller {
     public function selectEventAdmin($id)
     {
         $calendarItem = Event::find($id);
+        if($calendarItem!=null)
+        {
+
+
         $monthNumber = date_format($calendarItem->event_date,'m');
         $yearNumber = date_format($calendarItem->event_date,'Y');
         $timeString = $yearNumber . '-' . $monthNumber . '-01 00:00:00';
@@ -141,6 +146,11 @@ class CalendarController extends Controller {
         // var_dump(count($calendarMonthItems));exit();
         $sdh= $this->sdh->getData();
         return view('adminpages.calendar',compact('calendarItem','calendarMonthItems','eventListItems','sdh'));
+        }
+        else
+        {
+            return redirect('admincalendar');
+        }
     }
 
     public function changeTime($direction,$dateReference)

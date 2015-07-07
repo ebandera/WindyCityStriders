@@ -39,26 +39,26 @@
                     <ul>
                         <li>
                             <p><strong>Name</strong> <em>(*)</em></p>
-                            <input name="name" type="text" class="requiredField" />
+                            <input name="name" id="name" type="text" class="requiredField" />
                         </li>
 
                         <li>
                             <p><strong>E-mail</strong> <em>(*)</em></p>
-                            <input name="email" type="text" class="requiredField email" />
+                            <input name="email" id="email" type="text" class="requiredField email" />
                         </li>
 
                         <li>
                             <p><strong>URL</strong> <em>(Optional)</em></p>
-                            <input name="url" type="text" />
+                            <input name="url" id="url" type="text" />
                         </li>
 
                         <li>
                             <p><strong>Message</strong> <em>(*)</em></p>
-                            <textarea name="message" rows="20" cols="30" class="requiredField"></textarea>
+                            <textarea name="message" id="message" rows="20" cols="30" class="requiredField"></textarea>
                         </li>
 
                         <li class="submit-button">
-                            <input name="submit" id="submitted" value="Send Message" class="submit" type="submit" />
+                            <input name="submit" id="submitted" value="Send Message" class="submit" type="button" onclick="sendContactMessage()"; />
                         </li>
                     </ul>
                 </form><!--END CONTACT FORM-->

@@ -31,81 +31,37 @@
 
                     <!--	<h3 class="title">Meet the team</h3>-->
 
-                    @if(count($board)>=2)
 
-                            <div class="one-half team">
-                                <img src="{{ $board[0]->image_url }}" alt="" />
-                                <div class="arrow"></div>
-                                <div class="team-member-info">
-                                    <ul>
-                                        <li><h2>{{ $board[0]->name }}</h2></li>
-                                        <li><h3>{{ $board[0]->position }}</h3></li>
-                                    </ul>
-                                    <p>{{ $board[0]->description }}</p>
-                                    <ul class="social-personal">
-                                        <li><a href="{{ $board[0]->twitter_link }}">Twitter</a><span>/</span></li>
-                                        <li><a href="{{ $board[0]->facebook_link }}">Facebook</a></li>
-                                    </ul>
-                                </div><!--END TEAM-MEMBER-INFO-->
-                            </div><!--END ONE-THIRD-->
-
-                            <div class="one-half team last">
-                                <img src="{{ $board[1]->image_url }}" alt="" />
-                                <div class="arrow"></div>
-                                <div class="team-member-info">
-                                    <ul>
-                                        <li><h2>{{ $board[1]->name }}</h2></li>
-                                        <li><h3>{{ $board[1]->position }}</h3></li>
-                                    </ul>
-                                    <p>{{ $board[1]->description }}</p>
-                                    <ul class="social-personal">
-                                        <li><a href="{{ $board[1]->twitter_link }}">Twitter</a><span>/</span></li>
-                                        <li><a href="{{ $board[1]->facebook_link }}">Facebook</a></li>
-                                    </ul>
-                                </div><!--END TEAM-MEMBER-INFO-->
-                            </div><!--END ONE-THIRD LAST-->
+                    <?php $index=0; ?>
+                    @foreach($board as $member)
+                        @if($index==0) <div class="one-half">
+                        @elseif($index==1) <div class="one-half last">
+                        @elseif($index%3==1) <div class="one-third last">
+                        @else <div class="one-third">@endif
 
 
-                    @endif
-                    @if(count($board)>2)
-                        @for($i=2;$i<count($board);$i++)
-                            @if($i%3==1)
-                                <div class="one-third team last">
-                                    <img src="{{ $board[$i]->image_url }}" alt="" />
-                                    <div class="arrow"></div>
-                                    <div class="team-member-info">
-                                        <ul>
-                                            <li><h2>{{ $board[$i]->name }}</h2></li>
-                                            <li><h3>{{ $board[$i]->position }}</h3></li>
-                                        </ul>
-                                        <p>{{ $board[$i]->description }}</p>
-                                        <ul class="social-personal">
-                                            <li><a href="{{ $board[$i]->twitter_link }}">Twitter</a><span>/</span></li>
-                                            <li><a href="{{ $board[$i]->facebook_link }}">Facebook</a></li>
-                                        </ul>
-                                    </div><!--END TEAM-MEMBER-INFO-->
-                                </div><!--END ONE-THIRD LAST-->
-                            @else
-                                <div class="one-third team">
-                                    <img src="{{ $board[$i]->image_url }}" alt="" />
-                                    <div class="arrow"></div>
-                                    <div class="team-member-info">
-                                        <ul>
-                                            <li><h2>{{ $board[$i]->name }}</h2></li>
-                                            <li><h3>{{ $board[$i]->position }}</h3></li>
-                                        </ul>
-                                        <p>{{ $board[$i]->description }}</p>
-                                        <ul class="social-personal">
-                                            <li><a href="{{ $board[$i]->twitter_link }}">Twitter</a><span>/</span></li>
-                                            <li><a href="{{ $board[$i]->facebook_link }}">Facebook</a></li>
-                                        </ul>
-                                    </div><!--END TEAM-MEMBER-INFO-->
-                                </div><!--END ONE-THIRD LAST-->
-                            @endif
 
-                        @endfor
 
-                    @endif
+                            <img src="{{ $member->image_url }}" alt="" />
+                            <div class="arrow"></div>
+                            <div class="team-member-info">
+                                <ul>
+                                    <li><h2>{{ $member->name }}</h2></li>
+                                    <li><h3>{{ $member->position }}</h3></li>
+                                </ul>
+                                <p>{{ $member->description }}</p>
+                                <ul class="social-personal">
+                                    <li><a href="{{ $member->twitter_link }}">Twitter</a><span>/</span></li>
+                                    <li><a href="{{ $member->facebook_link }}">Facebook</a></li>
+                                </ul>
+                            </div><!--END TEAM-MEMBER-INFO-->
+                        </div><!--END ONE-THIRD-->
+                       <?php $index+=1; ?>
+
+                    @endforeach
+
+
+
                 </div>
 
             </div><!--END MYAREACONTAINER-->
@@ -165,8 +121,8 @@
 
                             </select>
 
-                            <input type="button" class="adminMyButton1" onclick="UpdateBoardMember()" value = "Save Edits" />
-                            <input type="button" class="adminMyButton1" value = "Delete Item" />
+                            <input type="button" class="adminMyButton1" onclick="UpdateBoardMember()" value = "Save Edits" disabled />
+                            <input type="button" class="adminMyButton1" value = "Delete Item" onclick="DeleteBoardMember()" disabled />
 
                             <hr>
                             <h3>Add New</h3>
@@ -179,25 +135,49 @@
             <!-- END ABOUT -->
 
         </div><!--END CONTENTWRAPPER-->
-    </div> <!--END WRAPPER
+    </div> <!--END WRAPPER-->
     <script>
-    $('#fileUpload3').live('change', function(){
-        var tmppath = URL.createObjectURL(event.target.files[0]);
-        $('#adminBoardImage').attr('src',tmppath);
+        $(document).ready(function($) {
+            $('#adminBoardYearTop').change(function(){
+                var id = $('#adminBoardYearTop option:selected').val();
 
-    });
-
-    $('#adminBoardYearTop').live('change', function(){
-       var id = $('#adminBoardYearTop option:selected').val();
-       // var currentUrl = window.location.href;
-       // alert(currentUrl);
-       // var nextUrl = currentUrl.replace('adminteam','');
-       // alert(nextUrl);
-
-        window.location.href = '/adminteam/' + id;
+                if(typeof(id)!='undefined') {
+                    window.location.href = '/adminteam/' + id;
+                }
 
 
 
-    });
+            });
+            $('#adminBoardListbox').change(function(){
+                $('#adminBoardImage').attr('src',$('#adminBoardListbox option:selected').data('image'));
+                $('#adminBoardTextarea').val($('#adminBoardListbox option:selected').data('caption'));
+                // $('#adminBoardPosition').val($('#adminBoardListbox option:selected').data('position'));
+                // alert($('#adminBoardListbox option:selected').data('position'));
+                $('#adminBoardPosition').val($('#adminBoardListbox option:selected').data('position'));
+                $('#adminBoardTwitter').val($('#adminBoardListbox option:selected').data('twitter'));
+                $('#adminBoardFacebook').val($('#adminBoardListbox option:selected').data('facebook'));
+                $('#adminBoardName').val($('#adminBoardListbox option:selected').text());
+                $('#adminBoardYear').val($('#adminBoardListbox option:selected').data('year'));
+                $('input[type="button"]').removeAttr('disabled');
+                //alert($('#adminBoardListbox option:selected').data('position'));
+
+
+            });
+            $('#fileUpload3').change(function(){
+
+                var tmppath = URL.createObjectURL(event.target.files[0]);
+                $('#adminBoardImage').attr('src',tmppath);
+                $('#adminBoardName').val('');
+                $('#adminBoardTextarea').val('');
+                $('#adminBoardFacebook').val('');
+                $('#adminBoardTwitter').val('');
+                $('input[type="button"]').attr('disabled','disabled');
+
+
+
+            });
+        });
+
+
     </script>
 @endsection

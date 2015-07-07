@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}" />
     <meta name="xsrf-token" content="<?php $encrypter= app('Illuminate\Encryption\Encrypter'); echo $encrypter->encrypt(csrf_token());?>" >
-	<title>Laravel</title>
+	<title>Windy City Striders</title>
 
 	<!--<link href="css/app.css" rel="stylesheet">-->
 	<link href="/css/flexslider.css" rel="stylesheet">
@@ -104,7 +104,7 @@
                             <li><a href="/approveLogin">Manage Requests</a></li>
                             <li><a href="/systemSettings">System Settings</a></li>
                         @endif
-
+                        <!--<li><a href="/password/reset">Reset Password</a></li>-->
 
                     </ul>
                 </li>
@@ -112,7 +112,8 @@
                 <li><a href="/auth/login">Login</a>
                     <ul>
                         <li><a href="/auth/register">Register</a></li>
-                        <li><a href="/password/reset">Reset Password</a></li>
+
+
                     </ul>
                 </li>
                 @endif</a>

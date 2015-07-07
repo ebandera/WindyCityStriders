@@ -67,6 +67,24 @@ return [
 
 	'fallback_locale' => 'en',
 
+    /*
+    |--------------------------------------------------------------------------
+    | PHP Excel Stuff  (put in by me!!!)
+    |--------------------------------------------------------------------------
+     */
+
+    'PHPExcelIOFactory' => app_path() . '/Includes/PHPExcel/IOFactory.php',
+    'PHPExcelWriter' => app_path() . '/Includes/PHPExcel/Writer/Excel2007.php',
+    'PHPExcelBase' => app_path() . '/Includes/PHPExcel.php',
+
+    /*
+    |--------------------------------------------------------------------------
+    | Default Documents  (put in by me!!!)
+    |--------------------------------------------------------------------------
+     */
+    'DefaultPrimaryImage' => env('DEFAULT_PRIMARY_IMAGE_PATH','/img/defaultPrimary.png'),
+    'DefaultGalleryTile' => env('DEFAULT_GALLERY_IMAGE_TILE','/img/defaultGalleryTile.jpg'),
+
 	/*
 	|--------------------------------------------------------------------------
 	| Encryption Key
@@ -78,9 +96,6 @@ return [
 	|
 	*/
 
-    'PHPExcelIOFactory' => app_path() . '/Includes/PHPExcel/IOFactory.php',
-    'PHPExcelWriter' => app_path() . '/Includes/PHPExcel/Writer/Excel2007.php',
-    'PHPExcelBase' => app_path() . '/Includes/PHPExcel.php',
 
 	'key' => env('APP_KEY', 'SomeRandomString'),
 

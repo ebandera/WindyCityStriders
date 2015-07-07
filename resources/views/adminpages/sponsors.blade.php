@@ -107,7 +107,7 @@
                 <div class="one-half last adminHomeCarouselControls">
 
                     <div style="height:200px">
-                    <img id="adminSponsorImage" src="/img/slideshow.png" />
+                    <img id="adminSponsorImage" src="{{$sdh->defaultImage}}" />
                     </div>
                     <h3>Sponsor Info</h3>
                     <div id="datepickerContainer">

@@ -36,11 +36,11 @@
 .container .date-bar{
     background-color : lightgray;
     border-top: gray solid 1px;
-    height: 50px;
+    height: 40px;
     color : white;
     font-size : 30px;
     font-weight : 400;
-    padding : 15px;
+    padding : 12px;
 }
 .container .date-bar{
     /* IE10 Consumer Preview */
@@ -63,10 +63,12 @@
 }
 .date-cube{
     height: 100%;
-    width: 100px;
+    width: 60px;
+    margin-left:10px;
     border-left: dashed 1px #f5f5f5;
     border-right: dashed 1px #f5f5f5;
     float: left;
+    font-size:16pt;
 
 }
 .date-cube:hover{

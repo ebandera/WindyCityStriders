@@ -40,16 +40,21 @@
                 <p>{{ $calendarItem->event_details }}</p>
                 <P>{{ $calendarItem->event_address }}</P>
                 <div id="bra-map" class="google-map"></div><br />
+                @if($calendarItem->event_address!='')
                 <script>
                     $(document).ready(function() {
                         $('#bra-map').bra_google_map({location: '{{$calendarItem->event_address}}', zoom: 12});
                     });
 
                 </script>
+                @endif
 
             </div>
             <div class="event-img span4">
+                @if($calendarItem->event_img_url!='')
+
                 <img src="{{ $calendarItem->event_img_url }}" alt="race"/>
+                @endif
                 <hr>
 
                 @if($calendarItem->gallery)
@@ -62,11 +67,12 @@
                 @if($calendarItem->event_url_path!='')
                     <P><a target="_blank" href="{{ $calendarItem->event_url_path }}">Website for more details</a></P>
                 @endif
-
+                @if($calendarItem->event_results_path!='')
                 <P><a href="{{ $calendarItem->event_results_path }}">Results</a></P>
+                @endif
             </div>
             <div class="event-details2 span11">
-                <p>Secondary details</p>
+
             </div>
         </div> <!--END EVENT-BAR-->
     </div> <!--END CONTAINER BOOTSTRAP-->
@@ -209,6 +215,19 @@
         </div>
     </div>
     </form>
+    <div class="myareacontainer" >
+        <div class="content-wrapper clear">
+
+            <h3>Bulk Event Loader</h3>
+            <form id="eventUploadForm" method="POST" ENCTYPE="multipart/form-data" action="/updateBulkEvents">
+                <input type="hidden" name="_token" value = "{{ csrf_token() }}" />
+                <input type="file" id='fileUploadBulkEvents' name="fileUploadBulkEvents" class="adminFile"/>
+                <input type="submit" class="adminMyButton2"  name="fileBulkEventsBtn" value="Upload Excel File"  />
+
+            </form>
+        </div>
+    </div>
+
     <script>
         $(function() {
             $( "#from" ).datepicker({
@@ -239,7 +258,7 @@
                 }
             });
 
-            $('#fileUploadImage').live('change', function(){
+            $('#fileUploadImage').change(function(){
                 var tmppath = URL.createObjectURL(event.target.files[0]);
                 $('#adminEventImage').attr('src',tmppath);
             });
@@ -247,6 +266,7 @@
 
 
             @if(isset($editingEvent))
+
             var eventId={{$editingEvent->id}};
             EditEvent(eventId);
             @endif

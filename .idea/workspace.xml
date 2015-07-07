@@ -1,289 +1,239 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="16421f50-9212-4959-8c97-27fb796635a3" name="Default" comment=" Work on homepage additions and schedue page half done">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Controllers/JsonRequestController.xlsx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/locale/hu/functions" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/migrations/2015_06_28_151603_create_system_settings_table.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/CachedObjectStorage/APC.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Reader/Abstract.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Writer/Abstract.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Cell/AdvancedValueBinder.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Style/Alignment.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Controllers/ApproveLoginController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Worksheet/AutoFilter.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Autoloader.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Writer/Excel5/BIFFwriter.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Shared/Escher/DggContainer/BstoreContainer/BSE.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Worksheet/BaseDrawing.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Shared/Escher/DggContainer/BstoreContainer/BSE/Blip.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Style/Border.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Style/Borders.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Shared/Escher/DggContainer/BstoreContainer.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Shared/JAMA/CHANGELOG.TXT" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Reader/CSV.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Writer/CSV.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/CachedObjectStorage/CacheBase.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/CachedObjectStorageFactory.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Calculation.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Cell.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Worksheet/CellIterator.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Shared/OLE/ChainedBlockStream.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Chart.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Reader/Excel2007/Chart.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Writer/Excel2007/Chart.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Shared/JAMA/CholeskyDecomposition.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Shared/CodePage.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Style/Color.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Worksheet/AutoFilter/Column.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Worksheet/ColumnDimension.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Comment.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Writer/Excel2007/Comments.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Style/Conditional.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Writer/Excel2007/ContentTypes.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Writer/PDF/Core.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/CalcEngine/CyclicReferenceStack.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Chart/DataSeries.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Chart/DataSeriesValues.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Cell/DataType.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Cell/DataValidation.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Calculation/Database.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Shared/Date.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Calculation/DateTime.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Reader/DefaultReadFilter.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Cell/DefaultValueBinder.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Shared/Escher/DgContainer.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Shared/Escher/DggContainer.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/CachedObjectStorage/DiscISAM.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Writer/Excel2007/DocProps.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/DocumentProperties.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/DocumentSecurity.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Writer/PDF/DomPDF.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Shared/Drawing.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Worksheet/Drawing.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Writer/Excel2007/Drawing.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Shared/JAMA/EigenvalueDecomposition.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Calculation/Engineering.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Shared/JAMA/utils/Error.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Reader/Excel5/Escher.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Shared/Escher.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Writer/Excel5/Escher.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Reader/Excel2003XML.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Reader/Excel2007.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Writer/Excel2007.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Reader/Excel5.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Shared/Excel5.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Writer/Excel5.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Exception.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Calculation/Exception.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Chart/Exception.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Reader/Exception.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Writer/Exception.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Calculation/ExceptionHandler.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Shared/File.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Shared/OLE/PPS/File.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Style/Fill.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Calculation/Financial.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Shared/Font.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Style/Font.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Writer/Excel5/Font.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Calculation/FormulaParser.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Calculation/FormulaToken.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Calculation/Function.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Calculation/Functions.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Reader/Gnumeric.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Reader/HTML.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Writer/HTML.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/HashTable.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Worksheet/HeaderFooter.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Worksheet/HeaderFooterDrawing.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Cell/Hyperlink.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/CachedObjectStorage/ICache.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/IComparable.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/IOFactory.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Reader/IReadFilter.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Reader/IReader.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/RichText/ITextElement.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Cell/IValueBinder.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Writer/IWriter.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/CachedObjectStorage/Igbinary.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Shared/JAMA/LUDecomposition.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Chart/Layout.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Chart/Legend.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/CalcEngine/Logger.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Calculation/Logical.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Calculation/LookupRef.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Reader/Excel5/MD5.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Calculation/MathTrig.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Shared/JAMA/utils/Maths.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Shared/JAMA/Matrix.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/CachedObjectStorage/Memcache.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/CachedObjectStorage/Memory.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Worksheet/MemoryDrawing.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/CachedObjectStorage/MemoryGZip.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/CachedObjectStorage/MemorySerialized.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/NamedRange.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Style/NumberFormat.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Shared/OLE.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Shared/OLERead.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Reader/OOCalc.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Writer/PDF.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Chart/Renderer/PHP Charting Libraries.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/CachedObjectStorage/PHPTemp.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Shared/OLE/PPS.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Worksheet/PageMargins.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Worksheet/PageSetup.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Writer/Excel5/Parser.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Shared/PasswordHasher.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Chart/PlotArea.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Style/Protection.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Worksheet/Protection.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Shared/JAMA/QRDecomposition.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Reader/Excel5/RC4.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/ReferenceHelper.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Writer/Excel2007/Rels.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Writer/Excel2007/RelsRibbon.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Writer/Excel2007/RelsVBA.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Controllers/ResultsController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/RichText.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Shared/OLE/PPS/Root.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Worksheet/Row.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Worksheet/RowDimension.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Worksheet/RowIterator.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Worksheet/AutoFilter/Column/Rule.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/RichText/Run.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/CachedObjectStorage/SQLite.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/CachedObjectStorage/SQLite3.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Reader/SYLK.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Settings.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Worksheet/Drawing/Shadow.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Worksheet/SheetView.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Shared/JAMA/SingularValueDecomposition.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Shared/Escher/DgContainer/SpgrContainer/SpContainer.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Shared/Escher/DgContainer/SpgrContainer.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Controllers/SponsorsController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Calculation/Token/Stack.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Calculation/Statistical.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Shared/String.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Writer/Excel2007/StringTable.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Style.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Writer/Excel2007/Style.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Style/Supervisor.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/SystemSetting.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Controllers/SystemSettingsController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Calculation/TextData.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/RichText/TextElement.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Reader/Excel2007/Theme.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Writer/Excel2007/Theme.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Shared/TimeZone.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Chart/Title.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Middleware/VerifyApprovedUsers.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/CachedObjectStorage/Wincache.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Writer/Excel2007/Workbook.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Writer/Excel5/Workbook.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Worksheet.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Writer/Excel2007/Worksheet.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Writer/Excel5/Worksheet.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/WorksheetIterator.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Writer/Excel2007/WriterPart.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Shared/XMLWriter.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Writer/Excel5/Xf.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Shared/ZipArchive.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Shared/ZipStreamWrapper.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/adminpages/approvelogin.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Shared/trend/bestFitClass.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/locale/bg/config" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/locale/cs/config" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/locale/da/config" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/locale/de/config" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/locale/en/uk/config" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/locale/es/config" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/locale/fi/config" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/locale/fr/config" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/locale/hu/config" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/locale/it/config" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/locale/nl/config" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/locale/no/config" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/locale/pl/config" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/locale/pt/config" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/locale/pt/br/config" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/locale/ru/config" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/locale/sv/config" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/locale/tr/config" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Shared/trend/exponentialBestFitClass.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Calculation/functionlist.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/locale/cs/functions" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/locale/da/functions" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/locale/de/functions" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/locale/es/functions" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/locale/fi/functions" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/locale/fr/functions" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/locale/it/functions" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/locale/nl/functions" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/locale/no/functions" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/locale/pl/functions" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/locale/pt/functions" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/locale/pt/br/functions" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/locale/ru/functions" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/locale/sv/functions" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/locale/tr/functions" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Shared/PCLZip/gnu-lgpl.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Chart/Renderer/jpgraph.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Shared/trend/linearBestFitClass.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Shared/trend/logarithmicBestFitClass.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Writer/PDF/mPDF.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Shared/PCLZip/pclzip.lib.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Shared/trend/polynomialBestFitClass.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Shared/trend/powerBestFitClass.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Shared/PCLZip/readme.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/pages/results.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/adminpages/sponsors.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/pages/sponsors.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/adminpages/systemsettings.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Writer/PDF/tcPDF.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Includes/PHPExcel/Shared/trend/trendClass.php" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/calendarImage.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/gallery4.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/gallery7.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/galleryTEMPimage.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/galleryTEMPimage2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/usercontent/4_newsletter_1433620974.pdf" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2015_03_24_000000_create_events_table.php" afterPath="$PROJECT_DIR$/database/migrations/2015_03_24_000000_create_events_table.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2015_03_24_201255_create_result_items_table.php" afterPath="$PROJECT_DIR$/database/migrations/2015_03_24_201255_create_result_items_table.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Middleware/Authenticate.php" afterPath="$PROJECT_DIR$/app/Http/Middleware/Authenticate.php" />
+    <list default="true" id="16421f50-9212-4959-8c97-27fb796635a3" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/plugins/link/images/anchor.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/plugins/link/images/hidpi/anchor.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/skins/moono/images/arrow.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/skins/moono/images/close.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/skins/moono/images/hidpi/close.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/samples/toolbarconfigurator/font/fontello.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/samples/toolbarconfigurator/font/fontello.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/samples/toolbarconfigurator/font/fontello.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/samples/img/github-top.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/samples/img/header-bg.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/samples/img/header-separator.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/plugins/icons.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/skins/moono/icons.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/plugins/icons_hidpi.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/skins/moono/icons_hidpi.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/skins/moono/images/lock-open.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/skins/moono/images/hidpi/lock-open.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/skins/moono/images/lock.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/skins/moono/images/hidpi/lock.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/samples/img/logo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/samples/old/assets/inlineall/logo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/plugins/about/dialogs/logo_ckeditor.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/plugins/about/dialogs/hidpi/logo_ckeditor.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/samples/img/navigation-tip.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/skins/moono/images/refresh.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/skins/moono/images/hidpi/refresh.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/samples/old/assets/sample.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/skins/moono/images/spinner.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/CHANGES.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Controllers/EmailController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/LICENSE.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/samples/toolbarconfigurator/font/LICENSE.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/samples/toolbarconfigurator/lib/codemirror/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/plugins/about/dialogs/about.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/samples/toolbarconfigurator/js/abstracttoolbarmodifier.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/lang/af.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/samples/old/ajax.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/plugins/link/dialogs/anchor.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/samples/old/api.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/samples/old/appendto.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/emails/approveuseremail.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/lang/ar.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/lang/bg.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/lang/bn.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/lang/bs.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/build-config.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/lang/ca.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/ckeditor.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/samples/toolbarconfigurator/lib/codemirror/codemirror.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/samples/toolbarconfigurator/lib/codemirror/codemirror.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/config.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/samples/toolbarconfigurator/font/config.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/emails/contactusemail.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/contents.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/lang/cs.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/lang/cy.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/lang/da.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/samples/old/datafiltering.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/lang/de.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/skins/moono/dialog.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/samples/old/dialog/dialog.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/plugins/dialog/dialogDefinition.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/skins/moono/dialog_ie.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/skins/moono/dialog_ie7.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/skins/moono/dialog_ie8.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/skins/moono/dialog_iequirks.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/samples/old/divreplace.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/skins/moono/editor.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/skins/moono/editor_gecko.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/skins/moono/editor_ie.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/skins/moono/editor_ie7.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/skins/moono/editor_ie8.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/skins/moono/editor_iequirks.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/lang/el.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/lang/en-au.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/lang/en-ca.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/lang/en-gb.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/lang/en.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/samples/old/enterkey/enterkey.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/lang/eo.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/lang/es.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/lang/et.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/lang/eu.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/lang/fa.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/lang/fi.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/lang/fo.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/samples/toolbarconfigurator/css/fontello.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/samples/toolbarconfigurator/font/fontello.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/lang/fr-ca.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/lang/fr.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/samples/old/wysiwygarea/fullpage.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/samples/toolbarconfigurator/js/fulltoolbareditor.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/lang/gl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/lang/gu.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/lang/he.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/lang/hi.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/lang/hr.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/lang/hu.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/lang/id.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/samples/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/samples/old/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/samples/toolbarconfigurator/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/samples/old/inlineall.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/samples/old/inlinebycode.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/samples/old/inlinetextarea.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/lang/is.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/lang/it.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/lang/ja.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/samples/toolbarconfigurator/lib/codemirror/javascript.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/samples/old/jquery.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/adapters/jquery.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/lang/ka.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/lang/km.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/lang/ko.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/lang/ku.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/samples/old/assets/uilanguages/languages.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/plugins/link/dialogs/link.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/lang/lt.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/lang/lv.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/lang/mk.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/lang/mn.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/lang/ms.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/samples/old/dialog/assets/my_dialog.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/lang/nb.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/samples/toolbarconfigurator/lib/codemirror/neo.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/lang/nl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/lang/no.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/samples/old/assets/outputxhtml/outputxhtml.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/plugins/clipboard/dialogs/paste.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/lang/pl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/samples/old/assets/posteddata.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/lang/pt-br.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/lang/pt.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/skins/moono/readme.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/samples/old/readonly.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/samples/old/replacebyclass.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/samples/old/replacebycode.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/lang/ro.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/lang/ru.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/samples/old/sample.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/samples/js/sample.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/samples/old/sample.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/samples/old/sample_posteddata.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/samples/css/samples.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/samples/js/sf.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/samples/toolbarconfigurator/lib/codemirror/show-hint.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/samples/toolbarconfigurator/lib/codemirror/show-hint.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/lang/si.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/lang/sk.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/lang/sl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/lang/sq.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/lang/sr-latn.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/lang/sr.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/styles.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/lang/sv.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/samples/old/tabindex.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/emails/template.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/lang/th.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/samples/old/toolbar/toolbar.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/samples/toolbarconfigurator/js/toolbarmodifier.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/samples/toolbarconfigurator/js/toolbartextmodifier.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/lang/tr.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/lang/tt.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/lang/ug.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/samples/old/uicolor.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/samples/old/uilanguages.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/lang/uk.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/lang/vi.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/samples/old/xhtmlstyle.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/lang/zh-cn.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascript/ckeditor/lang/zh.js" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Http/Controllers/JsonRequestController.xlsx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/Adam_Arguello.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/Allison_Linhart.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/Cindy.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/Joann_True.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/Marlene.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/gallery1.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/gallery2.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/gallery3.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/gallery5.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/gallery6.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/runBlog.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/runningSlideShow.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/runningSlideShow2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/running_blog.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/running_shoes.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/usercontent/14_carousel_1430767309.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/usercontent/14_carousel_1430768030.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/usercontent/14_carousel_1430768224.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/usercontent/14_carousel_1430768450.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/usercontent/14_carousel_1430769051.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/usercontent/3_board_1431644306.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/usercontent/3_board_1432042372.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/usercontent/3_board_1433618983.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/usercontent/3_carousel_1430779772.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/usercontent/3_carousel_1430783926.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/usercontent/4_board_1432046438.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/usercontent/4_board_1432048719.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/usercontent/4_board_1432648460.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/winning the race.png" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/slideshow.png" afterPath="$PROJECT_DIR$/public/img/defaultPrimary.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/BoardMember.php" afterPath="$PROJECT_DIR$/app/BoardMember.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/CalendarController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/CalendarController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Event.php" afterPath="$PROJECT_DIR$/app/Event.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Gallery.php" afterPath="$PROJECT_DIR$/app/Gallery.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/GalleryController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/GalleryController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Middleware/HandleRoles.php" afterPath="$PROJECT_DIR$/app/Http/Middleware/HandleRoles.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/ImageTool.php" afterPath="$PROJECT_DIR$/app/ImageTool.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/JoinController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/JoinController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/JsonRequestController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/JsonRequestController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Kernel.php" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Page.php" afterPath="$PROJECT_DIR$/app/Page.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Requests/Request.php" afterPath="$PROJECT_DIR$/app/Http/Requests/Request.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/ResultItem.php" afterPath="$PROJECT_DIR$/app/ResultItem.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php" afterPath="$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/ScreenDataHelper.php" afterPath="$PROJECT_DIR$/app/ScreenDataHelper.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/TeamController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/TeamController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/pages/about.blade.php" afterPath="$PROJECT_DIR$/resources/views/pages/about.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/pages/app.blade.php" afterPath="$PROJECT_DIR$/resources/views/pages/app.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/app.php" afterPath="$PROJECT_DIR$/config/app.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/pages/basicapp.blade.php" afterPath="$PROJECT_DIR$/resources/views/pages/basicapp.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/adminpages/blog.blade.php" afterPath="$PROJECT_DIR$/resources/views/adminpages/blog.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/pages/blog.blade.php" afterPath="$PROJECT_DIR$/resources/views/pages/blog.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/adminpages/calendar.blade.php" afterPath="$PROJECT_DIR$/resources/views/adminpages/calendar.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/carouselstyle.css" afterPath="$PROJECT_DIR$/public/css/carouselstyle.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/pages/calendar.blade.php" afterPath="$PROJECT_DIR$/resources/views/pages/calendar.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/pages/contact.blade.php" afterPath="$PROJECT_DIR$/resources/views/pages/contact.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascript/custom.js" afterPath="$PROJECT_DIR$/public/javascript/custom.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/adminpages/gallery.blade.php" afterPath="$PROJECT_DIR$/resources/views/adminpages/gallery.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/adminpages/gallerymain.blade.php" afterPath="$PROJECT_DIR$/resources/views/adminpages/gallerymain.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/pages/gallerymain.blade.php" afterPath="$PROJECT_DIR$/resources/views/pages/gallerymain.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/adminpages/home.blade.php" afterPath="$PROJECT_DIR$/resources/views/adminpages/home.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/pages/home.blade.php" afterPath="$PROJECT_DIR$/resources/views/pages/home.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/adminpages/join.blade.php" afterPath="$PROJECT_DIR$/resources/views/adminpages/join.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/pages/join.blade.php" afterPath="$PROJECT_DIR$/resources/views/pages/join.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/main.css" afterPath="$PROJECT_DIR$/public/css/main.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/adminpages/sponsors.blade.php" afterPath="$PROJECT_DIR$/resources/views/adminpages/sponsors.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/style.css" afterPath="$PROJECT_DIR$/public/css/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/adminpages/team.blade.php" afterPath="$PROJECT_DIR$/resources/views/adminpages/team.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/pages/team.blade.php" afterPath="$PROJECT_DIR$/resources/views/pages/team.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="WindyCityStriders.iws" />
@@ -309,23 +259,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="JsonRequestController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/JsonRequestController.php">
+      <file leaf-file-name="sponsors.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/adminpages/sponsors.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.0416665" vertical-offset="17726" max-vertical-offset="19125">
-              <caret line="1193" column="39" selection-start-line="1193" selection-start-column="39" selection-end-line="1193" selection-end-column="39" />
-              <folding>
-                <element signature="e#42#64#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="systemsettings.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/adminpages/systemsettings.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.125" vertical-offset="0" max-vertical-offset="645">
-              <caret line="21" column="44" selection-start-line="21" selection-start-column="44" selection-end-line="21" selection-end-column="44" />
+            <state vertical-scroll-proportion="-8.125" vertical-offset="1305" max-vertical-offset="2325">
+              <caret line="100" column="0" selection-start-line="100" selection-start-column="0" selection-end-line="114" selection-end-column="67" />
               <folding />
             </state>
           </provider>
@@ -334,28 +272,68 @@
       <file leaf-file-name="custom.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/javascript/custom.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2927" max-vertical-offset="23025">
-              <caret line="214" column="76" selection-start-line="214" selection-start-column="76" selection-end-line="214" selection-end-column="76" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="19067" max-vertical-offset="24885">
+              <caret line="1311" column="34" selection-start-line="1311" selection-start-column="34" selection-end-line="1311" selection-end-column="34" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="blog.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/adminpages/blog.blade.php">
+      <file leaf-file-name="EmailController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/EmailController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-28.916666" vertical-offset="1421" max-vertical-offset="2325">
-              <caret line="141" column="44" selection-start-line="141" selection-start-column="44" selection-end-line="141" selection-end-column="44" />
+            <state vertical-scroll-proportion="0.63495576" vertical-offset="311" max-vertical-offset="1215">
+              <caret line="64" column="36" selection-start-line="64" selection-start-column="36" selection-end-line="64" selection-end-column="36" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.blade.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/pages/app.blade.php">
+      <file leaf-file-name="template.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/emails/template.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.1039823" vertical-offset="2216" max-vertical-offset="3285">
-              <caret line="154" column="0" selection-start-line="154" selection-start-column="0" selection-end-line="154" selection-end-column="0" />
+            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="405">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="approveuseremail.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/emails/approveuseremail.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-3.125" vertical-offset="0" max-vertical-offset="735">
+              <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="contactusemail.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/emails/contactusemail.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-13.75" vertical-offset="0" max-vertical-offset="1080">
+              <caret line="22" column="8" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="password.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/emails/password.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="105">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ApproveLoginController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ApproveLoginController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="420">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -364,18 +342,8 @@
       <file leaf-file-name="ScreenDataHelper.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/ScreenDataHelper.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-26.875" vertical-offset="0" max-vertical-offset="930">
-              <caret line="48" column="5" selection-start-line="48" selection-start-column="5" selection-end-line="48" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Page.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Page.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-18.75" vertical-offset="0" max-vertical-offset="600">
-              <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="990">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -384,30 +352,8 @@
       <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-22.041666" vertical-offset="866" max-vertical-offset="1770">
-              <caret line="102" column="67" selection-start-line="102" selection-start-column="67" selection-end-line="102" selection-end-column="67" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DatabaseSeeder.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/database/seeds/DatabaseSeeder.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-23.916666" vertical-offset="12101" max-vertical-offset="13005">
-              <caret line="845" column="11" selection-start-line="845" selection-start-column="11" selection-end-line="845" selection-end-column="11" />
-              <folding>
-                <element signature="e#7#38#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="about.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/adminpages/about.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.75" vertical-offset="0" max-vertical-offset="1425">
-              <caret line="14" column="46" selection-start-line="10" selection-start-column="16" selection-end-line="14" selection-end-column="46" />
+            <state vertical-scroll-proportion="-26.875" vertical-offset="840" max-vertical-offset="1875">
+              <caret line="108" column="0" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -421,57 +367,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/config/database.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2015_03_24_000000_create_events_table.php" />
-        <option value="$PROJECT_DIR$/public/css/main.css" />
-        <option value="$PROJECT_DIR$/config/myapp.php" />
-        <option value="$PROJECT_DIR$/.env" />
-        <option value="$PROJECT_DIR$/resources/views/adminpages/home.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/pages/home.blade.php" />
-        <option value="$PROJECT_DIR$/app/ResultItem.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/ResultsController.php" />
-        <option value="$PROJECT_DIR$/resources/views/adminpages/team.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/GalleryController.php" />
-        <option value="$PROJECT_DIR$/public/javascript/jquery.flexslider.js" />
-        <option value="$PROJECT_DIR$/resources/views/pages/gallerymain.blade.php" />
-        <option value="$PROJECT_DIR$/public/css/carouselstyle.css" />
-        <option value="$PROJECT_DIR$/resources/views/adminpages/gallerymain.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/adminpages/gallery.blade.php" />
-        <option value="$PROJECT_DIR$/app/Gallery.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/CalendarController.php" />
-        <option value="$PROJECT_DIR$/resources/views/auth/login.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/pages/basicapp.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Middleware/HandleRoles.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2015_03_24_201255_create_result_items_table.php" />
-        <option value="$PROJECT_DIR$/app/Http/Middleware/Authenticate.php" />
-        <option value="$PROJECT_DIR$/app/Http/Kernel.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Controller.php" />
-        <option value="$PROJECT_DIR$/app/Http/Requests/Request.php" />
         <option value="$PROJECT_DIR$/app/Http/Middleware/VerifyApprovedUsers.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ApproveLoginController.php" />
-        <option value="$PROJECT_DIR$/public/css/style.css" />
         <option value="$PROJECT_DIR$/resources/views/adminpages/approvelogin.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/pages/blog.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/SponsorsController.php" />
         <option value="$PROJECT_DIR$/resources/views/pages/sponsors.blade.php" />
         <option value="$PROJECT_DIR$/app/ImageTool.php" />
-        <option value="$PROJECT_DIR$/resources/views/adminpages/sponsors.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/adminpages/calendar.blade.php" />
-        <option value="$PROJECT_DIR$/config/app.php" />
         <option value="$PROJECT_DIR$/resources/views/pages/results.blade.php" />
         <option value="$PROJECT_DIR$/app/Event.php" />
         <option value="$PROJECT_DIR$/database/migrations/2015_06_28_151603_create_system_settings_table.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/SystemSettingsController.php" />
         <option value="$PROJECT_DIR$/resources/views/adminpages/systemsettings.blade.php" />
-        <option value="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" />
-        <option value="$PROJECT_DIR$/app/Http/routes.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/JsonRequestController.php" />
-        <option value="$PROJECT_DIR$/public/javascript/custom.js" />
         <option value="$PROJECT_DIR$/resources/views/adminpages/blog.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/pages/gallerymain.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/pages/testEmal.blade.php" />
+        <option value="$PROJECT_DIR$/config/mail.php" />
+        <option value="$PROJECT_DIR$/resources/views/emails/template.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/pages/contact.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/emails/testEmail.blade.php" />
+        <option value="$PROJECT_DIR$/config/app.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/GalleryController.php" />
+        <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/app/ScreenDataHelper.php" />
+        <option value="$PROJECT_DIR$/resources/views/adminpages/home.blade.php" />
+        <option value="$PROJECT_DIR$/app/BoardMember.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/TeamController.php" />
+        <option value="$PROJECT_DIR$/resources/views/adminpages/team.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/pages/team.blade.php" />
         <option value="$PROJECT_DIR$/app/Page.php" />
+        <option value="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" />
+        <option value="$PROJECT_DIR$/public/css/style.css" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/JoinController.php" />
+        <option value="$PROJECT_DIR$/public/javascript/ckeditor/contents.css" />
+        <option value="$PROJECT_DIR$/resources/views/adminpages/join.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/pages/basicapp.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Middleware/HandleRoles.php" />
+        <option value="$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php" />
         <option value="$PROJECT_DIR$/resources/views/pages/app.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/JsonRequestController.php" />
+        <option value="$PROJECT_DIR$/public/css/bootstrap.css" />
+        <option value="$PROJECT_DIR$/resources/views/pages/calendar.blade.php" />
+        <option value="$PROJECT_DIR$/public/css/main.css" />
+        <option value="$PROJECT_DIR$/resources/views/pages/about.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/pages/join.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/adminpages/calendar.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/CalendarController.php" />
+        <option value="$PROJECT_DIR$/resources/views/adminpages/sponsors.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/routes.php" />
+        <option value="$PROJECT_DIR$/public/javascript/custom.js" />
+        <option value="$PROJECT_DIR$/resources/views/emails/approveuseremail.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/EmailController.php" />
       </list>
     </option>
   </component>
@@ -540,20 +486,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="vendor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WindyCityStriders" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WindyCityStriders" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -581,6 +513,50 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="pages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WindyCityStriders" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WindyCityStriders" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="emails" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WindyCityStriders" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WindyCityStriders" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="auth" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -631,6 +607,104 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WindyCityStriders" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WindyCityStriders" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="javascript" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WindyCityStriders" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WindyCityStriders" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="javascript" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ckeditor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WindyCityStriders" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WindyCityStriders" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="img" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WindyCityStriders" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WindyCityStriders" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="img" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="usercontent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WindyCityStriders" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WindyCityStriders" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -709,72 +783,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WindyCityStriders" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WindyCityStriders" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Includes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WindyCityStriders" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WindyCityStriders" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Includes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PHPExcel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WindyCityStriders" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WindyCityStriders" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Includes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PHPExcel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CachedObjectStorage" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -872,24 +880,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WindyCityStriders" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WindyCityStriders" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Console" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -905,6 +895,10 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/resources/views/adminpages" />
+      <recent name="$PROJECT_DIR$/resources/views/emails" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/views/emails" />
     </key>
   </component>
   <component name="RunManager">
@@ -922,6 +916,9 @@
       <BehatRunner />
       <method />
     </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
+      <method />
+    </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <node-options />
       <gulpfile />
@@ -929,9 +926,6 @@
       <arguments />
       <pass-parent-envs>true</pass-parent-envs>
       <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
       <method />
     </configuration>
     <list size="0" />
@@ -983,7 +977,13 @@
       <option name="project" value="LOCAL" />
       <updated>1433907225834</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Lots of updates for main end push before debug">
+      <created>1435511721923</created>
+      <option name="number" value="00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1435511721923</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -998,7 +998,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24969475" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21062271" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21306472" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32901296" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -1008,9 +1008,9 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
     <layout-to-restore>
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1030,10 +1030,10 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24969475" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21062271" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21306472" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -1055,7 +1055,8 @@
     <MESSAGE value="Many Changes for logins and dynamic pages" />
     <MESSAGE value=" Changes for control of the team page and more" />
     <MESSAGE value=" Work on homepage additions and schedue page half done" />
-    <option name="LAST_COMMIT_MESSAGE" value=" Work on homepage additions and schedue page half done" />
+    <MESSAGE value="Lots of updates for main end push before debug" />
+    <option name="LAST_COMMIT_MESSAGE" value="Lots of updates for main end push before debug" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1066,28 +1067,30 @@
           <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="9" />
+      <option name="time" value="10" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Contracts/Auth/Guard.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/JoinController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.25" vertical-offset="0" max-vertical-offset="1590">
-          <caret line="2" column="10" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="10" />
+        <state vertical-scroll-proportion="-18.291666" vertical-offset="176" max-vertical-offset="1095">
+          <caret line="41" column="57" selection-start-line="41" selection-start-column="57" selection-end-line="41" selection-end-column="57" />
+          <folding>
+            <element signature="e#39#88#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/javascript/ckeditor/styles.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.0" vertical-offset="0" max-vertical-offset="1755">
+          <caret line="9" column="53" selection-start-line="9" selection-start-column="50" selection-end-line="9" selection-end-column="53" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/Core_c.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.166667" vertical-offset="4316" max-vertical-offset="5220">
-          <caret line="304" column="12" selection-start-line="304" selection-start-column="12" selection-end-line="304" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php">
+    <entry file="file://$PROJECT_DIR$/public/javascript/ckeditor/config.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="928">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1095,36 +1098,84 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/Authenticate.php">
+    <entry file="file://$PROJECT_DIR$/public/javascript/ckeditor/contents.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-29.375" vertical-offset="0" max-vertical-offset="870">
-          <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+        <state vertical-scroll-proportion="-10.0" vertical-offset="0" max-vertical-offset="2085">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/javascript/ckeditor/ckeditor.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="10772" max-vertical-offset="11700">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#38#50#0#PHP" expanded="false" />
+            <element signature="n#!!doc" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Kernel.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/pages/basicapp.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-18.75" vertical-offset="0" max-vertical-offset="615">
-          <caret line="30" column="58" selection-start-line="30" selection-start-column="58" selection-end-line="30" selection-end-column="58" />
+        <state vertical-scroll-proportion="-20.791666" vertical-offset="1391" max-vertical-offset="2295">
+          <caret line="126" column="0" selection-start-line="126" selection-start-column="0" selection-end-line="126" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Controller.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/VerifyApprovedUsers.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.625" vertical-offset="0" max-vertical-offset="345">
-          <caret line="13" column="26" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="928">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Requests/Request.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.0" vertical-offset="0" max-vertical-offset="240">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+        <state vertical-scroll-proportion="-21.875" vertical-offset="0" max-vertical-offset="735">
+          <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/auth/reset.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1080">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Auth/ResetsPasswords.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.5" vertical-offset="0" max-vertical-offset="2130">
+          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/HandleRoles.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7466814" vertical-offset="135" max-vertical-offset="2715">
+          <caret line="54" column="61" selection-start-line="54" selection-start-column="61" selection-end-line="54" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/PasswordController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.625" vertical-offset="0" max-vertical-offset="615">
+          <caret line="20" column="20" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Providers/RouteServiceProvider.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.875" vertical-offset="0" max-vertical-offset="735">
+          <caret line="20" column="19" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
           <folding />
         </state>
       </provider>
@@ -1137,354 +1188,261 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/PasswordController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="928">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/VerifyApprovedUsers.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.625" vertical-offset="0" max-vertical-offset="615">
-          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ApproveLoginController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.375" vertical-offset="0" max-vertical-offset="465">
-          <caret line="15" column="27" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
-          <folding>
-            <element signature="e#39#61#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/phpspec/php-diff/example/styles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="542" max-vertical-offset="1470">
-          <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="17205" max-vertical-offset="18750">
-          <caret line="1184" column="57" selection-start-line="1184" selection-start-column="57" selection-end-line="1184" selection-end-column="57" />
+        <state vertical-scroll-proportion="-11.111111" vertical-offset="8940" max-vertical-offset="18825">
+          <caret line="616" column="42" selection-start-line="616" selection-start-column="38" selection-end-line="616" selection-end-column="42" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/adminpages/approvelogin.blade.php">
+    <entry file="file://$PROJECT_DIR$/public/css/app.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.0" vertical-offset="0" max-vertical-offset="810">
-          <caret line="16" column="70" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="70" />
+        <state vertical-scroll-proportion="-143.33333" vertical-offset="61095" max-vertical-offset="93585">
+          <caret line="4331" column="23" selection-start-line="4331" selection-start-column="19" selection-end-line="4331" selection-end-column="23" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ResultsController.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/pages/calendar.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="928">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="-13.75" vertical-offset="0" max-vertical-offset="1230">
+          <caret line="22" column="45" selection-start-line="22" selection-start-column="45" selection-end-line="22" selection-end-column="45" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/pages/blog.blade.php">
+    <entry file="file://$PROJECT_DIR$/public/css/bootstrap.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.2776549" vertical-offset="0" max-vertical-offset="1425">
-          <caret line="77" column="27" selection-start-line="77" selection-start-column="27" selection-end-line="77" selection-end-column="27" />
+        <state vertical-scroll-proportion="-46.11111" vertical-offset="3735" max-vertical-offset="92625">
+          <caret line="332" column="6" selection-start-line="332" selection-start-column="1" selection-end-line="332" selection-end-column="6" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/adminpages/team.blade.php">
+    <entry file="file://$PROJECT_DIR$/public/css/main.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.72549" vertical-offset="1388" max-vertical-offset="3120">
-          <caret line="112" column="69" selection-start-line="112" selection-start-column="12" selection-end-line="112" selection-end-column="69" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/pages/sponsors.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.12057522" vertical-offset="251" max-vertical-offset="1200">
-          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SponsorsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.875" vertical-offset="0" max-vertical-offset="570">
-          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/adminpages/gallery.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.24857469" vertical-offset="1163" max-vertical-offset="2895">
-          <caret line="63" column="23" selection-start-line="63" selection-start-column="23" selection-end-line="63" selection-end-column="90" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BlogController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1230">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/adminpages/calendar.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.7843137" vertical-offset="2183" max-vertical-offset="3900">
-          <caret line="172" column="26" selection-start-line="172" selection-start-column="26" selection-end-line="172" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Providers/RouteServiceProvider.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="928">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Includes/PHPExcel/Writer/Abstract.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2100">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/app.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-31.875" vertical-offset="435" max-vertical-offset="3120">
-          <caret line="80" column="22" selection-start-line="80" selection-start-column="5" selection-end-line="80" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Includes/PHPExcel/Writer/Excel2007.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.1736727" vertical-offset="2130" max-vertical-offset="7710">
-          <caret line="35" column="6" selection-start-line="35" selection-start-column="6" selection-end-line="35" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/pages/results.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.3" vertical-offset="71" max-vertical-offset="975">
-          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Blog.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="928">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/BoardMember.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="928">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/CarouselItem.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="928">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Gallery.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="928">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/GalleryItem.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="928">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/ImageTool.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-33.291668" vertical-offset="56" max-vertical-offset="1215">
-          <caret line="62" column="12" selection-start-line="62" selection-start-column="12" selection-end-line="62" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Event.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.75" vertical-offset="0" max-vertical-offset="510">
-          <caret line="14" column="7" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2015_03_24_201255_create_result_items_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.375" vertical-offset="0" max-vertical-offset="645">
-          <caret line="24" column="11" selection-start-line="14" selection-start-column="8" selection-end-line="24" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2015_06_28_151603_create_system_settings_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.625" vertical-offset="0" max-vertical-offset="615">
-          <caret line="18" column="40" selection-start-line="18" selection-start-column="40" selection-end-line="18" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/adminpages/sponsors.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-19.666666" vertical-offset="878" max-vertical-offset="2325">
-          <caret line="90" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="149" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-26.875" vertical-offset="0" max-vertical-offset="930">
-          <caret line="48" column="74" selection-start-line="48" selection-start-column="7" selection-end-line="48" selection-end-column="74" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/HandleRoles.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.5" vertical-offset="105" max-vertical-offset="2505">
-          <caret line="35" column="45" selection-start-line="35" selection-start-column="15" selection-end-line="35" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SystemSettingsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.0" vertical-offset="0" max-vertical-offset="465">
-          <caret line="16" column="5" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
-          <folding>
-            <element signature="e#39#61#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/adminpages/about.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.75" vertical-offset="0" max-vertical-offset="1425">
-          <caret line="14" column="46" selection-start-line="10" selection-start-column="16" selection-end-line="14" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/phpunit/phpunit/tests/TextUI/custom-printer-debug.phpt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="525">
-          <caret line="26" column="22" selection-start-line="26" selection-start-column="22" selection-end-line="26" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/adminpages/systemsettings.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.125" vertical-offset="0" max-vertical-offset="645">
-          <caret line="21" column="44" selection-start-line="21" selection-start-column="44" selection-end-line="21" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/seeds/DatabaseSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-23.916666" vertical-offset="12101" max-vertical-offset="13005">
-          <caret line="845" column="11" selection-start-line="845" selection-start-column="11" selection-end-line="845" selection-end-column="11" />
-          <folding>
-            <element signature="e#7#38#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-22.041666" vertical-offset="866" max-vertical-offset="1770">
-          <caret line="102" column="67" selection-start-line="102" selection-start-column="67" selection-end-line="102" selection-end-column="67" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/JsonRequestController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.0416665" vertical-offset="17726" max-vertical-offset="19125">
-          <caret line="1193" column="39" selection-start-line="1193" selection-start-column="39" selection-end-line="1193" selection-end-column="39" />
-          <folding>
-            <element signature="e#42#64#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascript/custom.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2927" max-vertical-offset="23025">
-          <caret line="214" column="76" selection-start-line="214" selection-start-column="76" selection-end-line="214" selection-end-column="76" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/adminpages/blog.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-28.916666" vertical-offset="1421" max-vertical-offset="2325">
-          <caret line="141" column="44" selection-start-line="141" selection-start-column="44" selection-end-line="141" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/ScreenDataHelper.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-26.875" vertical-offset="0" max-vertical-offset="930">
-          <caret line="48" column="5" selection-start-line="48" selection-start-column="5" selection-end-line="48" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Page.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-18.75" vertical-offset="0" max-vertical-offset="600">
-          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.46614873" vertical-offset="555" max-vertical-offset="2085">
+          <caret line="65" column="16" selection-start-line="65" selection-start-column="16" selection-end-line="65" selection-end-column="16" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/pages/app.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1039823" vertical-offset="2216" max-vertical-offset="3285">
-          <caret line="154" column="0" selection-start-line="154" selection-start-column="0" selection-end-line="154" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.4358407" vertical-offset="1301" max-vertical-offset="3300">
+          <caret line="113" column="70" selection-start-line="113" selection-start-column="70" selection-end-line="113" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/JsonRequestController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.640821" vertical-offset="6593" max-vertical-offset="21615">
+          <caret line="477" column="13" selection-start-line="477" selection-start-column="13" selection-end-line="477" selection-end-column="13" />
+          <folding>
+            <element signature="e#42#64#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/adminpages/about.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.625" vertical-offset="0" max-vertical-offset="1425">
+          <caret line="9" column="42" selection-start-line="9" selection-start-column="42" selection-end-line="9" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/pages/about.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-21.25" vertical-offset="0" max-vertical-offset="900">
+          <caret line="34" column="45" selection-start-line="34" selection-start-column="45" selection-end-line="34" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/adminpages/join.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-33.75" vertical-offset="0" max-vertical-offset="1455">
+          <caret line="54" column="42" selection-start-line="10" selection-start-column="12" selection-end-line="54" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/pages/join.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.5" vertical-offset="0" max-vertical-offset="1035">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/adminpages/calendar.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.666667" vertical-offset="3221" max-vertical-offset="4200">
+          <caret line="235" column="51" selection-start-line="235" selection-start-column="51" selection-end-line="235" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CalendarController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.375" vertical-offset="1185" max-vertical-offset="4695">
+          <caret line="93" column="41" selection-start-line="93" selection-start-column="41" selection-end-line="93" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/img/usercontent/6_eventImage_1434577941.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/img/usercontent/6_eventImage_1435288262.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/img/usercontent/6_eventImage_1435293483.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/img/usercontent/6_galleryItem_1435032080.jpeg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/img/usercontent/6_galleryItem_1435032814.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/img/usercontent/3_eventImage_1434412758.jpeg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/img/usercontent/3_eventImage_1434412906.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/img/usercontent/3_eventImage_1434413291.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/img/usercontent/3_eventImage_1434413540.jpeg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/img/usercontent/3_eventImage_1434413780.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/img/usercontent/3_eventImage_1434414813.jpeg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/img/usercontent/3_eventImage_1434462029.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/img/usercontent/3_eventImage_1434475326.jpeg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/ScreenDataHelper.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="990">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/adminpages/sponsors.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.125" vertical-offset="1305" max-vertical-offset="2325">
+          <caret line="100" column="0" selection-start-line="100" selection-start-column="0" selection-end-line="114" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/pages/contact.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-23.916666" vertical-offset="296" max-vertical-offset="1200">
+          <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ApproveLoginController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="928">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-26.875" vertical-offset="840" max-vertical-offset="1875">
+          <caret line="108" column="0" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/javascript/custom.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="19067" max-vertical-offset="24885">
+          <caret line="1311" column="34" selection-start-line="1311" selection-start-column="34" selection-end-line="1311" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/emails/password.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="928">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/emails/template.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="928">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/emails/contactusemail.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.75" vertical-offset="0" max-vertical-offset="1080">
+          <caret line="22" column="8" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/emails/approveuseremail.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.125" vertical-offset="0" max-vertical-offset="735">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/EmailController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.63495576" vertical-offset="311" max-vertical-offset="1215">
+          <caret line="64" column="36" selection-start-line="64" selection-start-column="36" selection-end-line="64" selection-end-column="36" />
           <folding />
         </state>
       </provider>

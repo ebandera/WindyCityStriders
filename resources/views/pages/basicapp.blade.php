@@ -124,7 +124,7 @@
                     <li><a href="/auth/login">Login</a>
                         <ul>
                             <li><a href="/auth/register">Register</a></li>
-                            <li><a href="/password/reset">Reset Password</a></li>
+
                         </ul>
                     </li>
 
